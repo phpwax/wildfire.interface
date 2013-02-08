@@ -23,7 +23,7 @@ foreach($grouping as $g=>$info){
 <?=partial("_form_start", $this)?>
 
   <div class='intro_block_content clearfix'>
-    <?=partial("_intro", array('model'=>$model, 'controller'=>$controller, 'autosave'=>$autosave))?>
+    <?=partial("_intro", array('model'=>$model, 'controller'=>$controller, 'model_class'=>$model_class, 'autosave'=>$autosave))?>
   </div>
 
   <div class='edit_form_block_container clearfix<?if($secondary_tabs):?> with_meta_tabs<?endif?>'>
@@ -34,40 +34,42 @@ foreach($grouping as $g=>$info){
             <?$k=0;?>
             <?foreach($primary_tabs as $name=>$info):?>
               <?$tabhash = Inflections::to_url($name); $tabid = "tab-".$tabhash;?>
-              <li id="<?=$tabid?>" class='tab-<?=$k?>'><a href="#<?=$tabhash?>"><?=ucwords($name)?></a></li>
+              <li id="<?=$tabid?>" class='tab-<?=$k?>'><a href="#content_tab_<?=$tabhash?>"><?=ucwords($name)?></a></li>
               <?$k++;?>
             <?endforeach?>
           </ul>
         <?foreach($primary_tabs as $name=>$fields):?>
           <?$tabhash = Inflections::to_url($name);?>
 
-          <fieldset class='tab-contents clearfix <?=$tabhash?>' id="<?=$tabhash?>" >
+          <fieldset class='tab-contents clearfix <?=$tabhash?>' id="content_tab_<?=$tabhash?>" >
 
           <?if(!$readable = CMSBaseComponent::form_group_partial_check($partial_paths, $name)) $readable = "_default_form_group";?>
           <?=partial($readable, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base))?>
 
           </fieldset>
 
-        <?endforeach?>
-        <fieldset class='submit'>
-        <?=partial("_submit", array('model'=>$model, 'controller'=>$controller, 'model_class'=>$model_class, 'autosave'=>$autosave))?>
-        </fieldset>
+          <?if($secondary_tabs):?>
 
+            <?if($tabhash == "content"):?>
+            <div class='meta_tabs accordion clearfix'>
+              <?foreach($secondary_tabs as $name=>$fields):?>
+                <?$tabhash = Inflections::to_url($name);?>
+                <h3 class='accordion_header meta-tab-title'><?=$name?></h3>
+                <div class="meta-tab clearfix">
+                  <?if(!$partial = CMSBaseComponent::form_group_partial_check($partial_paths, $name)) $partial = "_default_form_group";?>
+                  <?=partial($partial, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base));?>
+                </div>
+              <?endforeach?>
+            </div>
+
+            <?endif?>
+
+          <?endif?>
+
+        <?endforeach?>
+        
       <?endif?>
     </div>
-
-    <?if($secondary_tabs):?>
-      <div class='meta_tabs accordion clearfix'>
-        <?foreach($secondary_tabs as $name=>$fields):?>
-          <?$tabhash = Inflections::to_url($name);?>
-          <h3 class='accordion_header meta-tab-title'><?=$name?></h3>
-          <div class="meta-tab clearfix">
-            <?if(!$partial = CMSBaseComponent::form_group_partial_check($partial_paths, $name)) $partial = "_default_form_group";?>
-            <?=partial($partial, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base));?>
-          </div>
-        <?endforeach?>
-      </div>
-    <?endif?>
 
   </div>
 </form>
