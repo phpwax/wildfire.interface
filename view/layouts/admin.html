@@ -53,6 +53,10 @@
   <?$cachelink = Config::get('cacheissue')?>
   <?=partial("_nav", array("allowed_modules"=>$allowed_modules))?>
 
+<?foreach(CMSApplication::$global_partials as $partial):?>
+<?=partial($partial)?>
+<?endforeach?>
+
 <script src='//www.google.com/jsapi?'  type='text/javascript'></script>
 <script type='text/javascript'>
   google.load('jquery', '1.5');
