@@ -8,6 +8,26 @@ var auto_save_signature,
       auto_save_signature
       ;
 
+function span_hide(el, after){
+  el.delay(2000).clearQueue().animate({
+    "width": '1px',
+    "margin-right": '0'
+  }, 500, function(){
+    el.css({"display":"none", "width":""});
+    if(after) after();
+  });
+}
+
+function span_show(el, after){
+  var target_width = el.width();
+  el.css({"display":"inline", "width":"1px"}).clearQueue().animate({
+    "width": target_width,
+    "margin-right": '5px'
+  }, 500, after);
+}
+
+
+
 function auto_save_form(auto_span, auto_saver, auto_image, preview){
   var endpoint = auto_span.attr('data-save-point'),
       action = auto_span.attr("data-controller")+"edit/";
@@ -53,24 +73,6 @@ function auto_save_form(auto_span, auto_saver, auto_image, preview){
 
 
 jQuery(document).ready(function(){
-  function span_hide(el, after){
-    el.delay(2000).clearQueue().animate({
-      "width": '1px',
-      "margin-right": '0'
-    }, 500, function(){
-      el.css({"display":"none", "width":""});
-      if(after) after();
-    });
-  }
-
-  function span_show(el, after){
-    var target_width = el.width();
-    el.css({"display":"inline", "width":"1px"}).clearQueue().animate({
-      "width": target_width,
-      "margin-right": '5px'
-    }, 500, after);
-  }
-
 
   auto_saver = jQuery('#auto-save');
   auto_span = auto_saver.find("span");
