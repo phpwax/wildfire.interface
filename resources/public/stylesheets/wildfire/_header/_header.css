@@ -9,11 +9,15 @@
 
   #header #logo{
     float:left;
-    width:14%;
-    padding-top:15px;
-    margin-left:2%;
-    margin-bottom:10px;
+    width:160px;
+    height:62px;
+    margin-left:20px;
+    background:url(/images/wildfire/logos/white-small.png) no-repeat left center;
   }
+  #header #logo:hover{
+    background:url(/images/wildfire/logos/white-small.gif) no-repeat left center;
+  }
+
     #logo span{display:none;}
 
   #header a{
@@ -30,18 +34,19 @@
       margin-right:15px;
     }
 
-  #search_form{float:left;}
-
   #options{
-    float:right;
-    width:60%;
-    max-width:300px;
+    float:left;
   }
   #options{
-    padding-top:12px;
+    padding-top:15px;
   }
   #options a{
-    float:right;
+    float:left;
     margin-left:10px;
+  }
+
+  #logout_button{
+    float:right;
+    margin:15px 15px 0 0;
   }
 
