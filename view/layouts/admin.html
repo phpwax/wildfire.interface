@@ -28,7 +28,7 @@
   </div>
   <div id="outer">
     <div id="page_content" class='clearfix'>
-  
+
       <div class='clearfix full content <?=Inflections::underscore($display_name)?>_content <?=Inflections::underscore($display_name)?>_<?= Inflections::underscore($action)?>' id="content">
         <?
           //support for session-based messages to pass along between redirects
@@ -70,6 +70,10 @@
 <script src="/tinymce/jscripts/tiny_mce/jquery.tinymce.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- CMS -->
+
+<?foreach(CMSApplication::get_registered_assets("wildfire", "js") as $asset):?>
+  <?=js_bundle($asset, array(), $asset);?>
+<?endforeach?>
 
 <?foreach(Autoloader::$plugin_array as $plugin):?>
   <?
