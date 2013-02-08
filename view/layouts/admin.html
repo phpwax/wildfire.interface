@@ -4,16 +4,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 	<?=partial("_cf")?>
-  <?$mods = CMSApplication::get_modules();?>
-  <?foreach(Autoloader::$plugin_array as $plugin):?>
-    <?
-    $use = false;
-    foreach($mods as $mod) if($mod['plugin_name'] == $plugin['name']) $use = $mod;
-    if($use && $use['assets_for_cms']){
-      echo css_bundle($plugin['name'], array('media'=>'all'), $plugin['name']);
-    }
-    ?>
+
+
+  <?foreach(CMSApplication::get_registered_assets("wildfire", "css") as $asset):?>
+    <?=css_bundle($asset, array('media'=>'all'), $asset);?>
   <?endforeach?>
+
   <?=css_bundle("wildfire-overwrites", array('media'=>'all'))?>
 
 	<title>Content Management System</title>
@@ -29,7 +25,7 @@
   </div>
   <div id="outer">
     <div id="page_content" class='clearfix'>
-  
+
       <div class='clearfix full content <?=Inflections::underscore($display_name)?>_content <?=Inflections::underscore($display_name)?>_<?= Inflections::underscore($action)?>' id="content">
         <?
           //support for session-based messages to pass along between redirects
@@ -71,15 +67,11 @@
 
 <!-- CMS -->
 
-<?foreach(Autoloader::$plugin_array as $plugin):?>
-  <?
-  $use = false;
-  foreach($mods as $mod) if($mod['plugin_name'] == $plugin['name']) $use = $mod;
-  if($use && $use['assets_for_cms']){
-    echo js_bundle($plugin['name'], array(), $plugin['name']);
-  }
-  ?>
+<?foreach(CMSApplication::get_registered_assets("wildfire", "js") as $asset):?>
+  <?=js_bundle($asset, array(), $asset);?>
 <?endforeach?>
+
+
 <?=js_bundle("wildfire-plugins", array(),"wildfire")?>
 
 <?=js_bundle("wildfire-overwrites", array())?>
