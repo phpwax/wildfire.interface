@@ -75,15 +75,7 @@
   <?=js_bundle($asset, array(), $asset);?>
 <?endforeach?>
 
-<?foreach(Autoloader::$plugin_array as $plugin):?>
-  <?
-  $use = false;
-  foreach($mods as $mod) if($mod['plugin_name'] == $plugin['name']) $use = $mod;
-  if($use && $use['assets_for_cms']){
-    echo js_bundle($plugin['name'], array(), $plugin['name']);
-  }
-  ?>
-<?endforeach?>
+
 <?=js_bundle("wildfire-plugins", array(),"wildfire")?>
 
 <?=js_bundle("wildfire-overwrites", array())?>
