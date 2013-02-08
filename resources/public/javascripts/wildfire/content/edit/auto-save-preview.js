@@ -54,6 +54,7 @@ jQuery(document).ready(function(){
             preview.attr("href", res.model.row.permalink+"?preview="+res.meta.model.primval).removeClass('loading');
             window.open(preview.attr("href"));
           }
+          jQuery(window).trigger("autosave.completed", [res]);
         },
         error:function(){clearInterval(blink_timer);}
       });
