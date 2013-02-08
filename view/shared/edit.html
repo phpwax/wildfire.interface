@@ -16,12 +16,15 @@ if(($show_group = Request::param('group')) && isset($grouping[$show_group])) $gr
 $counter = 0;
 $primary_tabs = $secondary_tabs = false;
 foreach($grouping as $g=>$info){
-  if(in_array($g, CMSApplication::$form_primary_tabs)) $secondary_tabs[$g] = $info;
-  else $primary_tabs[$g] = $info;
+  if(in_array($g, CMSApplication::$form_primary_tabs)) $primary_tabs[$g] = $info;
+  else $secondary_tabs[$g] = $info;
 }
 ?>
 <?=partial("_form_start", $this)?>
 
+  <div class='intro_block_content clearfix'>
+    <?=partial("_intro", array('model'=>$model, 'controller'=>$controller, 'autosave'=>$autosave))?>
+  </div>
 
   <div class='edit_form_block_container clearfix<?if($secondary_tabs):?> with_meta_tabs<?endif?>'>
     <?if($secondary_tabs):?>
@@ -31,41 +34,39 @@ foreach($grouping as $g=>$info){
           <h3 class='accordion_header meta-tab-title'><?=$name?></h3>
           <div class="meta-tab clearfix">
             <?if(!$partial = CMSBaseComponent::form_group_partial_check($name)) $partial = "_default_form_group";?>
-            <?=partial($patial, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base));?>
+            <?=partial($partial, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base));?>
           </div>
         <?endforeach?>
       </div>
     <?endif?>
 
+    <div class='primary_form_container clearfix'>
+      <?if(count($primary_tabs)):?>
+          <ul class='tabs clearfix'>
+            <?$k=0;?>
+            <?foreach($primary_tabs as $name=>$info):?>
+              <?$tabhash = Inflections::to_url($name); $tabid = "tab-".$tabhash;?>
+              <li id="<?=$tabid?>" class='tab-<?=$k?>'><a href="#<?=$tabhash?>"><?=ucwords($name)?></a></li>
+              <?$k++;?>
+            <?endforeach?>
+          </ul>
+        <?foreach($primary_tabs as $name=>$fields):?>
+          <?$tabhash = Inflections::to_url($name);?>
 
+          <fieldset class='tab-contents clearfix <?=$tabhash?>' id="<?=$tabhash?>" >
 
+          <?if(!$readable = CMSBaseComponent::form_group_partial_check($name)) $readable = "_default_form_group";?>
+          <?=partial($readable, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base))?>
 
+          </fieldset>
 
-  <?if(count($grouping)):?>
-    <?=partial("_intro", array('model'=>$model, 'controller'=>$controller, 'autosave'=>$autosave))?>
+        <?endforeach?>
+        <fieldset class='submit'>
+        <?=partial("_submit", array('model'=>$model, 'controller'=>$controller, 'model_class'=>$model_class, 'autosave'=>$autosave))?>
+        </fieldset>
 
-    <ul class='tabs clearfix'>
-      <?$k=0;?>
-      <?foreach($grouping as $name=>$info):?>
-        <?$tabhash = Inflections::to_url($name); $tabid = "tab-".$tabhash;?>
-        <li id="<?=$tabid?>" class='tab-<?=$k?>'><a href="#<?=$tabhash?>"><?=ucwords($name)?></a></li>
-        <?$k++;?>
-      <?endforeach?>
-    </ul>
-
-    <?foreach($grouping as $name=>$fields):?>
-      <?$tabhash = Inflections::to_url($name);?>
-      <fieldset class='tab-contents clearfix <?=$tabhash?>' id="<?=$tabhash?>" >
-      <?if(!$readable = CMSBaseComponent::form_group_partial_check($name)) $readable = "_default_form_group";?>
-      <?=partial($readable, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base))?>
-
-      </fieldset>
-
-    <?endforeach?>
-    <fieldset class='submit'>
-    <?=partial("_submit", array('model'=>$model, 'controller'=>$controller, 'model_class'=>$model_class, 'autosave'=>$autosave))?>
-    </fieldset>
-  <?endif?>
+      <?endif?>
+    </div>
 </form>
 
 
