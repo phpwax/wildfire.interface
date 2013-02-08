@@ -1,13 +1,12 @@
 #outer{
-  padding-top:58px; /*height of  #header*/
-}
-#page_content{
+  padding-top:66px; /*height of  #header*/
   margin-left:180px;
 }
+#page_content{}
 #primary_navigation{
   position:fixed;
   width:180px;
-  top:54px;
+  top:66px;
   padding:2% 0;
   height:100%;
   background: #f0f0f0;
