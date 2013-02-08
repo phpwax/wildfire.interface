@@ -32,7 +32,9 @@ function auto_save_form(auto_span, auto_saver, auto_image, preview){
   var endpoint = auto_span.attr('data-save-point'),
       action = auto_span.attr("data-controller")+"edit/";
       form_container = auto_span.closest("form"),
-      form_data = form_container.serialize();
+      form_data = form_container.serialize(),
+      preview_button = jQuery(".preview-button")
+      ;
 
   if(auto_save_signature != form_data){
     auto_image.attr("src", auto_image.attr("data-saving"));
@@ -60,9 +62,9 @@ function auto_save_form(auto_span, auto_saver, auto_image, preview){
             form_container.attr("action", action+res['id']); //changed action to post to the new revision's url instead, same behaviour as if autosave didn't exist
           });
         }
+        preview_button.attr("href", res.model.row.permalink+"?preview="+res.meta.model.primval).removeClass('loading');
         if(preview){
-          preview.attr("href", res.model.row.permalink+"?preview="+res.meta.model.primval).removeClass('loading');
-          window.open(preview.attr("href"));
+          window.open(preview_button.attr("href"));
         }
         jQuery(window).trigger("autosave.completed", [res]);
       },
