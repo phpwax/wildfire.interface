@@ -27,9 +27,12 @@ foreach($grouping as $g=>$info){
     <?if($secondary_tabs):?>
       <div class='meta_tabs accordion clearfix'>
         <?foreach($secondary_tabs as $name=>$fields):?>
-        <h3 class='accordion_header meta-tab-title'><?=$name?></h3>
-        <div class="meta-tab clearfix">
-        </div>
+          <?$tabhash = Inflections::to_url($name);?>
+          <h3 class='accordion_header meta-tab-title'><?=$name?></h3>
+          <div class="meta-tab clearfix">
+            <?if(!$partial = CMSBaseComponent::form_group_partial_check($name)) $partial = "_default_form_group";?>
+            <?=partial($patial, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base));?>
+          </div>
         <?endforeach?>
       </div>
     <?endif?>
@@ -51,20 +54,11 @@ foreach($grouping as $g=>$info){
     </ul>
 
     <?foreach($grouping as $name=>$fields):?>
-      <?
-      $readable = CMSBaseComponent::form_group_partial_check($name);
-      ?>
+      <?$tabhash = Inflections::to_url($name);?>
       <fieldset class='tab-contents clearfix <?=$tabhash?>' id="<?=$tabhash?>" >
-      <?if($readable):?>
-        <?=partial($partial_name, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base))?>
-      <?else:?>
-        <?foreach($fields as $n=>$f):?>
-        <?$nm = Inflections::to_url($n)?>
-        <?if($f->widget != "HiddenInput"):?><div class='field field-<?=$nm?> field-<?=$tabhash?>-<?=$nm?> <?=$model_class?>-<?=$nm?> clearfix'><?endif?>
-        <?=$f->render()?>
-        <?if($f->widget != "HiddenInput"):?></div><?endif?>
-        <?endforeach?>
-      <?endif?>
+      <?if(!$readable = CMSBaseComponent::form_group_partial_check($name)) $readable = "_default_form_group";?>
+      <?=partial($readable, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base))?>
+
       </fieldset>
 
     <?endforeach?>
