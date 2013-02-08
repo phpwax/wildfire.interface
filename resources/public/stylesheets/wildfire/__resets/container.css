@@ -2,7 +2,9 @@
   padding-top:66px; /*height of  #header*/
   margin-left:180px;
 }
-#page_content{}
+#page_content{
+  padding:20px;
+}
 #primary_navigation{
   position:fixed;
   width:180px;
