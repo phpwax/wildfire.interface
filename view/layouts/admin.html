@@ -19,9 +19,9 @@
 	<title>Content Management System</title>
 </head>
 
-<body id="v2-cms" class='wildfire'>
+<body id="v7-1-cms" class='wildfire'>
 	<div id="header">
-    <div class="brand" id="logo"><img src="/images/wildfire/logos/v2_small.png" alt="wildfire"></div>
+    <div class="brand" id="logo"><span>WildFire</span></div>
     <div class='clearfix full buttons_and_search'>
     <?WaxEvent::run("cms.layout.sublinks", $this);?>
     <?=partial("_buttons_and_search", array('current_user'=>$current_user, 'quick_links'=>$this->quick_links))?>
@@ -49,16 +49,15 @@
             <li class="clearfix <?=$class?>"><a class="close_button" href="#"></a><span class="icon"></span><span class="message"><?=$message?></ span></li>
           <?endforeach?>
         </ul>
+        <?foreach(CMSApplication::$global_partials as $partial):?>
+        <?=partial($partial)?>
+        <?endforeach?>
         <?=$content_for_layout?>
       </div>
     </div>
   </div>
   <?$cachelink = Config::get('cacheissue')?>
   <?=partial("_nav", array("allowed_modules"=>$allowed_modules))?>
-
-<?foreach(CMSApplication::$global_partials as $partial):?>
-<?=partial($partial)?>
-<?endforeach?>
 
 <script src='//www.google.com/jsapi?'  type='text/javascript'></script>
 <script type='text/javascript'>
