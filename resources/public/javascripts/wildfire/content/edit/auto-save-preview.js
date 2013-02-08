@@ -8,7 +8,7 @@ jQuery(document).ready(function(){
       if(after) after();
     });
   }
-  
+
   function span_show(el, after){
     var target_width = el.width();
     el.css({"display":"inline", "width":"1px"}).clearQueue().animate({
@@ -16,13 +16,13 @@ jQuery(document).ready(function(){
       "margin-right": '5px'
     }, 500, after);
   }
-  
+
   function auto_save_form(auto_span, auto_saver, auto_image, preview){
     var endpoint = auto_span.attr('data-save-point'),
         action = auto_span.attr("data-controller")+"edit/";
         form_container = auto_span.closest("form"),
         form_data = form_container.serialize();
-    
+
     if(auto_save_signature != form_data){
       auto_image.attr("src", auto_image.attr("data-saving"));
       span_show(auto_span, function(){
@@ -32,7 +32,7 @@ jQuery(document).ready(function(){
           });
         }, 2000);
       });
-      
+
       jQuery.ajax({
         url:endpoint,
         data:form_data,
@@ -40,6 +40,7 @@ jQuery(document).ready(function(){
         dataType:"json",
         async:preview?false:true,
         success:function(res){
+          console.log(res);
           auto_save_signature = form_data;
           if(res['id']){
             auto_span.attr('data-save-point', action+res['id']+".json");
@@ -58,7 +59,7 @@ jQuery(document).ready(function(){
       });
     }else if(preview) window.open(preview.attr("href"));
   }
-  
+
   var auto_saver = jQuery('#auto-save'),
       auto_span = auto_saver.find("span"),
       auto_image = auto_saver.find("img"),
@@ -66,7 +67,7 @@ jQuery(document).ready(function(){
       auto_save_time = (typeof auto_save_time_override != "undefined")?auto_save_time_override : 20000,
       auto_save_signature = auto_span.closest("form").serialize(),
       auto_interval;
-  
+
   setTimeout(function(){
     span_hide(jQuery('#auto-save span'), function(){
       jQuery('#auto-save span').text("Auto Saving");
@@ -75,7 +76,7 @@ jQuery(document).ready(function(){
       }, auto_save_time);
     });
   }, 2000);
-  
+
   jQuery('#auto-save').live("click", function(e){
     var show_timeout;
     clearTimeout(show_timeout);
@@ -96,12 +97,12 @@ jQuery(document).ready(function(){
     });
     e.preventDefault();
   });
-  
+
   jQuery('.button.preview').live("click", function(e){
     var preview_button = jQuery(this);
     preview_button.addClass('loading');
     auto_save_form(auto_span,auto_saver,auto_image, preview_button);
     e.preventDefault();
   });
-  
+
 });
