@@ -1,3 +1,12 @@
+var auto_save_signature,
+      auto_interval,
+      auto_saver,
+      auto_span,
+      auto_image,
+      auto_image_src,
+      auto_save_time,
+      auto_save_signature
+      ;
 
 function auto_save_form(auto_span, auto_saver, auto_image, preview){
   var endpoint = auto_span.attr('data-save-point'),
@@ -63,13 +72,13 @@ jQuery(document).ready(function(){
   }
 
 
-  var auto_saver = jQuery('#auto-save'),
-      auto_span = auto_saver.find("span"),
-      auto_image = auto_saver.find("img"),
-      auto_image_src = auto_image.attr("src"),
-      auto_save_time = (typeof auto_save_time_override != "undefined")?auto_save_time_override : 20000,
-      auto_save_signature = auto_span.closest("form").serialize(),
-      auto_interval;
+  auto_saver = jQuery('#auto-save');
+  auto_span = auto_saver.find("span");
+  auto_image = auto_saver.find("img");
+  auto_image_src = auto_image.attr("src");
+  auto_save_time = (typeof auto_save_time_override != "undefined")?auto_save_time_override : 20000;
+  auto_save_signature = auto_span.closest("form").serialize();
+  auto_interval;
 
   setTimeout(function(){
     span_hide(jQuery('#auto-save span'), function(){
