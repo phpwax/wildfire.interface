@@ -42,8 +42,8 @@ jQuery(document).ready(function(){
         success:function(res){
           console.log(res);
           auto_save_signature = form_data;
-          if(res['id']){
-            auto_span.attr('data-save-point', action+res['id']+".json");
+          if(res.meta.model.primval){
+            auto_span.attr('data-save-point', action+res.meta.model.primval+".json");
             //making "save for later" button behave as if we were on the new revision's edit url to avoid having 2 revisions when an autosave occurs, and then someone clicks "save for later".
             form_container.find('input[name="revision"]').click(function(){
               jQuery(this).attr("name", "hide"); //did this to mirror the functionality of the "save for later" button as in _submit.html for content
@@ -51,7 +51,7 @@ jQuery(document).ready(function(){
             });
           }
           if(preview){
-            preview.attr("href", res['permalink']+"?preview="+res['id']).removeClass('loading');
+            preview.attr("href", res.model.row.permalink+"?preview="+res.meta.model.primval).removeClass('loading');
             window.open(preview.attr("href"));
           }
         },
