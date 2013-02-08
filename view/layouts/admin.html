@@ -3,16 +3,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<?=partial("_cf")?>
-  <?$mods = CMSApplication::get_modules();?>
-  <?foreach(Autoloader::$plugin_array as $plugin):?>
-    <?
-    $use = false;
-    foreach($mods as $mod) if($mod['plugin_name'] == $plugin['name']) $use = $mod;
-    if($use && $use['assets_for_cms']){
-      echo css_bundle($plugin['name'], array('media'=>'all'), $plugin['name']);
-    }
-    ?>
+
+
+  <?foreach(CMSApplication::get_registered_assets("wildfire", "css") as $asset):?>
+    <?=css_bundle($asset, array('media'=>'all'), $asset);?>
   <?endforeach?>
+
   <?=css_bundle("wildfire-overwrites", array('media'=>'all'))?>
 
 	<title>Content Management System</title>
