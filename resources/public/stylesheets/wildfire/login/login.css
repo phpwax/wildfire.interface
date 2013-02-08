@@ -45,14 +45,24 @@
 body.wf-adminlogin-index h1 span{
   display:none;
 }
-body.wf-adminlogin-index{
+body.wf-admininstall-index h1 span{
+  padding-top:70px;
+  text-align:center;
+  display:block;
+}
+body.wf-adminlogin-index,
+body.wf-admininstall-index{
   background:#136ea2 url('/images/wildfire/backgrounds/login.png') repeat center center;;
   background-sizing:cover;
 }
-body.wf-adminlogin-index h1{
-  background:url('/images/wildfire/logos/blue.png') no-repeat center center;
+body.wf-adminlogin-index h1,
+body.wf-admininstall-index h1{
+  background:url('/images/wildfire/logos/blue.png') no-repeat center 20px;
   height:60px;
   width:100%;
+}
+body.wf-admininstall-index h1{
+  height: auto
 }
 
   width:100%;
