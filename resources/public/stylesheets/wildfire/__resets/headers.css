@@ -1,0 +1,28 @@
+h1{
+  font-size:232%;
+  color:#333333;
+}
+
+
+h2{
+  font-weight:normal;
+  font-size:182%;
+  color:#333333;
+}
+
+
+h3{
+  font-size:131%;
+  font-weight:bold;
+  margin:0;
+  padding:3px 0 0 0;
+  color:#333333;
+}
+
+h4{
+  font-size:116%;
+  font-weight:bold;
+  margin:0;
+  padding:0 0 0 0;
+  color:#333333;
+}

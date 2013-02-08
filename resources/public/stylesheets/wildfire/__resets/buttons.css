@@ -1,0 +1,51 @@
+.button{
+  text-transform: uppercase;
+  cursor:pointer;
+  display:inline-block;
+  padding:7px 9px;
+  font-size:93%;
+  text-decoration:none;
+  letter-spacing:0.5px;
+  font-weight:normal;
+  border-radius:4px;
+  line-height:1em;
+  border:1px solid #a0bac1;
+  color:#437182;
+  box-shadow:0 0 4px rgba(227,227,227,0.5);
+  background: #f3fbfc; /* Old browsers */
+  background: -moz-linear-gradient(top, #f3fbfc 0%, #eff9fb 3%, #e7f6f9 38%, #d1edf4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3fbfc), color-stop(3%,#eff9fb), color-stop(38%,#e7f6f9), color-stop(100%,#d1edf4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* W3C */
+}
+
+  #header .button{
+    border:1px solid #1a1c1f;
+    text-shadow:1px 2px 1px rgba(0,0,0,0.8);
+    color:#b4b5b7;
+
+    background: #5e6168; /* Old browsers */
+    background: -moz-linear-gradient(top, #5e6168 0%, #494d51 4%, #494c51 15%, #3c3e41 81%, #383a3e 92%, #34373a 96%, #383a3e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5e6168), color-stop(4%,#494d51), color-stop(15%,#494c51), color-stop(81%,#3c3e41), color-stop(92%,#383a3e), color-stop(96%,#34373a), color-stop(100%,#383a3e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #5e6168 0%,#494d51 4%,#494c51 15%,#3c3e41 81%,#383a3e 92%,#34373a 96%,#383a3e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #5e6168 0%,#494d51 4%,#494c51 15%,#3c3e41 81%,#383a3e 92%,#34373a 96%,#383a3e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #5e6168 0%,#494d51 4%,#494c51 15%,#3c3e41 81%,#383a3e 92%,#34373a 96%,#383a3e 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #5e6168 0%,#494d51 4%,#494c51 15%,#3c3e41 81%,#383a3e 92%,#34373a 96%,#383a3e 100%); /* W3C */
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  }
+
+#header .button:hover,
+#header .button.active{
+  color:#fff;
+}
+
+.button.error{
+  background:red;
+  color:white;
+  border-color:red;
+}
+.button.error:after{
+  content:"✘";
+}

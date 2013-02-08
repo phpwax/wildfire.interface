@@ -1,0 +1,47 @@
+#header{
+  width:100%;
+  padding:0;
+  background:#333333;
+  position:fixed;
+  z-index:20;
+  border-bottom:4px solid #136ea2;
+}
+
+  #header #logo{
+    float:left;
+    width:14%;
+    padding-top:15px;
+    margin-left:2%;
+    margin-bottom:10px;
+  }
+    #logo span{display:none;}
+
+  #header a{
+    text-decoration: none;
+  }
+    #header #logo a{
+      display:block;
+    }
+    #header #logo img{
+      height:25px;
+    }
+    #header img.logo{
+      float:left;
+      margin-right:15px;
+    }
+
+  #search_form{float:left;}
+
+  #options{
+    float:right;
+    width:60%;
+    max-width:300px;
+  }
+  #options{
+    padding-top:12px;
+  }
+  #options a{
+    float:right;
+    margin-left:10px;
+  }
+
