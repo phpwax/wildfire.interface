@@ -1,34 +1,261 @@
-form{border:0;background:none;}
-  body.wildfire form.form_container fieldset{
-    padding:10px 0;
-    border:0;
+form{
+  padding:0px;
+  margin:0 0 15px 0;
+  background:#f0f0f0;
+}
+  #form p{
+    margin-bottom:5px;
   }
-    form fieldset label{
-      display:block;
-      width:100%;
-      font-weight:bold;
-      margin-bottom:8px;
+  form fieldset{
+    padding:15px;
+    margin:0;
+  }
+  form:last-child{
+    margin-bottom:0;
+  }
+    form fieldset:last-child{
+      margin-bottom:0;
     }
-    form fieldset select{
-      width:98%;
+    form fieldset.submit{
+      padding-top:0;
     }
-    form fieldset .field{
-      margin-bottom:10px;
-      padding:5px 2%;
-    }
-    form fieldset .text_field, form fieldset textarea{
-      padding:6px 6px;
-      display:block;
-      width:98%;
-      font-size:116%;
-    }
-    form fieldset textarea{height:90px;}
-    .form-submit{padding:10px 2%;}
+  form label{
+    font-size:131%;
+    font-weight:bold;
+    margin:0;
+    padding:3px 0 0 0;
+    color:#333333;
+  }
+  form select{
+    color:#333333;
+    max-width:200px;
+  }
+  form textarea,
+  form input[type=text],
+  form input[type=password]
+  {
+    outline:none;
+    padding:10px;
+    font-size:108%;
+    color:#333333;
+    border:1px solid #b9bcbe;
+    border-radius:4px;
+    box-shadow:0 0 6px 4px rgba(226,234,238,0.8), inset 0 0 2px 2px #e7e7e7;
+  }
+  form textarea{
+    height:80px;
+  }
 
-/*fordepth*/
-option.select-depth-1{padding-left:10px;}
-  option.select-depth-2{padding-left:20px;}
-    option.select-depth-3{padding-left:30px;}
-      option.select-depth-4{padding-left:45px;}
-        option.select-depth-5{padding-left:55px;}
-          option.select-depth-6{padding-left:65px;}        
+  form input[type=text],
+  form input[type=password],
+  form input[type=file]{
+    width:180px;
+  }
+  form input[type=file]{
+    border-width:0;
+  }
+  ::-webkit-input-placeholder,
+  ::-moz-placeholder{
+    color:#aeaeae;
+  }
+
+  form input[type=text]:focus,
+  form input[type=password]:focus,
+  form input[type=file]:focus,
+  form textarea:focus{
+    border-color:#7dc6dd;
+    box-shadow:0 0 6px 4px rgba(224,241,252,1), inset 0 0 2px 2px #e7e7e7;;
+  }
+  form input[type=text].error_field,
+  form input[type=password].error_field,
+  form input[type=file].error_field,
+  form textarea.error_field{
+    border-color:#ff8888;
+  }
+  form input[disabled=disabled]{
+    background:none;
+    border-width:0;
+    color:#aeaeae;
+    box-shadow: none;
+  }
+  form input[type=submit]{
+    margin-top:5px;
+    text-transform: uppercase;
+    cursor:pointer;
+    display:inline-block;
+    padding:7px 9px;
+    font-size:93%;
+    text-decoration:none;
+    letter-spacing:0.5px;
+    font-weight:normal;
+    border-radius:4px;
+    line-height:1em;
+    border:1px solid #a0bac1;
+    color:#437182;
+    box-shadow:0 0 4px rgba(227,227,227,0.5);
+    background: #f3fbfc; /* Old browsers */
+    background: -moz-linear-gradient(top, #f3fbfc 0%, #eff9fb 3%, #e7f6f9 38%, #d1edf4 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3fbfc), color-stop(3%,#eff9fb), color-stop(38%,#e7f6f9), color-stop(100%,#d1edf4)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* W3C */
+  }
+    form input[type=submit].saved{
+      background: #4cbd66;
+      color:#fff;
+    }
+
+    form .tasked{
+      margin-bottom:5px;
+    }
+/*errors*/
+span.error_message{
+  display:inline-block;
+  color:#da4744;
+}
+input.error_field{
+  border-color:#da4744;
+}
+.user_errors{
+  padding:15px;
+}
+  #form .user_errors{
+    padding:0;
+  }
+  .user_errors .error_message{
+    font-size:100%;
+    padding:5px 0;
+  }
+/*** split form ***/
+.split{
+  float:left;
+  width:50%;
+}
+/*** BLOCK FORM ***/
+.blocked label,
+.blocked input[type=text],
+.blocked input[type=file],
+.blocked input[type=password],
+.blocked select,
+.blocked textarea,
+.blocked span{
+  display:block;
+  width:100%;
+}
+.blocked span{
+  margin-bottom:15px;
+}
+.blocked span.split{
+  width:30%;
+  margin-right:3%;
+}
+
+/*** INLINE FORM ***/
+.inline input,
+.inline label,
+.inline select,
+.inline textarea{
+  float:left;
+  margin-right:10px;
+}
+.inline select{
+  margin-top:8px;
+}
+.inline select[multiple=multiple]{
+  margin-top:0;
+  height:38px;
+}
+.inline textarea{
+  height:38px;
+  overflow: hidden;
+}
+.inline label{
+  display:none;
+}
+.inline input[type=file]{
+  width:220px;
+}
+
+.inline span.error_message{
+  display:none;
+}
+.inline input[type=file]{
+  margin-top:8px;
+}
+
+.inline label[for="company_logo"]{
+  padding-top:7px;
+  display:inline-block;
+}
+
+/** inline block **/
+.blocked_inline span{
+  display:block;
+  margin-bottom:15px;
+}
+.blocked_inline label{
+  width:30%;
+  display:block;
+  float:left;
+}
+.blocked_inline input[type=text],
+.blocked_inline input[type=password],
+.blocked_inline select{
+  width:70%;
+  float:left;
+  display:block;
+}
+
+/** MIXED **/
+.blocked_split .inline label{
+  display:block;
+}
+.blocked_split .inline span{
+  float:left;
+  width:30%;
+  margin-right:3%;
+}
+.blocked_split .inline span input,
+.blocked_split .inline span label{
+  margin-right:0;
+}
+
+/** form icons **/
+a.close{
+  float:right;
+  display:block;
+  margin:0;
+  font-size:123.1%;
+  color:#333;
+  text-align: center;
+  line-height: 1em;
+  text-decoration: none;
+  margin-right:15px;
+  margin-top:15px;
+}
+span.status{
+  float:right;
+  display:none;
+}
+.completed .status{
+  width:34px;
+  display:block;
+  margin:0;
+  font-size:123.1%;
+  color:#fff;
+  background:#4bbb65;
+  padding:9px 10px;
+  text-align: center;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  border-radius: 200px;
+  line-height: 1em;
+}
+
+
+/** filters **/
+form.inline_filters select{
+  margin-top:0;
+  max-width:200px;
+}

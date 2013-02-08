@@ -1,0 +1,59 @@
+#login{
+  padding:0;
+  width:90%;
+  max-width:375px;
+  margin:15% auto 0 auto;
+  border:8px solid rgba(0,0,0,0.1);
+  position:relative;
+}
+
+#login h1{
+  margin-bottom:10px;
+}
+#login label.remember{
+  font-weight:normal;
+  font-size:100%;
+  width:auto;
+  margin-top:5px;
+  margin-right:10px;
+  padding-top:0;
+}
+
+#login input[type=checkbox]{
+  float:left;
+  margin-right:10px;
+  margin-top:8px;
+}
+
+#login .submit_button{
+  float:right;
+}
+
+#login span label{
+  display:none;
+}
+#login span input[type=text],
+#login span input[type=password]{
+  width:100%;
+}
+
+#login span.password{
+  margin-bottom:15px;
+}
+
+/** standard **/
+body.wf-adminlogin-index h1 span{
+  display:none;
+}
+body.wf-adminlogin-index{
+  background:#136ea2 url('/images/wildfire/backgrounds/login.png') repeat center center;;
+  background-sizing:cover;
+}
+body.wf-adminlogin-index h1{
+  background:url('/images/wildfire/logos/blue.png') no-repeat center center;
+  height:60px;
+  width:100%;
+}
+
+  width:100%;
+}
