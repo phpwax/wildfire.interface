@@ -8,6 +8,25 @@
   font-style: normal;
 }
 
+b{
+  font-family:'Entypo';
+  font-size:30px;
+  vertical-align:bottom;
+  margin-right:5px;
+}
+.button b{
+  font-size:25px;
+}
+
+b.entypo-icon-home:before{ content: "🚀"; }
+b.entypo-icon-users:before{ content: ""; }
+b.entypo-icon-navigation:before{ content: ""; }
+b.entypo-icon-content:before{ content: "📰"; }
+b.entypo-icon-categories:before{ content: ""; }
+b.entypo-icon-media:before{ content: "🌄"; }
+b.entypo-icon-redirect:before{ content: "🔙"; }
+
+
 /*!
  *  Font Awesome 3.0.2
  *  the iconic font designed for use with Twitter Bootstrap

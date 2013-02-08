@@ -1,0 +1,10 @@
+#primary_navigation li{
+  margin-left:20px;
+}
+#primary_navigation li a{
+  text-decoration: none;
+  font-weight:600;
+}
+#primary_navigation li a:hover{
+  color:#136ea2;
+}
