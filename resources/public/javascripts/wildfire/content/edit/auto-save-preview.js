@@ -40,7 +40,6 @@ jQuery(document).ready(function(){
         dataType:"json",
         async:preview?false:true,
         success:function(res){
-          console.log(res);
           auto_save_signature = form_data;
           if(res.meta.model.primval){
             auto_span.attr('data-save-point', action+res.meta.model.primval+".json");
