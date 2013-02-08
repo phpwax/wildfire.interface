@@ -23,6 +23,7 @@
     <?=partial("_buttons_and_search", array('current_user'=>$current_user, 'quick_links'=>$this->quick_links))?>
     </div>
   </div>
+  <?=partial("_nav", array("allowed_modules"=>$allowed_modules))?>
   <div id="outer">
     <div id="page_content" class='clearfix'>
 
@@ -52,8 +53,6 @@
       </div>
     </div>
   </div>
-  <?$cachelink = Config::get('cacheissue')?>
-  <?=partial("_nav", array("allowed_modules"=>$allowed_modules))?>
 
 <script src='//www.google.com/jsapi?'  type='text/javascript'></script>
 <script type='text/javascript'>
