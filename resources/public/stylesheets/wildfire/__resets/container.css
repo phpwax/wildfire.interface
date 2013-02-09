@@ -5,7 +5,20 @@
 #page_content{
   padding:20px;
 }
+  
+.intro_block_content{
+  float:right;
+}
+.primary_form_container{
+  border:none;
+}
   .tab-contents{
+    background:#f0f0f0;
+    padding:10px;
+    border:none;
+    border-top:1px solid #dfdfdf;
+  }
+  .edit_fields{
     width:70%;
     float:left;
   }
@@ -13,9 +26,6 @@
     width:30%;
     float:left;
   }
-.intro_block_content{
-  float:right;
-}
 #primary_navigation{
   position:fixed;
   width:180px;
