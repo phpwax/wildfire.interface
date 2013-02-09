@@ -1,7 +1,7 @@
 <h3>Overall Site Traffic</h3>
 <div class='graph_wrapper'>
   <div class='chart' id="overall-traffic-data-graph"></div>
-  <table class='traffic-data graph' id="traffic-data" data-type="AreaChart">
+  <table class='traffic-data graph' id="traffic-data" data-type="AreaChart" data-showTextEvery="5" data-pointSize="5">
     <thead>
       <tr>
         <th>Date</th>
