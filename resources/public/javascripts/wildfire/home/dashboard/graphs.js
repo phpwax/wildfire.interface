@@ -45,7 +45,7 @@ jQuery(document).ready(function(){
       url:analytics_container.attr('data-dest'),
       type:"post",
       success:function(res){
-        analytics_container.html(res).removeClass('loading');
+        analytics_container.removeClass("loading").find(".listing").html(res);
       }
     });
   }

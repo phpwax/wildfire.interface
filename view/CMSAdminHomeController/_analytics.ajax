@@ -1,7 +1,7 @@
 <h3>Overall Site Traffic</h3>
 <div class='graph_wrapper'>
   <div class='chart' id="overall-traffic-data-graph"></div>
-  <table class='traffic-data graph' id="traffic-data" data-type="ColumnChart">  
+  <table class='traffic-data graph' id="traffic-data" data-type="AreaChart" data-showTextEvery="8" data-pointSize="5">
     <thead>
       <tr>
         <th>Date</th>
@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-    <?foreach($visit_data as $d=>$info):?>
+    <?foreach(array_reverse($visit_data, true) as $d=>$info):?>
       <?foreach($info as $day=>$data):?>
       <tr class='<?=$day?>'>
         <th><?=date("jS M", strtotime($day))?></th>
@@ -27,7 +27,7 @@
 <div class='graph_wrapper'>
   <div class='chart' id="overall-traffic-sources-graph"></div>
 
-  <table class='traffic-sources graph' id="traffic-sources" data-type="ColumnChart">  
+  <table class='traffic-sources graph' id="traffic-sources" data-type="ColumnChart">
     <thead>
       <tr>
         <th>Source</th>
@@ -49,7 +49,7 @@
 
 <h3>Search Keywords</h3>
 
-<table class='traffic-keywords' id="traffic-keywords">  
+<table class='traffic-keywords' id="traffic-keywords">
   <?foreach($search_data as $source=>$info):?>
     <tr>
       <th><?=$source?></th>
