@@ -5,6 +5,17 @@
 #page_content{
   padding:20px;
 }
+  .tab-contents{
+    width:70%;
+    float:left;
+  }
+  .meta_tabs{
+    width:30%;
+    float:left;
+  }
+.intro_block_content{
+  float:right;
+}
 #primary_navigation{
   position:fixed;
   width:180px;
@@ -25,7 +36,7 @@
   position: fixed;
   z-index:10;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-  background:# f0f0f0;
+  background:#f0f0f0;
 }
   #form form{
     border-width: 0;
