@@ -26,6 +26,7 @@ jQuery(document).ready(function(){
             .insertAfter(row.removeClass('loading'))
             .addClass("children-of-"+id)
             .slideDown("fast");
+          history.pushState({}, "", link.attr("href"));
         },
         error:function(){}
       });
