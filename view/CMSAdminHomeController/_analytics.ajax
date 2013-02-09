@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-    <?foreach($visit_data as $d=>$info):?>
+    <?foreach(array_reverse($visit_data, true) as $d=>$info):?>
       <?foreach($info as $day=>$data):?>
       <tr class='<?=$day?>'>
         <th><?=date("jS M", strtotime($day))?></th>
