@@ -33,6 +33,7 @@ jQuery(document).ready(function(){
     }else if(link.hasClass('open')){
       link.toggleClass("open ui-icon-circle-triangle-e ui-icon-circle-triangle-s");
       jQuery('.children-of-'+id).slideUp("fast");
+      history.pushState({}, "", link.attr("href"));
     }else{
       link.toggleClass("open ui-icon-circle-triangle-e ui-icon-circle-triangle-s");
       jQuery('.children-of-'+id).slideDown("fast");
