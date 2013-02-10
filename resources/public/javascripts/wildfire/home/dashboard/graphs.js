@@ -3,13 +3,12 @@ jQuery(document).ready(function(){
   jQuery(window).bind("graph.draw", function(){
     jQuery(".graph").each(function(){
       var table = jQuery(this),
-          config = table.data(),
+          config = analytics_config[table.attr("id")],
           chart_div = table.siblings(".chart"),
           data = [],
           chart=false,
-          chart_type = config.type
+          chart_type = graph_types[table.attr("id")]
           ;
-
 
       table.find("tr:not(.totals)").each(function(){
         var row = jQuery(this),
@@ -21,10 +20,11 @@ jQuery(document).ready(function(){
         data.push(tmp);
       });
 
+
       if(data && data.length > 1){
         chart_div.html("");
-        chart = new google.visualization[chart_type](document.getElementById(chart_div.attr("id")));
-        chart.draw(google.visualization.arrayToDataTable(data), {isStacked:false});
+        chart = new google.visualization[chart_type](document.getElementById(chart_div.attr("id") ) );
+        chart.draw(google.visualization.arrayToDataTable(data), config);
       }
       table.hide();
     });
