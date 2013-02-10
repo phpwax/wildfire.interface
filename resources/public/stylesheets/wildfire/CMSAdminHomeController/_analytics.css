@@ -9,3 +9,20 @@
 #overall-browser-data-graph{
   height:400px;
 }
+
+
+.bar_gauge{
+  width:100%;
+  background:#e5f3fa;
+}
+.bar_gauge .bar_segment{
+  float:left;
+  padding:10px 0;
+  text-align: center;
+  color:#008dca;
+  font-family: "OpenSans", helvetica, arial;
+}
+.bar_gauge .biggest_segment{
+  background:#008dca;
+  color:#fff;
+}
