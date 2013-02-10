@@ -1,13 +1,22 @@
 .analytics-blocks-3 .analytics_block{
   float:left;
-  width:33%;
-  padding:10px;
-  min-height:400px;
+  width:32%;
+  padding:0;
+  min-height:500px;
+  border-bottom:1px solid #dfdfdf;
+}
+.analytics-blocks-3 .analytics_block:nth-child(2){
+  margin:0 2%;
 }
 
 
-#overall-browser-data-graph{
+#overall-browser-data-graph,
+#overall-traffic-data-graph{
   height:400px;
+}
+
+#client-analytics h3{
+  margin-top:20px;
 }
 
 
@@ -17,7 +26,7 @@
 }
 .bar_gauge .bar_segment{
   float:left;
-  padding:10px 0;
+  padding:20px 0;
   text-align: center;
   color:#008dca;
   font-family: "OpenSans", helvetica, arial;
@@ -25,4 +34,9 @@
 .bar_gauge .biggest_segment{
   background:#008dca;
   color:#fff;
+}
+
+.dashboard_content .analytics-mobile-usage{
+  padding-bottom:20px;
+  margin-bottom:0;
 }
