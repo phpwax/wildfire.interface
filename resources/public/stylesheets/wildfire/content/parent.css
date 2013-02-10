@@ -25,3 +25,22 @@
   .has-children .open b{
     background:#f0f0f0;
   }
+.content_parent span.status{
+  display:block;
+}
+  .content_parent span.status a{
+    text-decoration:none;
+    display:block;
+    width:10px;
+    height:10px;
+    margin:12px 10px 0 0;
+  }
+    .content_parent span.status.live a{
+      background:green;
+    }
+    .content_parent span.status.not-live a{
+      background:red;
+    }
+    .content_parent .self span.status{
+      display:none;
+    }
