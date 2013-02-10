@@ -1,59 +1,121 @@
-<h3>Overall Site Traffic</h3>
-<div class='graph_wrapper'>
-  <div class='chart' id="overall-traffic-data-graph"></div>
-  <table class='traffic-data graph' id="traffic-data" data-type="AreaChart" data-showTextEvery="8" data-pointSize="5">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Visits</th>
-      </tr>
-    </thead>
-    <tbody>
-    <?foreach(array_reverse($visit_data, true) as $d=>$info):?>
-      <?foreach($info as $day=>$data):?>
-      <tr class='<?=$day?>'>
-        <th><?=date("jS M", strtotime($day))?></th>
-        <td><?=array_shift($data)?></td>
-      </tr>
+<div class='row clearfix'>
+  <div class='graph_wrapper'>
+    <div class='chart' id="overall-traffic-data-graph"></div>
+    <script type="text/javascript">
+    analytics_config['traffic-data']= {
+      width:"100%",
+      chartArea:{
+        left:"2%",
+        top:"4%",
+        width:"98%",
+        height:"70%"
+      },
+      areaOpacity:"0.2",
+      colors:["#008dca"],
+      legend:"none",
+      pointSize:7,
+      lineWidth:3,
+      hAxis:{
+        showTextEvery:8
+      }
+    };
+    graph_types['traffic-data'] = "AreaChart";
+    </script>
+
+    <table class='traffic-data graph' id="traffic-data">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Visits</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?foreach(array_reverse($visit_data, true) as $d=>$info):?>
+        <?foreach($info as $day=>$data):?>
+        <tr class='<?=$day?>'>
+          <th><?=date("jS M", strtotime($day))?></th>
+          <td><?=array_shift($data)?></td>
+        </tr>
+        <?endforeach?>
       <?endforeach?>
-    <?endforeach?>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 
+<div class='row clearfix analytics-blocks-3'>
 
-<h3>Traffic Sources</h3>
-<div class='graph_wrapper'>
-  <div class='chart' id="overall-traffic-sources-graph"></div>
+  <div class='analytics_block'>
+    <h3>Traffic Sources</h3>
+    <table class='traffic-sources' id="traffic-sources">
+      <thead>
+        <tr>
+          <th>Source</th>
+          <th>Vists</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?foreach($sources_data as $source=>$info):?>
+        <tr>
+          <th><?=$source?></th>
+          <?$total=0;?>
+          <?foreach($info as $page=>$amount):?><?$total+=($amount['ga:visits'])?><?endforeach?>
+          <td><?=$total?></td>
+        </tr>
+      <?endforeach?>
+      </tbody>
+    </table>
+  </div>
 
-  <table class='traffic-sources graph' id="traffic-sources" data-type="ColumnChart">
-    <thead>
-      <tr>
-        <th>Source</th>
-        <th>Vists</th>
-      </tr>
-    </thead>
-    <tbody>
-    <?foreach($sources_data as $source=>$info):?>
-      <tr>
-        <th><?=$source?></th>
-        <?$total=0;?>
-        <?foreach($info as $page=>$amount):?><?$total+=($amount['ga:visits'])?><?endforeach?>
-        <td><?=$total?></td>
-      </tr>
-    <?endforeach?>
-    </tbody>
-  </table>
+  <div class='analytics_block'>
+    <h3>Search Keywords</h3>
+
+    <table class='traffic-keywords' id="traffic-keywords">
+      <?foreach($search_data as $source=>$info):?>
+        <tr>
+          <th><?=$source?></th>
+          <td><?=$info['ga:visits']?></td>
+        </tr>
+      <?endforeach?>
+    </table>
+  </div>
+
+  <div class='analytics_block'>
+    <div class='graph_wrapper'>
+      <div class='chart' id="overall-browser-data-graph"></div>
+      <script type="text/javascript">
+      analytics_config['browser-data']= {
+        width:"100%",
+        height:"500px",
+        chartArea: {
+          top:"3%",
+          left:"3%",
+          width:"75%",
+          height:"75%"
+        }
+      };
+      graph_types['browser-data'] = "PieChart";
+      </script>
+      <table class='browser-data graph' id="browser-data">
+        <thead>
+          <tr>
+            <th>Browser</th>
+            <th>Visits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?foreach($browser_data as $browser=>$info):?>
+            <tr>
+              <th><?=$browser?></th>
+              <?$total=0;?>
+              <?foreach($info as $page=>$amount):?><?$total+=($amount['ga:visits'])?><?endforeach?>
+              <td><?=$total?></td>
+            </tr>
+          <?endforeach?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </div>
-
-<h3>Search Keywords</h3>
-
-<table class='traffic-keywords' id="traffic-keywords">
-  <?foreach($search_data as $source=>$info):?>
-    <tr>
-      <th><?=$source?></th>
-      <td><?=$info['ga:visits']?></td>
-    </tr>
-  <?endforeach?>
-</table>

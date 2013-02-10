@@ -26,12 +26,14 @@ jQuery(document).ready(function(){
             .insertAfter(row.removeClass('loading'))
             .addClass("children-of-"+id)
             .slideDown("fast");
+          history.pushState({}, "", link.attr("href"));
         },
         error:function(){}
       });
     }else if(link.hasClass('open')){
       link.toggleClass("open ui-icon-circle-triangle-e ui-icon-circle-triangle-s");
       jQuery('.children-of-'+id).slideUp("fast");
+      history.pushState({}, "", link.attr("href"));
     }else{
       link.toggleClass("open ui-icon-circle-triangle-e ui-icon-circle-triangle-s");
       jQuery('.children-of-'+id).slideDown("fast");
