@@ -1,0 +1,133 @@
+#user_options{
+  float:right;
+  width:250px;
+  border-left:2px solid #1a1c1f;
+  height:54px; /*match header bar*/
+}
+  #user_options .dropdown_option_list{
+    float:right;
+  }
+  #user_options a.dropdown{
+    border-right-width:0;
+    background:none;
+    height:54px;
+    padding-top:20px;
+    border-radius:0;
+    box-shadow:none;
+  }
+  #user_options .dropdown_option_list .sub{
+    background: #333333;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-left:-220px;
+    width:250px;
+  }
+
+#user_options .information{
+  padding:10px 10px;
+  float:left;
+  font-size:85%;
+}
+#user_options .information a{
+  color:#d3dadc;
+  display:inline-block;
+  font-size:100%;
+}
+  #user_options .information .logged_time{
+    margin-left:15px;
+  }
+  #user_options .information a.dash_link{
+    margin-bottom:5px;
+    display:block;
+    text-transform: uppercase;
+    letter-spacing:0.5px;
+    color:#fff;
+  }
+  #user_options .information span{
+    color:#fff;
+    display:inline-block;
+    margin-right:2px;
+    border-radius: 4px;
+    padding:2px 4px;
+    background: #f6918f; /* Old browsers */
+    background: -moz-linear-gradient(top, #f6918f 0%, #f2605c 7%, #e83634 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6918f), color-stop(7%,#f2605c), color-stop(100%,#e83634)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f6918f 0%,#f2605c 7%,#e83634 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f6918f 0%,#f2605c 7%,#e83634 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f6918f 0%,#f2605c 7%,#e83634 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #f6918f 0%,#f2605c 7%,#e83634 100%); /* W3C */
+  }
+
+/** CLOCK **/
+#clock{
+  z-index:120;
+  position:absolute;
+  right:0;
+  top:0;
+  width:248px;
+  background:#333333;
+  height:54px; /*match header bar*/
+  display:none;
+}
+#clock.active{
+  display:block;
+}
+
+
+#clock .job,
+#clock .stop{
+  float:left;
+  margin-right:12px;
+  height:54px;
+  background:#1a1c1f;
+  width:44px;
+  color:#fff;
+  padding:18px 4px 2px 4px;
+  text-align: center;
+}
+#clock .stop{
+  float:right;
+  margin:0;
+  font-weight:normal;
+  font-size:100%;
+  letter-spacing:1px;
+}
+#clock .job{
+  font-size:77%;
+  letter-spacing:1px;
+}
+  #clock .job strong,
+  #clock .stop span{
+    font-weight: normal;
+  }
+#clock .titles,
+#clock .timer{
+  float:left;
+  width:140px;
+  padding:2px 0;
+  color:#fff;
+}
+
+  #clock .titles span,
+  #clock .timer span{
+    width:30%;
+    margin-right:3%;
+    display:block;
+    float:left;
+    text-align:center;
+    line-height: 1em;
+  }
+
+  #clock .titles span{
+    font-size:85%;
+    color:#d3dadc;
+  }
+  #clock .timer span{
+    font-weight:bold;
+    padding:2px 0;
+    font-size:197%;
+    background:#fff;
+    border-radius:2px;
+    color:#1a1c1f;
+  }

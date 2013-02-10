@@ -24,13 +24,10 @@
   <title>Wildfire Web Content Manager Login</title>
 </head>
 
-<body>
-  <div class="middle">
-    <h1><img src="/images/wildfire/logos/white.png" alt="Wildfire" title="Wildfire" id="wf_logo">Content Management Login</h1>
+<body class="wf-<?=Inflections::to_url($controller)?>-<?=$action?>">
+  <div id="outer" class='clearfix'>
     <?=$content_for_layout?>
-    <div id="footer"><a href="#wf_logo">Wildfire CMS MMXI</a>&nbsp;&nbsp;|&nbsp;&nbsp;</div>
   </div>
-  
   <?=js_bundle("wildfire-overwrites", array())?>
 </body>
 </html>

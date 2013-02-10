@@ -1,0 +1,55 @@
+#outer{
+  padding-top:66px; /*height of  #header*/
+  margin-left:180px;
+}
+#page_content{
+  padding:20px;
+}
+  
+.intro_block_content{
+  float:right;
+}
+.primary_form_container{
+  border:none;
+}
+  .tab-contents{
+    background:#f0f0f0;
+    padding:10px;
+    border:none;
+    border-top:1px solid #dfdfdf;
+  }
+  .edit_fields{
+    width:70%;
+    float:left;
+  }
+  .meta_tabs{
+    width:30%;
+    float:left;
+  }
+#primary_navigation{
+  position:fixed;
+  width:180px;
+  top:66px;
+  padding:2% 0;
+  height:100%;
+  background: #f0f0f0;
+  overflow:hidden;
+  border-right:1px solid #dfdfdf;
+  overflow: hidden;
+  width:180px;
+}
+
+
+#form{
+  margin-top:-5px;
+  margin-left:180px;
+  position: fixed;
+  z-index:10;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  background:#f0f0f0;
+}
+  #form form{
+    border-width: 0;
+    margin-bottom:0;
+    background:none;
+  }

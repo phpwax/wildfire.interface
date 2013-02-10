@@ -1,0 +1,29 @@
+<?$cachelink = Config::get('cacheissue')?>
+<ul id="primary_navigation">
+  <?uksort($allowed_modules, function($a, $b){
+    $ai = array_search($a, CMSApplication::$default_module_order);
+    $bi = array_search($b, CMSApplication::$default_module_order);
+    if($ai === false) return 1;
+    if($bi === false) return -1;
+    return $ai > $bi;
+  })?>
+  <?foreach($allowed_modules as $i=>$info):?>
+    <?if($info['hidden'] != true):?>
+      <li class='top <?=$i?>'>
+        <a
+          href="<?=$info['link']?><?=(($cachelink)?"?rand=".rand():"")?>"
+          class='<?=$i?>-link <?if($i == $module_name):?> active<?endif?>'>
+             <b class="entypo-icon-<?=$i?>"></b><?=$info['display_name']?>
+        </a>
+      </li>
+      <?foreach((array)$info['subs'] as $name=>$subinfo):?>
+        <li class='top subtop'>
+          <a href="<?=$subinfo?>"><?=$name?></a>
+        </li>
+      <?endforeach?>
+      <?if($info['split']):?>
+        <li class='group_split'>&nbsp;</li>
+      <?endif?>
+    <?endif?>
+  <?endforeach?>
+</ul>

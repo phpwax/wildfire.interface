@@ -1,5 +1,14 @@
 <?
 CMSBaseComponent::$default_format = "html";
+if(!CMSApplication::$default_module_order) CMSApplication::$default_module_order = array(
+  "home",
+  "content",
+  "media",
+  "navigation",
+  "redirect",
+  "categories",
+  "users"
+);
 WaxEvent::add("cms.format.set", function(){
   $obj = WaxEvent::data();
   if($obj->use_format == "ajax" || $obj->use_format == "json") $obj->use_layout = false;

@@ -1,0 +1,52 @@
+#header{
+  width:100%;
+  padding:0;
+  background:#333333;
+  position:fixed;
+  z-index:20;
+  border-bottom:4px solid #136ea2;
+}
+
+  #header #logo{
+    float:left;
+    width:160px;
+    height:62px;
+    margin-left:20px;
+    background:url(/images/wildfire/logos/white-small.png) no-repeat left center;
+  }
+  #header #logo:hover{
+    background:url(/images/wildfire/logos/white-small.gif) no-repeat left center;
+  }
+
+    #logo span{display:none;}
+
+  #header a{
+    text-decoration: none;
+  }
+    #header #logo a{
+      display:block;
+    }
+    #header #logo img{
+      height:25px;
+    }
+    #header img.logo{
+      float:left;
+      margin-right:15px;
+    }
+
+  #options{
+    float:left;
+  }
+  #options{
+    padding-top:15px;
+  }
+  #options a{
+    float:left;
+    margin-left:10px;
+  }
+
+  #logout_button{
+    float:right;
+    margin:15px 15px 0 0;
+  }
+
