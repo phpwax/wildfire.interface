@@ -44,6 +44,17 @@
 </div>
 
 
+<div class='row clearfix analytics-mobile-usage'>
+  <h3>Mobile Usage</h3>
+  <div class='bar_container'>
+    <div class='bar_gauge clearfix'>
+      <?foreach($mobile_data as $type):?>
+        <div class='bar_segment' data-amount="<?=$type['ga:visits']?>"><span class='amount'></span><?if($type == "No"):?>Desktop<?else:?>Moble<?endif?></div>
+      <?endforeach?>
+    </div>
+  </div>
+</div>
+
 <div class='row clearfix analytics-blocks-3'>
 
   <div class='analytics_block'>

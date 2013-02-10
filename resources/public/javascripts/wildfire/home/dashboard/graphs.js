@@ -20,7 +20,6 @@ jQuery(document).ready(function(){
         data.push(tmp);
       });
 
-
       if(data && data.length > 1){
         chart_div.html("");
         chart = new google.visualization[chart_type](document.getElementById(chart_div.attr("id") ) );
@@ -28,7 +27,34 @@ jQuery(document).ready(function(){
       }
       table.hide();
     });
+
+    jQuery(".bar_gauge").each(function(){
+      var bar = jQuery(this),
+            total = 0,
+            items = bar.find(".bar_segment"),
+            largest = 0,
+            main_bar = false
+            ;
+      items.each(function(){
+        var val =parseInt(jQuery(this).attr("data-amount") );
+        if(val > largest){
+          largest = val;
+          main_bar = jQuery(this);
+        }
+        total+= val;
+      } ).each(function(){
+        var amount = parseInt(jQuery(this).attr("data-amount")),
+              one_percent = total/100,
+              width = Math.round(amount / one_percent)
+              ;
+        jQuery(this).css({width:width+"%"}).find(".amount").html(width+"% ");
+      });
+      main_bar.addClass("biggest_segment");
+
+    });
   });
+
+
 
   jQuery(window).trigger("graph.draw");
   jQuery(document).ajaxComplete(function(){
