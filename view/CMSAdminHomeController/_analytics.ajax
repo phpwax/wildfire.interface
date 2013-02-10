@@ -1,5 +1,7 @@
 <div class='row clearfix'>
+  <h3>Visitors over the last 30 days</h3>
   <div class='graph_wrapper'>
+
     <div class='chart' id="overall-traffic-data-graph"></div>
     <script type="text/javascript">
     analytics_config['traffic-data']= {
@@ -17,6 +19,13 @@
       lineWidth:3,
       hAxis:{
         showTextEvery:7
+      },
+      vAxis:{
+        textPosition:"in",
+        gridlines:{
+          color:"#fff",
+          count:3
+        }
       }
     };
     graph_types['traffic-data'] = "AreaChart";
@@ -45,7 +54,7 @@
 
 
 <div class='row clearfix analytics-mobile-usage'>
-  <h3>Mobile Usage</h3>
+  <h3>Desktop vs Mobile usage over the last 30 days</h3>
   <div class='bar_container'>
     <div class='bar_gauge clearfix'>
       <?foreach($mobile_data as $type):?>
