@@ -40,6 +40,9 @@ pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
   box-sizing: border-box;
   font-family: "Open Sans", helvetica, arial;
 }
+input[type=submit]{
+  font-family: "Open Sans", helvetica, arial;
+}
 
 em,i{
   font-style: italic;
