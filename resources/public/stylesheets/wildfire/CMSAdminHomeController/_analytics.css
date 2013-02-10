@@ -1,0 +1,11 @@
+.analytics-blocks-3 .analytics_block{
+  float:left;
+  width:33%;
+  padding:10px;
+  min-height:400px;
+}
+
+
+#overall-browser-data-graph{
+  height:400px;
+}
