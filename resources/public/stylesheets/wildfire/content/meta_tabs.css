@@ -1,0 +1,57 @@
+.meta_tabs .meta-tab-title{
+      text-transform: capitalize;
+      border-radius:0px;
+      border:none;
+      padding:15px;
+      font-size:13px;
+    }
+      .meta_tabs .meta-tab-title span{
+        display:block;
+      }
+      .meta_tabs .meta-tab-title.ui-state-default{
+        background:none;
+      }
+      .meta_tabs .meta-tab-title:hover{
+        background:#dfdfdf;
+      }
+      .meta_tabs .meta-tab-title.ui-state-active{
+        background:white;
+        margin-top:10px;
+        padding-bottom:0;
+        color:#136ea2;
+        font-size:123.1%;
+        font-weight:bold;
+        border-top:1px solid #dbdbdb;
+        border-left:1px solid #dbdbdb;
+        border-right:1px solid #dbdbdb;
+      }
+        .meta_tabs .meta-tab-title.ui-state-active span{
+          padding-bottom:10px;
+          border-bottom:1px solid #dfdfdf;
+        }
+      .meta_tabs .meta-tab-title.ui-state-active:first-child{
+        margin-top:0px;
+      }
+    .meta_tabs .meta-tab{
+      border-radius:0px;
+      padding:15px;
+      margin-bottom:10px;
+      border-top:none;
+      border-bottom:1px solid #dbdbdb;
+      border-left:1px solid #dbdbdb;
+      border-right:1px solid #dbdbdb;
+    }
+      .meta_tabs .meta-tab label,.meta_tabs .meta-tab input, .meta_tabs .meta-tab textarea, .meta_tabs .meta-tab select{
+        display:block;
+        max-width:none;
+        width:100%;
+      }
+      .meta_tabs .meta-tab input[type=radio],.meta_tabs .meta-tab input[type=checkbox]{
+        width:auto;
+        float:left;
+      }
+      .meta_tabs .meta-tab label{
+        margin-bottom:10px;
+        font-size:100%;
+        color:#333333;
+      }
