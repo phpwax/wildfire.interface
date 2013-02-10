@@ -1,23 +1,23 @@
-.tabs_nav{
+.tabs_container .tabs_nav{
   background:none;
   border:none;
 }
-.tabs_nav li.tabs_nav_item{
+.tabs_container .tabs_nav li.tabs_nav_item{
  float:left;
  border:none;
  background:none;
 }
-.tabs_nav li a{
+.tabs_container .tabs_nav li a{
   display:block;
   padding:20px;
   text-decoration:none;
   border-radius:0;
   border-bottom:1px solid transparent;
 }
-  .tabs_nav li a:hover{
+  .tabs_container .tabs_nav li a:hover{
     background:#f8f7f7;
   }
-  .tabs_nav li.ui-state-active a{
+  .tabs_container .tabs_nav li.ui-state-active a{
     font-weight:bold;
     background:#f0f0f0;
     border-top:1px solid #dfdfdf;

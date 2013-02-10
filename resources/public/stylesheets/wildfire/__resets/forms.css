@@ -104,6 +104,13 @@ form{
       background: #4cbd66;
       color:#fff;
     }
+    form input.hasDatepicker{
+      padding-left:40px;
+      background:url(/images/wildfire/icons/calendar.png) no-repeat 10px center;
+    }
+    form input.hasDatepicker:focus{
+      background-image:url(/images/wildfire/icons/calendar_black.png);
+    }
 
     form .tasked{
       margin-bottom:5px;
