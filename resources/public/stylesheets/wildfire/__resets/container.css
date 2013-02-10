@@ -12,20 +12,29 @@
 .primary_form_container{
   border:none;
 }
-  .tab-contents{
+.tabs_container{
+  position:static;
+}
+  .primary_form_container .tab-contents{
     background:#f0f0f0;
-    padding:10px;
+    padding:15px;
     border:none;
     border-top:1px solid #dfdfdf;
   }
-  .edit_fields{
-    width:70%;
+  .edit_fields,.meta_tabs{
     float:left;
+  }
+  .edit_fields{
+    background:white;
+    width:68%;
+    margin-right:2%;
+    box-shadow: 0 0 5px #333333;
   }
   .meta_tabs{
     width:30%;
-    float:left;
   }
+
+
 #primary_navigation{
   position:fixed;
   width:180px;
