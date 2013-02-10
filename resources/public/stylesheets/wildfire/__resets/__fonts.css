@@ -28,6 +28,9 @@ b.entypo-icon-redirect:before{ content: "🔙"; }
 b.entypo-icon-close:before{ content: "❎"; }
 b.entypo-icon-alert:before{ content: "💥"; color:red; }
 
+.has-children b.entypo-icon-expand:before{ content: "↳"; }
+.has-children .open b.entypo-icon-expand:before{ content: "↰"; }
+
 
 /*!
  *  Font Awesome 3.0.2
