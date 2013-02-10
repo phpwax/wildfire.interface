@@ -1,0 +1,8 @@
+.meta_tabs .permalink input{
+  width:90%;
+}
+
+.permalink .remove{
+  float:right;
+  text-decoration:none;
+}
