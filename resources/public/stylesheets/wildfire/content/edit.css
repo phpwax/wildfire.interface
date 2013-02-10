@@ -5,7 +5,8 @@
   padding:0;
   margin:0;
 }
-.edit_fields label{
+.edit_fields .field-title label,
+.edit_fields .field-content label{
   display:none;
 }
 .edit_fields textarea{
