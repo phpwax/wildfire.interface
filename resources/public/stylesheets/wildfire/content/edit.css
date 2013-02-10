@@ -1,0 +1,13 @@
+.edit_fields .field{
+  padding:15px;
+}
+.edit_fields .field-content{
+  padding:0;
+  margin:0;
+}
+.edit_fields label{
+  display:none;
+}
+.edit_fields textarea{
+  width:100%;
+}
