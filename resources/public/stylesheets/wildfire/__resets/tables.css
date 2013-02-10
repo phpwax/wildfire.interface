@@ -18,3 +18,13 @@ table{
   td a, th a{
     text-decoration: none;
   }
+
+td.title{
+  width:50%;
+}
+td.in{
+  width:20%;
+}
+td.on{
+  width:20%;
+}
