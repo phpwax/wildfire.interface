@@ -1,4 +1,5 @@
-<?foreach($permissions as $action=>$i):?>
+<?foreach($permissions as $action=>$x):?>
+  <?$i = $operation_actions[$action]?>
   <?if(is_array($i)):?>
   <a href="/<?=trim($controller,"/")?>/<?=$i['action']?>/<?=$row->primval?>/<?=(($cachelink)?"?rl=".rand():"")?>" class='button operation operation_<?=$action?>'><?=str_replace("%s", $module_name, $i['name'])?></a>
   <?else:?>
