@@ -28,25 +28,25 @@ foreach($grouping as $g=>$info){
 
   <div class='edit_form_block_container clearfix<?if($secondary_tabs):?> with_meta_tabs<?endif?>'>
 
-    <div class='primary_form_container clearfix'>
+    <div class='primary_form_container tabs_container clearfix'>
       <?if(count($primary_tabs)):?>
-          <ul class='tabs clearfix'>
-            <?$k=0;?>
-            <?foreach($primary_tabs as $name=>$info):?>
-              <?$tabhash = Inflections::to_url($name); $tabid = "tab-".$tabhash;?>
-              <li id="<?=$tabid?>" class='tab-<?=$k?>'><a href="#content_tab_<?=$tabhash?>"><?=ucwords($name)?></a></li>
-              <?$k++;?>
-            <?endforeach?>
-          </ul>
+        <ul class='tabs_nav clearfix'>
+          <?$k=0;?>
+          <?foreach($primary_tabs as $name=>$info):?>
+            <?$tabhash = Inflections::to_url($name); $tabid = "tab-".$tabhash;?>
+            <li id="<?=$tabid?>" class='tab-<?=$k?> tabs_nav_item'><a href="#content_tab_<?=$tabhash?>"><?=ucwords($name)?></a></li>
+            <?$k++;?>
+          <?endforeach?>
+        </ul>
         <?foreach($primary_tabs as $name=>$fields):?>
           <?$tabhash = Inflections::to_url($name);?>
 
           <fieldset class='tab-contents clearfix <?=$tabhash?>' id="content_tab_<?=$tabhash?>" >
 
           <?if(!$readable = CMSBaseComponent::form_group_partial_check($partial_paths, $name)) $readable = "_default_form_group";?>
+          <div class="edit_fields">
           <?=partial($readable, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base))?>
-
-          </fieldset>
+          </div>
 
           <?if($secondary_tabs):?>
 
@@ -61,10 +61,10 @@ foreach($grouping as $g=>$info){
                 </div>
               <?endforeach?>
             </div>
-
             <?endif?>
-
           <?endif?>
+
+          </fieldset>
 
         <?endforeach?>
         

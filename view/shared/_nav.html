@@ -5,7 +5,7 @@
     $bi = array_search($b, CMSApplication::$default_module_order);
     if($ai === false) return 1;
     if($bi === false) return -1;
-    return $a > $b;
+    return $ai > $bi;
   })?>
   <?foreach($allowed_modules as $i=>$info):?>
     <?if($info['hidden'] != true):?>

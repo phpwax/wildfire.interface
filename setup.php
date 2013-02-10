@@ -4,9 +4,9 @@ if(!CMSApplication::$default_module_order) CMSApplication::$default_module_order
   "home",
   "content",
   "media",
-  "categories",
-  "redirect",
   "navigation",
+  "redirect",
+  "categories",
   "users"
 );
 WaxEvent::add("cms.format.set", function(){
