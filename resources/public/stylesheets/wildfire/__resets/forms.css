@@ -265,3 +265,11 @@ form.inline_filters select{
   margin-top:0;
   max-width:200px;
 }
+
+
+#filters_container{
+  background:#f5f5f5;
+  border-bottom:1px solid #dfdfdf;
+  border-top:1px solid #dfdfdf;
+  margin-bottom:10px;
+}

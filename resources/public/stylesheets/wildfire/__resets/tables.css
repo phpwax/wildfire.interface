@@ -7,8 +7,8 @@ table{
     color:#333;
     border-bottom:1px solid #f0f0f0;
   }
-  tr:last-child td,
-  tr:last-child th{
+  tbody tr:last-child td,
+  tbody tr:last-child th{
     border-bottom-width:0;
   }
   th{
@@ -27,4 +27,10 @@ td.in{
 }
 td.on{
   width:20%;
+}
+
+
+thead td,
+thead th{
+  border-bottom:1px solid #dfdfdf;
 }
