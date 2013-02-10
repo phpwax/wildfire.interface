@@ -57,8 +57,8 @@
   <h3>Desktop vs Mobile usage over the last 30 days</h3>
   <div class='bar_container'>
     <div class='bar_gauge clearfix'>
-      <?foreach($mobile_data as $type):?>
-        <div class='bar_segment' data-amount="<?=$type['ga:visits']?>"><span class='amount'></span><?if($type == "No"):?>Desktop<?else:?>Moble<?endif?></div>
+      <?foreach($mobile_data as $bool=>$type):?>
+        <div class='bar_segment' data-amount="<?=$type['ga:visits']?>"><b><?if($bool == "No"):?>💻<?else:?>📱<?endif?></b><span class='amount'></span><?if($bool == "No"):?>Desktop<?else:?>Mobile<?endif?></div>
       <?endforeach?>
     </div>
   </div>
