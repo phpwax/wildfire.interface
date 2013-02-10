@@ -16,7 +16,7 @@
       pointSize:7,
       lineWidth:3,
       hAxis:{
-        showTextEvery:8
+        showTextEvery:7
       }
     };
     graph_types['traffic-data'] = "AreaChart";
