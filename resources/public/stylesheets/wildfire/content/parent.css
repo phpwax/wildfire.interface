@@ -1,0 +1,27 @@
+.content_parent li{
+  list-style:none;
+  margin-left:10px;
+}
+.content_parent li .field{
+  border-bottom:1px solid #dbdbdb;
+}
+.meta_tabs .content_parent label{
+  padding-top:10px;
+}
+.meta_tabs .content_parent input.node{
+  float:right;
+  margin-top:10px;
+}
+.meta_tabs .content_parent .view_children{
+  float:left;
+}
+  .meta_tabs .content_parent .view_children a{
+    text-decoration:none;
+    float:left;
+  }
+  .has-children b{
+    padding:5px;
+  }
+  .has-children .open b{
+    background:#f0f0f0;
+  }
