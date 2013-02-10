@@ -47,52 +47,56 @@
 <div class='row clearfix analytics-blocks-3'>
 
   <div class='analytics_block'>
-    <h3>Traffic Sources</h3>
+    <h3>Source Visits</h3>
     <table class='traffic-sources' id="traffic-sources">
-      <thead>
-        <tr>
-          <th>Source</th>
-          <th>Vists</th>
-        </tr>
-      </thead>
+
       <tbody>
+      <?$loops = 0;?>
       <?foreach($sources_data as $source=>$info):?>
+        <?if($loops >= 9) break;?>
         <tr>
-          <th><?=$source?></th>
+          <th title="<?=$source?>"><?=substr($source, 0, 30)?></th>
           <?$total=0;?>
           <?foreach($info as $page=>$amount):?><?$total+=($amount['ga:visits'])?><?endforeach?>
           <td><?=$total?></td>
         </tr>
+        <?$loops++;?>
       <?endforeach?>
       </tbody>
     </table>
   </div>
 
   <div class='analytics_block'>
-    <h3>Search Keywords</h3>
+    <h3>Top Keywords</h3>
 
     <table class='traffic-keywords' id="traffic-keywords">
+      <?$loops = 0;?>
       <?foreach($search_data as $source=>$info):?>
+      <?if($loops >= 9) break;?>
         <tr>
-          <th><?=$source?></th>
+          <th title="<?=$source?>"><?=substr($source, 0, 30)?></th>
           <td><?=$info['ga:visits']?></td>
         </tr>
+        <?$loops++;?>
       <?endforeach?>
     </table>
   </div>
 
   <div class='analytics_block'>
+    <h3>Browsers</h3>
     <div class='graph_wrapper'>
       <div class='chart' id="overall-browser-data-graph"></div>
       <script type="text/javascript">
       analytics_config['browser-data']= {
         width:"100%",
-        height:"500px",
         chartArea: {
-          top:"3%",
-          left:"3%",
-          width:"75%",
-          height:"75%"
+          top:"10",
+          left:"2%",
+          width:"98%",
+          height:"98%"
+        },
+        legend:{
+          position:"left"
         }
       };
       graph_types['browser-data'] = "PieChart";
@@ -109,7 +113,7 @@
             <tr>
               <th><?=$browser?></th>
               <?$total=0;?>
-              <?foreach($info as $page=>$amount):?><?$total+=($amount['ga:visits'])?><?endforeach?>
+              <?foreach($info as $page=>$amount):?><?$total+=($amount)?><?endforeach?>
               <td><?=$total?></td>
             </tr>
           <?endforeach?>
