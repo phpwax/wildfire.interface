@@ -55,3 +55,13 @@
         font-size:100%;
         color:#333333;
       }
+
+/* urls meta tab */
+.meta_tabs .permalink input{
+  width:90%;
+}
+
+.remove{
+  float:right;
+  text-decoration:none;
+}
