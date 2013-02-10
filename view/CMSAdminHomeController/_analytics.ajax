@@ -88,12 +88,11 @@
       <div class='chart' id="overall-browser-data-graph"></div>
       <script type="text/javascript">
       analytics_config['browser-data']= {
-        width:"100%",
         chartArea: {
           top:"10",
           left:"2%",
-          width:"98%",
-          height:"98%"
+          width:"96%",
+          height:"50%"
         },
         legend:{
           position:"left"
