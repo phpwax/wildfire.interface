@@ -11,3 +11,11 @@
 .edit_fields textarea{
   width:100%;
 }
+
+.field-content-content .o2k7Skin table.mceLayout{
+  border:none;
+}
+
+#wildfire_content_title{
+  width:50%;
+}
