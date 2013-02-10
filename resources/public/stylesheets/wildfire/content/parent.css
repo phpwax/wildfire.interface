@@ -1,6 +1,6 @@
 .content_parent li{
   list-style:none;
-  margin-left:10px;
+  padding-left:20px;
 }
 .content_parent li .field{
   border-bottom:1px solid #dbdbdb;
