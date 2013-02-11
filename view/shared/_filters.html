@@ -12,7 +12,7 @@
   data-replace=".data_table"
   data-action="/admin/<?=$module_name?>/_list.ajax?show_cols=1"
 >
-  <?foreach(array_diff_key($_GET, array("route"=>0)) as $k => $v):?>
+  <?foreach(array_diff_key($_GET, array("route"=>0, "filters"=>0)) as $k => $v):?>
     <input type="hidden" name="<?=$k?>" value="<?=$v?>">
   <?endforeach?>
   <?foreach($filter_fields as $name=>$field):?>
