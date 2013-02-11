@@ -1,16 +1,14 @@
 .content_parent li{
   list-style:none;
-  padding-left:20px;
 }
 .content_parent li .field{
   border-bottom:1px solid #dbdbdb;
 }
 .meta_tabs .content_parent label{
-  padding-top:10px;
+  padding:10px 0 0 0;
 }
 .meta_tabs .content_parent input.node{
   float:right;
-  margin-top:10px;
 }
 .meta_tabs .content_parent .view_children{
   float:left;
