@@ -1,0 +1,14 @@
+.tree_operations{
+  float:right;
+}
+
+span.tree_col_status{
+  border-radius:8px;
+  color:#fff;
+  background:#df3434;
+  display:block;
+  padding:5px;
+}
+span.live{
+  background:#92ba59;
+}
