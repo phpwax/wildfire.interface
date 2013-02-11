@@ -1,14 +1,64 @@
 .tree_operations{
   float:right;
 }
+  .tree_operations a{
+    margin:10px 0 10px 10px;
+  }
 
 span.tree_col_status{
+  text-transform: uppercase;
+  cursor:pointer;
+  display:inline-block;
+  padding:7px 9px;
+  font-size:93%;
+  text-decoration:none;
+  letter-spacing:0.5px;
+  font-weight:normal;
+  border-radius:4px;
+  line-height:1em;
   border-radius:8px;
   color:#fff;
   background:#df3434;
   display:inline-block;
-  padding:5px;
+  float:right;
+  margin:10px 0 10px 10px;
 }
 span.live{
   background:#92ba59;
 }
+
+.tree_node .view_children_link,
+.tree_node .children_link,
+.tree_node .empty{
+  float:left;
+}
+  .tree_node .empty{
+    width:20px;
+    border-right:1px dotted #f0f0f0;
+  }
+.tree_node .view_children_link,
+.tree_node .empty{
+  height:55px;
+  padding-top:10px;
+  margin-right:5px;
+}
+.tree_node .children_link{
+  height:35px;
+  padding-top:20px;
+}
+.tree_node .view_children_link{
+  border-right:1px solid #f0f0f0;
+}
+.tree_node{
+  height:55px;
+  overflow: hidden;
+  border-bottom:1px solid #f0f0f0;
+}
+.tree_node a{
+  text-decoration: none;
+}
+
+
+.tree_depth_1{margin-left:25px;}
+.tree_depth_2{margin-left:50px;}
+.tree_depth_3{margin-left:75px;}
