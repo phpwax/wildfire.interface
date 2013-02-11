@@ -33,7 +33,7 @@ span.live{
   float:left;
 }
   .tree_node .empty{
-    width:20px;
+    width:21px;
     border-right:1px dotted #f0f0f0;
   }
 .tree_node .view_children_link,
