@@ -1,44 +1,75 @@
 .content_parent li{
   list-style:none;
+  padding:0;
 }
-.content_parent li .field{
-  border-bottom:1px solid #dbdbdb;
+.content_parent li:last-child{
+  border-bottom:none;
 }
+  .content_parent li .field{
+    border-bottom:1px solid #dbdbdb;
+  }
 .meta_tabs .content_parent label{
   padding:10px 0 0 0;
+  font-weight:normal;
 }
+  .meta_tabs .content_parent .self label{
+    font-weight:bold;
+  }
 .meta_tabs .content_parent input.node{
   float:right;
 }
 .meta_tabs .content_parent .view_children{
   float:left;
+  width:27px;
+  height:39px;
+  border-right:1px solid #f0f0f0;
+  margin-right:5px;
+  display:block;
 }
   .meta_tabs .content_parent .view_children a{
     text-decoration:none;
-    float:left;
+    display: block
   }
   .has-children b{
-    padding:5px;
+    padding:0;
+    margin-right:0;
+    display: block;
+    text-align:center;
   }
   .has-children .open b{
     background:#f0f0f0;
   }
+
 .content_parent span.status{
-  display:block;
+  text-transform: uppercase;
+  cursor:pointer;
+  display:inline-block;
+  font-size:93%;
+  text-decoration:none;
+  letter-spacing:0.5px;
+  font-weight:normal;
+  border-radius:5px;
+  line-height:1em;
+  border-radius:8px;
+  color:#fff;
+  background:#df3434;
+  display:inline-block;
+  float:right;
+  margin:9px 10px 10px 10px;
 }
+  .content_parent span.status.live{
+    background:#92ba59;
+  }
   .content_parent span.status a{
     text-decoration:none;
     display:block;
-    width:10px;
-    height:10px;
-    margin:12px 10px 0 0;
+    width:15px;
+    height:15px;
   }
-    .content_parent span.status.live a{
-      background:green;
-    }
-    .content_parent span.status.not-live a{
-      background:red;
-    }
     .content_parent .self span.status{
       display:none;
     }
+.depth-0{margin-bottom:10px;}
+.depth-1 li .field{}
+.depth-2 li .field{padding-left:25px;}
+.depth-3 li .field{padding-left:50px;}
