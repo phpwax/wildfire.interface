@@ -1,20 +1,22 @@
 jQuery(function($){
-  var serialize = function(obj, prefix) {
-    var str = [];
-    for(var p in obj) {
-      var k = prefix ? prefix + "[" + encodeURIComponent(p) + "]" : p, v = obj[p];
-      str.push(typeof v == "object" ? 
-        serialize(v, k) :
-        encodeURIComponent(k) + "=" + encodeURIComponent(v));
+  var parse = function(url){
+    var orig = url.split("?"),
+        after = orig[1] || orig[0],
+        params = after.split("&"),
+        ret = {};
+    for(var i in params){
+      var split = params[i].split("=");
+      ret[split[0]] = split[1];
     }
-    return str.join("&");
+    return ret;
   }
 
-  $(window).bind("update_url", function(e, new_url){
-    var current_url = $.url(),
-        current_params = current_url.param(),
-        new_params = $.url(new_url).param();
+  $(window).bind("update_url", function(e, new_params){
+    if(typeof new_params == "string") new_params = parse(new_params);
+    var current_params = parse(window.location.href);
     $.extend(current_params, new_params);
-    history.pushState({}, "", current_url.attr("path")+"?"+serialize(current_params));
+    var ret = [];
+    for(var i in current_params) ret.push(i+"="+current_params[i]);
+    history.pushState({}, "", window.location.pathname+"?"+ret.join("&"));
   });
 });
