@@ -27,14 +27,14 @@ jQuery(document).ready(function(){
             .addClass("children-of-"+id)
             .slideDown("fast");
 
-          history.pushState({}, "", link.attr("href"));
+          $(window).trigger("update_url", link.attr("href"));
         },
         error:function(){}
       });
     }else if(link.hasClass('open')){
       link.toggleClass("open");
       jQuery('.children-of-'+id).slideUp("fast");
-      history.pushState({}, "", link.attr("href"));
+      $(window).trigger("update_url", link.attr("href"));
     }else{
       link.toggleClass("open");
       jQuery('.children-of-'+id).slideDown("fast");
