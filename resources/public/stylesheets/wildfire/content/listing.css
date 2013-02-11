@@ -47,6 +47,8 @@ span.live{
 .tree_node .children_link{
   height:35px;
   padding-top:20px;
+  width: 45%;
+  text-align: left;
 }
 .tree_node .view_children_link{
   border-right:1px solid #f0f0f0;
@@ -60,12 +62,21 @@ span.live{
   text-decoration: none;
 }
 
+.tree_node em.date{
+  padding-top:15px;
+  font-size:93%;
+  display: block;
+  color:#b3b3b3;
+  float:left;
+}
+
 .tree_node.open{
   background:#fafafa;
 }
   .tree_node.open .view_children_link{
     background: #f0f0f0;
   }
+
 
 
 .tree_depth_1{margin-left:25px;}
