@@ -273,3 +273,15 @@ form.inline_filters select{
   border-top:1px solid #dfdfdf;
   margin-bottom:10px;
 }
+
+#filters_container > div{
+  float:left;
+  margin-right:10px;
+}
+#filters_container > .text_field{
+  float:left;
+  margin-right:10px;
+}
+#filters_container label{
+  display:none;
+}

@@ -2,7 +2,7 @@
   float:right;
 }
   .tree_operations a{
-    margin:10px 0 10px 10px;
+    margin:13px 0 10px 10px;
   }
 
 span.tree_col_status{
@@ -21,7 +21,7 @@ span.tree_col_status{
   background:#df3434;
   display:inline-block;
   float:right;
-  margin:10px 0 10px 10px;
+  margin:13px 0 10px 10px;
 }
 span.live{
   background:#92ba59;
