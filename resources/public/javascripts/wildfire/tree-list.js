@@ -7,7 +7,7 @@ jQuery(document).ready(function(){
         id = row.attr("data-row-id"),
         language = row.attr("data-row-language")
         ;
-
+    row.toggleClass("open");
     if(link.hasClass("ajax_tree_load")){
       row.addClass('loading');
       jQuery.ajax({
@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
         type:"post",
         success:function(res){
           link
-            .toggleClass("ajax_tree_load open ui-icon-circle-triangle-e ui-icon-circle-triangle-s")
+            .toggleClass("ajax_tree_load open")
             .addClass("open");
 
           jQuery(res)
@@ -26,16 +26,17 @@ jQuery(document).ready(function(){
             .insertAfter(row.removeClass('loading'))
             .addClass("children-of-"+id)
             .slideDown("fast");
+
           history.pushState({}, "", link.attr("href"));
         },
         error:function(){}
       });
     }else if(link.hasClass('open')){
-      link.toggleClass("open ui-icon-circle-triangle-e ui-icon-circle-triangle-s");
+      link.toggleClass("open");
       jQuery('.children-of-'+id).slideUp("fast");
       history.pushState({}, "", link.attr("href"));
     }else{
-      link.toggleClass("open ui-icon-circle-triangle-e ui-icon-circle-triangle-s");
+      link.toggleClass("open");
       jQuery('.children-of-'+id).slideDown("fast");
     }
     e.preventDefault();

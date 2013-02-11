@@ -31,9 +31,11 @@ span.live{
 .tree_node .children_link,
 .tree_node .empty{
   float:left;
+  text-align: center;
+  padding-left:5px;
 }
   .tree_node .empty{
-    width:21px;
+    width:26px;
     border-right:1px dotted #f0f0f0;
   }
 .tree_node .view_children_link,
@@ -57,6 +59,13 @@ span.live{
 .tree_node a{
   text-decoration: none;
 }
+
+.tree_node.open{
+  background:#fafafa;
+}
+  .tree_node.open .view_children_link{
+    background: #f0f0f0;
+  }
 
 
 .tree_depth_1{margin-left:25px;}
