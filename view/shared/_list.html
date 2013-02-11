@@ -10,10 +10,7 @@ if(($tc = get_class($model)) && ($pid = $current_user->restricted_tree($tc))){
   $cms_content = $cms_content->all();
 }
 ?>
-<?if(!$show_unfiltered_results && $tree_layout):?>
-<table class='data_table empty_data_table' data-action="/<?=trim($controller,"/")?>/_list">
-</table>
-<?elseif($cms_content && $scaffold_columns):?>
+<?if($cms_content && $scaffold_columns):?>
 <table class='data_table<?if($uploads && $preview_hover):?> preview-hover <?elseif($uploads && $preview_click):?> preview-click <?endif?>' data-action="/<?=trim($controller,"/")?>/_list">
   <thead>
     <tr>
