@@ -7,14 +7,14 @@
   border-bottom:4px solid #136ea2;
 }
 
-  #header #logo{
+  #header #logo a{
     float:left;
     width:160px;
     height:62px;
     margin-left:20px;
     background:url(/images/wildfire/logos/white-small.png) no-repeat left center;
   }
-  #header #logo:hover{
+  #header #logo a:hover{
     background:url(/images/wildfire/logos/white-small.gif) no-repeat left center;
   }
 

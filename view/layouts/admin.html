@@ -17,7 +17,7 @@
 
 <body id="v7-1-cms" class='wildfire'>
 	<div id="header">
-    <div class="brand" id="logo"><span>WildFire</span></div>
+    <h1 class="brand" id="logo"><a href="/admin/home/"><span>WildFire</span></a></h1>
     <div class='clearfix full buttons_and_search'>
     <?WaxEvent::run("cms.layout.sublinks", $this);?>
     <?=partial("_buttons_and_search", array('current_user'=>$current_user, 'quick_links'=>$this->quick_links))?>
