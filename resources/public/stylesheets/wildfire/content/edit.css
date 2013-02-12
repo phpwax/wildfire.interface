@@ -6,6 +6,11 @@
   margin:0;
 }
 .edit_fields label{
+  display:block;
+  margin-bottom:10px;
+}
+.edit_fields .field-title label,
+.edit_fields .field-content label{
   display:none;
 }
 .edit_fields textarea{

@@ -6,11 +6,11 @@ function filter_list(trigger_element, replace){
       r = fieldset.attr('data-replace')
       ;
   form.addClass('loading');
-  fieldset.find("input[type='text'], select").each(function(){
+  var new_get_params = fieldset.find("input[type='text'], select").each(function(){
     var field = jQuery(this), nm = field.attr('name'), pl = field.attr('placeholder'), val = field.val();
     if(val != pl) data[nm] = val;
     else data[nm]='';
-  });
+  }).serialize();
   jQuery.ajax({
     url:dest,
     data:data,
@@ -21,6 +21,7 @@ function filter_list(trigger_element, replace){
       else fieldset.closest(".filter-block-and-listing").find(r).replaceWith(res);
       jQuery(window).trigger("filter.trigger");
       jQuery(window).trigger("join.files.highlight");
+      $(window).trigger("update_url", new_get_params);
     },
     error:function(){
       jQuery(window).trigger("filter.trigger");
