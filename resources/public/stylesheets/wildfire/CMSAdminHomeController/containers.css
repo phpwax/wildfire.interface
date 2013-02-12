@@ -7,6 +7,15 @@
   }
 }
 
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
 
 #cms-dashboard .indented .listing{
   margin:0 25px;
@@ -19,9 +28,10 @@
   font-family: 'Entypo';
   float:right;
   display:block;
-  margin-left:10px;
-  -webkit-animation-name:             rotate;
-      -webkit-animation-duration:         0.5s;
-      -webkit-animation-iteration-count:  infinite;
-      -webkit-transition-timing-function: linear;
+  margin-left:10px;      
+  -webkit-animation: rotate 0.5s linear infinite;
+     -moz-animation: rotate 0.5s linear infinite;
+      -ms-animation: rotate 0.5s linear infinite;
+       -o-animation: rotate 0.5s linear infinite;
+          animation: rotate 0.5s linear infinite;
 }
