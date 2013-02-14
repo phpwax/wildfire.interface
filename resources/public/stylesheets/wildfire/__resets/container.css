@@ -27,11 +27,14 @@
   .edit_fields{
     background:white;
     width:68%;
-    margin-right:2%;
-    box-shadow: 0 0 5px #333333;
+    margin-right:13px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
   }
   .meta_tabs{
-    width:30%;
+    width:30.3%;
+  }
+  .meta_tabs .ui-accordion-content-active {
+
   }
 
 
