@@ -1,20 +1,30 @@
-#adminlogin #outer{
+#adminlogin #outer, #admininstall #outer{
   margin-left:0;
+  padding-top:0;
+  position:relative;
+  height:100%;
 }
 #login{
   padding:0;
-  width:90%;
-  max-width:375px;
-  margin:15% auto 0 auto;
-  border:8px solid rgba(0,0,0,0.1);
-  position:relative;
+  width:100%;
+  margin:0 auto 0 auto;
+  position:absolute;
+  top:50%;
+  margin-top:-125px;
 }
 
 #login h1{
-  margin-bottom:10px;
+  padding-bottom:10px;
+  background-color:#fff;
 }
 #login form{
-  background:white;
+  margin:0 auto;
+  width:90%;
+  max-width:375px;
+  border:8px solid rgba(0,0,0,0.1);
+}
+#login fieldset{
+  background:#fff;
 }
 #login label.remember{
   font-weight:normal;
@@ -68,7 +78,7 @@ body.wf-admininstall-index h1{
   width:100%;
 }
 body.wf-admininstall-index h1{
-  height: auto
+  height:auto
 }
 
   width:100%;
