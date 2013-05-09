@@ -5,9 +5,12 @@ var tinymce_config = {
       theme: 'advanced',
       skin:'o2k7',
       skin_variant : "silver",
+      width:'100%',
       height:300,
+      autoresize_min_height: 300,
+      autoresize_max_height: 300,
       //
-      plugins: 'directionality,jqueryinlinepopups,paste,wflink,wfimage,wfhtml,wftable,wftemplate',
+      plugins: 'directionality,jqueryinlinepopups,paste,wflink,wfimage,wfhtml,wftable,wftemplate,autoresize',
       theme_advanced_blockformats: "p,h2,h3,h4,blockquote,h6",
       content_css: "/stylesheets/build/wildfire-templates_combined.css",
       // Theme options
@@ -18,7 +21,7 @@ var tinymce_config = {
     	theme_advanced_toolbar_location : "top",
     	theme_advanced_toolbar_align : "left",
     	theme_advanced_statusbar_location : "bottom",
-    	theme_advanced_resizing : true
+    	theme_advanced_resizing : false
     	//
     },
     simpletinymce_config = {
@@ -28,8 +31,9 @@ var tinymce_config = {
       theme: 'advanced',
       skin:'o2k7',
       skin_variant : "silver",
+      width:'100%',
       //
-      plugins: 'directionality,jqueryinlinepopups,paste,wflink',
+      plugins: 'directionality,jqueryinlinepopups,paste,wflink,autoresize',
       // Theme options
   		theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,link,unlink,|,hr",
   		theme_advanced_buttons2 : "",
@@ -38,7 +42,7 @@ var tinymce_config = {
   		theme_advanced_toolbar_location : "top",
   		theme_advanced_toolbar_align : "left",
   		theme_advanced_statusbar_location : "bottom",
-  		theme_advanced_resizing : true
+  		theme_advanced_resizing : false
   		//
     }
     ;
