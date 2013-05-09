@@ -57,8 +57,8 @@
       }
       .meta_tabs .meta-tab label,
       .meta_tabs .meta-tab h3{
-        margin:0 0 10px 0;
-        padding:0 0 10px 0;
+        margin:10px 0 5px 0;
+        padding:0;
         font-size:100%;
         color:#333333;
       }
