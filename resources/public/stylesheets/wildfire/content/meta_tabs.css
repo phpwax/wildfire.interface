@@ -35,12 +35,16 @@
     .meta_tabs .meta-tab{
       border-radius:0px;
       padding:15px;
-      margin-bottom:10px;
+      margin:0 0 10px;
+      top:0;
       border-top:none;
       border-bottom:1px solid #dbdbdb;
       border-left:1px solid #dbdbdb;
       border-right:1px solid #dbdbdb;
     }
+      .meta_tabs .edit_fields .field{
+        padding:0 15px 15px;
+      }
       .meta_tabs .meta-tab label,
       .meta_tabs .meta-tab input,
       .meta_tabs .meta-tab textarea,
@@ -58,7 +62,7 @@
       .meta_tabs .meta-tab label,
       .meta_tabs .meta-tab h3{
         margin:10px 0 5px 0;
-        padding:0;
+        padding:0 0 10px;
         font-size:100%;
         color:#333333;
       }

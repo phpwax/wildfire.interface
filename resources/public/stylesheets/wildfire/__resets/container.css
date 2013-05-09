@@ -33,6 +33,11 @@
   .meta_tabs{
     width:30%;
   }
+    .meta_tabs .edit_fields{
+      width:100%;
+      border:none;
+      box-shadow: none;
+    }
   .meta_tabs .ui-accordion-content-active {
 
   }
