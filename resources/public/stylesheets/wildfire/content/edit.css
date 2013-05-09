@@ -24,3 +24,7 @@
 #wildfire_content_title{
   width:50%;
 }
+
+.intro_block_content input[type=submit]{
+  margin:20px 0 0 20px;
+}
