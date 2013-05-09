@@ -1,6 +1,7 @@
 .tabs_container .tabs_nav{
   background:none;
   border:none;
+  padding:.2em 10px 0;
 }
 .tabs_container .tabs_nav li.tabs_nav_item{
  float:left;

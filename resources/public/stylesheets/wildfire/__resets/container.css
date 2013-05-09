@@ -11,13 +11,14 @@
 }
 .primary_form_container{
   border:none;
+  padding:0;
 }
 .tabs_container{
   position:static;
 }
   .primary_form_container .tab-contents{
     background:#f0f0f0;
-    padding:15px;
+    padding:10px;
     border:none;
     border-top:1px solid #dfdfdf;
   }
@@ -27,7 +28,7 @@
   .edit_fields{
     background:white;
     width:68%;
-    margin-right:20px;
+    margin-right:10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
   }
   .meta_tabs{
