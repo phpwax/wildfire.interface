@@ -1,4 +1,4 @@
-.button{
+.button, form input[type=submit].button{
   text-transform: uppercase;
   cursor:pointer;
   display:inline-block;
@@ -12,7 +12,7 @@
   color:#5d5d5d;
   box-shadow:0 0 4px rgba(227,227,227,0.5);
   background: #dfdfdf;
-
+  border:none;
 }
 
   #header .button{
