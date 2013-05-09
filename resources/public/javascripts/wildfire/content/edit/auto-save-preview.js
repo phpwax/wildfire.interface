@@ -68,7 +68,7 @@ function auto_save_form(auto_span, auto_saver, auto_image, preview){
         }
         jQuery(window).trigger("autosave.completed", [res]);
       },
-      error:function(){clearInterval(blink_timer);}
+      error:function(){}
     });
   }else if(preview) window.open(preview.attr("href"));
 }

@@ -92,6 +92,4 @@ jQuery(document).ready(function(){
     });
   });
 
-  if(tinymce && tinymce.length) file_tree_refresh(false, "#inline_root_node");
-
 });
