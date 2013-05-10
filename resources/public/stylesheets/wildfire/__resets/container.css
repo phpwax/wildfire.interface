@@ -26,9 +26,11 @@
     float:left;
   }
   .edit_fields{
+    width:70%;
+    padding-right:10px;
+  }
+  .edit_fields .raised{
     background:white;
-    width:68%;
-    margin-right:10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
   }
   .meta_tabs{
