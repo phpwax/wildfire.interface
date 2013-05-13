@@ -1,0 +1,31 @@
+.tab-contents .design_changer_container{
+  box-shadow:0 0 5px rgba(0,0,0,0.3);
+}
+
+.design-header{
+  background:#fff;
+  padding:20px;
+}
+  .design-header h3 {
+    color:#136ea2;
+    font-weight:300;
+    border:0;
+    padding:0;
+    margin:0;
+  }
+
+.design .selection_strip{
+  padding:20px;
+}
+.field.field-SelectInput{
+  float:left;
+  margin-right:15px;
+}
+.field.field-SelectInput label{
+  display:none;
+}
+
+.design_preview iframe{
+  height:500px;
+  border:none;
+}
