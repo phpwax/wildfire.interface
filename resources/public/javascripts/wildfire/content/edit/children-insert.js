@@ -13,16 +13,17 @@ jQuery(document).ready(function(){
       link.addClass("open");
       branch.children("ul").slideDown("fast");
       e.preventDefault();
+    }else{
+      jQuery.ajax({
+        url:dest,
+        type:"post",
+        success:function(res){
+          link.addClass("open").addClass("fetched");
+          branch.append(res);
+        },
+        error:function(){}
+      });
     }
-    jQuery.ajax({
-      url:dest,
-      type:"post",
-      success:function(res){
-        link.addClass("open").addClass("fetched");
-        branch.append(res);
-      },
-      error:function(){}
-    });
     
     e.preventDefault();
     
