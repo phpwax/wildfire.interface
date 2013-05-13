@@ -14,6 +14,7 @@
   text-decoration:none;
   border-radius:0;
   border-bottom:1px solid transparent;
+  outline:none;
 }
   .tabs_container .tabs_nav li a:hover{
     background:#f8f7f7;
