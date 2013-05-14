@@ -23,18 +23,18 @@ jQuery(document).ready(function(){
     }
   });
 
-  jQuery(".media-listing").closest("fieldset").bind("add-media", function(e, result){
+  jQuery(".embedded-media-listing").closest("fieldset").bind("add-media", function(e, result){
     var existing = jQuery(this).find(".existing-files").append(result);
     existing.find(".joined-file:last .join-order-field").val(existing.find(".joined-file").length);
   });
 
   //on click we will now copy that
-  jQuery(".button.add-button").live("click", function(e){
+  jQuery(".button.operation_add, .button.add-button").live("click", function(e){
     e.preventDefault();
 
     var target = jQuery(this),
-        primval = target.data("primval"),
-        holder = target.closest(".media-listing, .existing-files"),
+        primval = target.data("primval") || target.closest(".media-listing-item").data("primval"),
+        holder = target.closest(".embedded-media-listing"),
         field = holder.attr("data-field"),
         url = holder.attr("data-new-join-url");
 
