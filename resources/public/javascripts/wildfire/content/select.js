@@ -7,7 +7,7 @@ jQuery(document).ready(function(){
         if(!option.val()){
           placeholder = option.html();
           option.html("");
-          select2.select2({placeholder:placeholder}); //would be nice if there would be a setter for the placeholder
+          select2.select2({width:"resolve",allowClear: true,placeholder:placeholder}); //would be nice if there would be a setter for the placeholder
         }
 
   });
