@@ -36,28 +36,42 @@ jQuery(document).ready(function(){
         primval = target.data("primval") || target.closest(".media-listing-item").data("primval"),
         holder = target.closest(".embedded-media-listing"),
         field = holder.attr("data-field"),
-        url = holder.attr("data-new-join-url");
+        url = holder.attr("data-new-join-url"),
+        join_class = holder.attr("data-join-class");
+        join_id = holder.attr("data-join-id");
+        join_field = holder.attr("data-join-field");;
 
     jQuery.ajax({
       "url":url,
       "data":{
         "target_id":primval,
-        "field":field
+        "field":field,
+        "join_class":join_class,
+        "join_id":join_id,
+        "join_field":join_field
       },
       "success":function(result){
-        var fieldset = target.closest("fieldset");
+        var fieldset = target.closest("fieldset"),
+            button = fieldset.find("#row_"+primval+" .operation_add"),
+            button_link = button.attr("href");
+
         fieldset.trigger("add-media", result);
-        fieldset.find("a[data-primval='"+primval+"']").addClass("remove-button").removeClass("add-button").text("REMOVE");
+        button.addClass("operation_remove").removeClass("operation_add").text("Remove").attr("href",button_link.replace("\/add\/","\/remove\/"));
         jQuery(window).trigger("join.files.highlight");
         jQuery(window).trigger("join.added");
       }
     });
   });
-  jQuery(".button.remove-button").live("click", function(e){
+  jQuery(".button.operation_remove, .button.remove-button").live("click", function(e){
     e.preventDefault();
-    var primval = jQuery(this).data("primval"),
-        field = jQuery(this).closest(".media-listing, .existing-files").attr("data-field");
-    jQuery("a[data-primval='"+primval+"']").addClass("add-button").removeClass("remove-button").text("ADD");
+    var primval = jQuery(this).data("primval") || jQuery(this).closest(".media-listing-item").data("primval"),
+        fieldset = jQuery(this).closest("fieldset"),
+        field = fieldset.find(".embedded-media-listing").attr("data-field"),
+        
+        button = fieldset.find("#row_"+primval+" .operation_remove"),
+        button_link = button.attr("href");
+
+    button.addClass("operation_add").removeClass("operation_remove").text("Add").attr("href",button_link.replace("\/remove\/","\/add\/"));
     jQuery(".f_"+field+"_"+primval).remove();
     jQuery(window).trigger("join.files.highlight");
     jQuery(window).trigger("join.removed");
