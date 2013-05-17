@@ -58,6 +58,12 @@ jQuery(document).ready(function(){
 
         fieldset.trigger("add-media", result);
         button.addClass("operation_remove").removeClass("operation_add").text("Remove").attr("href",button_link.replace("\/add\/","\/remove\/"));
+
+        $(".media-listing-item").hoverIntent(
+          function(){$(this).toggleClass("hovered");},
+          function(){$(this).toggleClass("hovered");}
+        );
+        
         jQuery(window).trigger("join.files.highlight");
         jQuery(window).trigger("join.added");
       }
