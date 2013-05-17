@@ -4,7 +4,7 @@ jQuery(document).ready(function(){
     jQuery(".joined-to-model").removeClass("joined-to-model");
     jQuery(".joined-file").each(function(){
       var primval = jQuery(this).data("primval");
-      jQuery(this).closest("fieldset").find(".file-listing #row_"+primval).addClass("joined-to-model");
+      jQuery(this).closest("fieldset").find("#data-listing #row_"+primval).addClass("joined-to-model");
     });
   });
 
@@ -26,6 +26,7 @@ jQuery(document).ready(function(){
   jQuery(".embedded-media-listing").closest("fieldset").bind("add-media", function(e, result){
     var existing = jQuery(this).find(".existing-files").append(result);
     existing.find(".joined-file:last .join-order-field").val(existing.find(".joined-file").length);
+    existing.find('select.media-type-selector').select2({allowClear:true});
   });
 
   //on click we will now copy that
