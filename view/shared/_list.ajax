@@ -13,10 +13,10 @@ if(($tc = get_class($model)) && ($pid = $current_user->restricted_tree($tc))){
 ?>
 <?foreach($model_filters as $filter) if($filter) $actual_filters = 1?>
 <?if($model instanceof WaxTreeModel && !$actual_filters):?>
-<table class='data_table empty_data_table' data-action="/<?=trim($controller,"/")?>/_list">
+<table class='data_table empty_data_table' data-action="/<?=trim($controller,"/")?>/" data-view="_list">
 </table>
 <?elseif($cms_content):?>
-<table class='data_table' data-action="/<?=trim($controller,"/")?>/_list">
+<table class='data_table' data-action="/<?=trim($controller,"/")?>/" data-view="_list">
   <?if(Request::param('show_cols')):?>
   <thead>
     <tr>
@@ -51,7 +51,7 @@ if(($tc = get_class($model)) && ($pid = $current_user->restricted_tree($tc))){
   </tbody>
 </table>
 <?else:?>
-<table class='data_table' data-action="/<?=trim($controller,"/")?>/_list">
+<table class='data_table' data-action="/<?=trim($controller,"/")?>/" data-view="_list">
   <tr><td>No data</td></tr>
 </table>
 <?endif?>

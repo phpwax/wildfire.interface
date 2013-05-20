@@ -11,8 +11,8 @@ if(($tc = get_class($model)) && ($pid = $current_user->restricted_tree($tc))){
 }
 ?>
 <?if($cms_content && $scaffold_columns):?>
-<table class='data_table<?if($uploads && $preview_hover):?> preview-hover <?elseif($uploads && $preview_click):?> preview-click <?endif?>' data-action="/<?=trim($controller,"/")?>/_list">
-  <?if($model_filters):?>
+<table class='data_table<?if($uploads && $preview_hover):?> preview-hover <?elseif($uploads && $preview_click):?> preview-click <?endif?>' data-action="/<?=trim($controller,"/")?>/" data-view="_list">
+  <?if($model_filters || !$tree_layout):?>
     <thead>
       <tr>
       <?foreach($scaffold_columns as $col=>$info):?>
@@ -46,7 +46,7 @@ if(($tc = get_class($model)) && ($pid = $current_user->restricted_tree($tc))){
   <?endif?>
 </table>
 <?else:?>
-<table class='data_table' data-action="/<?=trim($controller,"/")?>/_list">
+<table class='data_table' data-action="/<?=trim($controller,"/")?>/" data-view="_list">
   <tr><td>No data</td></tr>
 </table>
 <?endif?>

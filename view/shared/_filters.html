@@ -10,7 +10,7 @@
   class='filters_container'
   id="filters_container"
   data-replace=".data_table"
-  data-action="/admin/<?=$module_name?>/_list.ajax?show_cols=1"
+  data-action="/admin/<?=$module_name?>/?show_cols=1" data-view="_list"
 >
   <?foreach(array_diff_key($_GET, array("route"=>0, "filters"=>0)) as $k => $v):?>
     <input type="hidden" name="<?=$k?>" value="<?=$v?>">

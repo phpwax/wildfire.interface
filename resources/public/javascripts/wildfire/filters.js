@@ -3,8 +3,11 @@ function filter_list(trigger_element, replace){
       data = {},
       fieldset = trigger_element.closest("fieldset.filters_container"),
       dest = fieldset.attr('data-action'),
-      r = fieldset.attr('data-replace')
+      r = fieldset.attr('data-replace'),
+      use_view = false;
       ;
+
+  if(use_view = fieldset.attr("data-view")) data.use_view = fieldset.attr("data-view");
   form.addClass('loading');
   var new_get_params = fieldset.find("input[type='text'], select").each(function(){
     var field = jQuery(this), nm = field.attr('name'), pl = field.attr('placeholder'), val = field.val();
@@ -14,7 +17,7 @@ function filter_list(trigger_element, replace){
   jQuery.ajax({
     url:dest,
     data:data,
-    type:"post",
+    type:"get",
     success:function(res){
       form.removeClass("loading");
       if(typeof replace != "undefined") jQuery(r).replaceWith(res);
