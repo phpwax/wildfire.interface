@@ -33,16 +33,14 @@ $counter = 0;
 
     <div class='primary_form_container tabs_container clearfix'>
       <?if($count = count($grouping['primary_tabs'])):?>
-        <?if($count > 1):?>
-          <ul class='tabs_nav clearfix'>
-            <?$k=0;?>
-            <?foreach($grouping['primary_tabs'] as $name=>$info):?>
-              <?$tabhash = Inflections::to_url($name); $tabid = "tab-".$tabhash;?>
-              <li id="<?=$tabid?>" class='tab-<?=$k?> tabs_nav_item'><a href="#content_tab_<?=$tabhash?>"><?=ucwords($name)?></a></li>
-              <?$k++;?>
-            <?endforeach?>
-          </ul>
-        <?endif?>
+        <ul class='tabs_nav clearfix'>
+          <?$k=0;?>
+          <?foreach($grouping['primary_tabs'] as $name=>$info):?>
+            <?$tabhash = Inflections::to_url($name); $tabid = "tab-".$tabhash;?>
+            <li id="<?=$tabid?>" class='tab-<?=$k?> tabs_nav_item'><a href="#content_tab_<?=$tabhash?>"><?=ucwords($name)?></a></li>
+            <?$k++;?>
+          <?endforeach?>
+        </ul>
         <?foreach($grouping['primary_tabs'] as $name=>$fields):?>
           <?$tabhash = Inflections::to_url($name);?>
 
