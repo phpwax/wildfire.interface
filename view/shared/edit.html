@@ -33,22 +33,20 @@ $counter = 0;
 
     <div class='primary_form_container tabs_container clearfix'>
       <?if($count = count($grouping['primary_tabs'])):?>
-        <?if($count > 1):?>
-          <ul class='tabs_nav clearfix'>
-            <?$k=0;?>
-            <?foreach($grouping['primary_tabs'] as $name=>$info):?>
-              <?$tabhash = Inflections::to_url($name); $tabid = "tab-".$tabhash;?>
-              <li id="<?=$tabid?>" class='tab-<?=$k?> tabs_nav_item'><a href="#content_tab_<?=$tabhash?>"><?=ucwords($name)?></a></li>
-              <?$k++;?>
-            <?endforeach?>
-          </ul>
-        <?endif?>
+        <ul class='tabs_nav clearfix'>
+          <?$k=0;?>
+          <?foreach($grouping['primary_tabs'] as $name=>$info):?>
+            <?$tabhash = Inflections::to_url($name); $tabid = "tab-".$tabhash;?>
+            <li id="<?=$tabid?>" class='tab-<?=$k?> tabs_nav_item'><a href="#content_tab_<?=$tabhash?>"><?=ucwords($name)?></a></li>
+            <?$k++;?>
+          <?endforeach?>
+        </ul>
         <?foreach($grouping['primary_tabs'] as $name=>$fields):?>
           <?$tabhash = Inflections::to_url($name);?>
 
-          <fieldset class='tab-contents clearfix <?=$tabhash?>' id="content_tab_<?=$tabhash?>" >
+          <fieldset class='tab-contents clearfix <?=$tabhash?> <?if(!$grouping["secondary_tabs"]) echo 'no_meta_tabs'?>' id="content_tab_<?=$tabhash?>" >
           <?if(!$readable = CMSBaseComponent::form_group_partial_check($partial_paths, $name)) $readable = "_default_form_group";?>
-          <?=partial($readable, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base))?>
+          <?=partial($readable, array('tabhash'=>$tabhash, 'model'=>$model, 'join_model_class'=>$model_class, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base))?>
 
           <?if($grouping['secondary_tabs']):?>
             <?if($tabhash == "content"):?>
