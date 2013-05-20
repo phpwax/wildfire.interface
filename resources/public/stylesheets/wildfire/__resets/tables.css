@@ -32,6 +32,13 @@ td.on{
 .operations{
   text-align: right;
 }
+  .operations .pagination{
+    float:right;
+  }
+    .operations .pagination li{
+      float:left;
+      margin-left:5px;
+    }
 
 thead td,
 thead th{

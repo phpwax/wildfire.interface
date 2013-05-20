@@ -23,7 +23,9 @@ if(($tc = get_class($model)) && ($pid = $current_user->restricted_tree($tc))){
     <?foreach($scaffold_columns as $col=>$info):?>
     <th class='<?=Inflections::underscore($col)?>'><span><?if($model->columns[$col][1]['label']):?><?=$model->columns[$col][1]['label']?><?else:?><?=Inflections::humanize($col)?><?endif?></span></th>
     <?endforeach?>
-    <th class='operations'></th>
+    <th class='operations'>
+      <?=paginate_links($cms_content, "2")?>
+    </th>
     </tr>
   </thead>
   <?endif?>
