@@ -23,4 +23,8 @@ jQuery(function($){
     console.log(current_params);
     history.pushState({}, window.document.title, window.location.pathname+"?"+ret.join("&"));
   });
+
+  $(window).bind("autosave.completed", function(e,res){
+    history.replaceState(res, window.document.title, "/"+res.meta.controller+"/"+res.meta.action+"/"+res.meta.model.primval+"/");
+  });
 });
