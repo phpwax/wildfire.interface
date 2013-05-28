@@ -14,6 +14,18 @@
   border:none;
 }
 
+  @keyframes autosave_active{
+    from {background-color: #92ba59;}
+    to {background-color: #dfdfdf;}
+  }
+  #auto-save.autosave_active{
+    color:#ffffff;
+    font-weight:bold;
+    padding-left:26px;
+    background:#92ba59 url(/images/wildfire/backgrounds/ajax-loader.gif) no-repeat 5px center;
+    animation:autosave_active 5s;
+  }
+
   #header .button{
     text-transform: uppercase;
     border:1px solid #1a1c1f;
