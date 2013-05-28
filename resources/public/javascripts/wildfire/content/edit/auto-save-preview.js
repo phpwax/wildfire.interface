@@ -23,12 +23,9 @@ function auto_save_form(auto_saver){
       success:function(res){
         auto_save_signature = form_data;
         if(res.meta.model.primval){
-          
           //making "save for later" button behave as if we were on the new revision's edit url to avoid having 2 revisions when an autosave occurs, and then someone clicks "save for later".
-          form_container.find('input[name="revision"]').click(function(){
-            jQuery(this).attr("name", "hide"); //did this to mirror the functionality of the "save for later" button as in _submit.html for content
-            form_container.attr("action", action+res['id']); //changed action to post to the new revision's url instead, same behaviour as if autosave didn't exist
-          });
+          auto_saver.siblings('input[name="hide"]').css("display", "none");
+          auto_saver.attr("name", "hide"); //did this to mirror the functionality of the "save for later" button as in _submit.html for content
         }
         auto_saver.removeClass("autosave_active");
         jQuery(window).trigger("autosave.completed", [res]);
