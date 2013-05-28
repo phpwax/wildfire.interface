@@ -45,12 +45,13 @@ jQuery(document).ready(function(){
   auto_saver = jQuery('#auto-save');
   auto_save_time = (typeof auto_save_time_override != "undefined")?auto_save_time_override : 20000;
   auto_save_signature = auto_saver.closest("form").serialize();
-
-  setTimeout(function(){
-    //animate button green and show rotating autosaver
-    auto_interval = setInterval(function(){
-      auto_save_form(auto_saver);
-    }, auto_save_time);
-  }, 2000);
+  if(auto_saver.length){
+    setTimeout(function(){
+      //animate button green and show rotating autosaver
+      auto_interval = setInterval(function(){
+        auto_save_form(auto_saver);
+      }, auto_save_time);
+    }, 2000);
+  }
 
 });
