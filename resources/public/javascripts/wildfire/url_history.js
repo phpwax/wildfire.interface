@@ -20,7 +20,6 @@ jQuery(function($){
     $.extend(current_params, new_params);
     var ret = [];
     for(var i in current_params) ret.push(i+"="+current_params[i]);
-    console.log(current_params);
     history.pushState({}, window.document.title, window.location.pathname+"?"+ret.join("&"));
   });
 
