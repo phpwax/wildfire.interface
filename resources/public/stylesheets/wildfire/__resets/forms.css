@@ -27,7 +27,7 @@ form{
   }
   form select{
     color:#333333;
-    max-width:200px;
+    min-width:180px;
   }
   form textarea,
   form input[type=text],
