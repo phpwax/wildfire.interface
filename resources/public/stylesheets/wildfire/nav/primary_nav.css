@@ -8,3 +8,7 @@
 #primary_navigation li a:hover{
   color:#136ea2;
 }
+#primary_navigation li b{
+  display:inline-block;
+  width:20px;
+}
