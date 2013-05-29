@@ -7,7 +7,7 @@ var auto_save_signature,
 function auto_save_form(auto_saver){
 
   var form_container = auto_saver.closest("form"),
-      form_data = form_container.serialize()+"&"+auto_saver.attr("name")+"=1";
+      form_data = form_container.serialize();
       ;
 
   if(auto_save_signature != form_data){
@@ -16,7 +16,7 @@ function auto_save_form(auto_saver){
 
     jQuery.ajax({
       url:window.location.pathname+".json"+window.location.search,
-      data:form_data,
+      data:form_data+"&"+auto_saver.attr("name")+"=1",
       type:"post",
       dataType:"json",
       async:true,
