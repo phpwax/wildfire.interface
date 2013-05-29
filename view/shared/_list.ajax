@@ -15,7 +15,7 @@ if(($tc = get_class($model)) && ($pid = $current_user->restricted_tree($tc))){
 <?if($model instanceof WaxTreeModel && !$actual_filters):?>
 <table class='data_table empty_data_table' data-action="/<?=trim($controller,"/")?>/" data-view="_list">
 </table>
-<?elseif($cms_content):?>
+<?elseif($cms_content->count()):?>
 <table class='data_table' data-action="/<?=trim($controller,"/")?>/" data-view="_list">
   <?if(Request::param('show_cols')):?>
   <thead>

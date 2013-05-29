@@ -10,6 +10,7 @@
 
 b{
   font-family:'Entypo';
+  font-weight:normal;
   font-size:30px;
   vertical-align:middle;
   margin-right:5px;
@@ -25,6 +26,7 @@ b.entypo-icon-content:before{ content: "📰"; }
 b.entypo-icon-categories:before{ content: ""; }
 b.entypo-icon-media:before{ content: "📁"; }
 b.entypo-icon-redirect:before{ content: "🔙"; }
+b.entypo-icon-customformbuilder:before{ content: "📋"; }
 b.entypo-icon-close:before{ content: "❎"; }
 b.entypo-icon-alert:before{ content: "💥"; color:red; }
 

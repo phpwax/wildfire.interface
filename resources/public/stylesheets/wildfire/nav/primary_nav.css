@@ -5,6 +5,10 @@
   text-decoration: none;
   font-weight:600;
 }
-#primary_navigation li a:hover{
+#primary_navigation li a:hover, #primary_navigation li a.active{
   color:#136ea2;
+}
+#primary_navigation li b{
+  display:inline-block;
+  width:20px;
 }
