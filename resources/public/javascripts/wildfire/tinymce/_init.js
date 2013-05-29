@@ -1,48 +1,31 @@
 var tinymce_config = {
       // Location of TinyMCE script
-      script_url : '/tinymce/jscripts/tiny_mce/tiny_mce.js',
+      script_url : '/tinymce/js/tinymce/tinymce.min.js',
       relative_urls: false,
-      theme: 'advanced',
-      skin:'o2k7',
-      skin_variant : "silver",
+      theme: 'modern',
       width:'100%',
       height:300,
       autoresize_min_height: 300,
       autoresize_max_height: 300,
       //
-      plugins: 'directionality,jqueryinlinepopups,paste,wflink,wfimage,wfhtml,wftable,wftemplate,autoresize',
-      theme_advanced_blockformats: "p,h2,h3,h4,blockquote,h6",
+      plugins: 'paste,table,image,media,link,code,wftemplate,autoresize,wordcount',
       content_css: "/stylesheets/build/wildfire-templates_combined.css",
-      // Theme options
-    	theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink,image,|,hr,|,code,|,table,|,row_before,row_after,delete_row,|,col_before,col_after,delete_col",
-    	theme_advanced_buttons2 : "formatselect,template",
-    	theme_advanced_buttons3 : "",
-    	theme_advanced_buttons4 : "",
-    	theme_advanced_toolbar_location : "top",
-    	theme_advanced_toolbar_align : "left",
-    	theme_advanced_statusbar_location : "bottom",
-    	theme_advanced_resizing : false
+
     	//
+      //TODO - list to document files
+      //link_list: [
+      //    {title: 'My page 1', value: 'http://www.tinymce.com'},
+      //    {title: 'My page 2', value: 'http://www.moxiecode.com'}
+      //]
     },
     simpletinymce_config = {
       // Location of TinyMCE script
       script_url : '/tinymce/jscripts/tiny_mce/tiny_mce.js',
       relative_urls: false,
-      theme: 'advanced',
-      skin:'o2k7',
-      skin_variant : "silver",
+      theme: 'modern',
       width:'100%',
       //
-      plugins: 'directionality,jqueryinlinepopups,paste,wflink,autoresize',
-      // Theme options
-  		theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,link,unlink,|,hr",
-  		theme_advanced_buttons2 : "",
-  		theme_advanced_buttons3 : "",
-  		theme_advanced_buttons4 : "",
-  		theme_advanced_toolbar_location : "top",
-  		theme_advanced_toolbar_align : "left",
-  		theme_advanced_statusbar_location : "bottom",
-  		theme_advanced_resizing : false
+      plugins: 'paste,autoresize',
   		//
     }
     ;
