@@ -47,6 +47,6 @@ if(($tc = get_class($model)) && ($pid = $current_user->restricted_tree($tc))){
 </table>
 <?else:?>
 <table class='data_table' data-action="/<?=trim($controller,"/")?>/" data-view="_list">
-  <tr><td>No data</td></tr>
+  <tr><td>Not found</td></tr>
 </table>
 <?endif?>
