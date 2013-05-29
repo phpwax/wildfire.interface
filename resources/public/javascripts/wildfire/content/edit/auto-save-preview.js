@@ -22,6 +22,7 @@ function auto_save_form(auto_saver){
       async:true,
       success:function(res){
         auto_save_signature = form_data;
+        if(res.meta.message_render) jQuery("ul.messages").replaceWith(res.meta.message_render);
         if(res.meta.model.primval){
           //making "save for later" button behave as if we were on the new revision's edit url to avoid having 2 revisions when an autosave occurs, and then someone clicks "save for later".
           auto_saver.siblings('input[name="hide"]').css("display", "none");
