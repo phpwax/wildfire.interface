@@ -12,3 +12,11 @@
   display:inline-block;
   width:20px;
 }
+
+#primary_navigation li.subtop{
+  margin-left:50px;
+  padding:4px 0;
+}
+  #primary_navigation li.subtop a{
+    font-weight: 300;
+  }
