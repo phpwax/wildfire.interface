@@ -2,7 +2,7 @@
   <div class="raised">
     <?foreach($fields as $n=>$f):?>
     <?$nm = Inflections::to_url($n)?>
-    <?if($f->widget != "HiddenInput"):?><div class='field field-<?=$nm?> field-<?=$tabhash?>-<?=$nm?> <?=$model_class?>-<?=$nm?> clearfix'><?endif?>
+    <?if($f->widget != "HiddenInput"):?><div class='field fieldw-<?=strtolower($f->widget)?> field-<?=$nm?> field-<?=$tabhash?>-<?=$nm?> <?=$model_class?>-<?=$nm?> clearfix'><?endif?>
     <?=$f->render(array('placeholder'=>$f->label))?>
     <?if($f->widget != "HiddenInput"):?></div><?endif?>
     <?endforeach?>

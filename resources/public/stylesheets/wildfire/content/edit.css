@@ -1,6 +1,13 @@
 .edit_fields .field{
   padding:15px;
+  display: inline-block;
 }
+
+.edit_fields .fieldw-tinymcetextareainput{
+  display:block;
+  clear:both;
+}
+
 .edit_fields .field-content{
   padding:0;
   margin:0;
@@ -21,8 +28,9 @@
   border:none;
 }
 
+.edit_fields .ObbContent-title,
 #wildfire_content_title{
-  width:50%;
+  width:100%;
 }
 
 .form-submit input[type=submit]{
