@@ -22,23 +22,32 @@
     border:none;
     border-top:1px solid #dfdfdf;
   }
-  .edit_fields,.meta_tabs{
-    float:left;
+  .edit_fields,
+  .meta_tabs{
+    float:none;
   }
   .edit_fields{
+    width:100%;
+    padding:0px;
+  }
+
+  fieldset.media .edit_fields{
+    float:left;
     width:70%;
     padding-right:10px;
   }
-    .no_meta_tabs .edit_fields{
-      width:100%;
-      padding-right:0;
-    }
+  fieldset.media .meta_tabs{
+    float:left;
+    width:30%;
+    margin-top:0;
+  }
   .edit_fields .raised{
     background:white;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
   }
   .meta_tabs{
-    width:30%;
+    width:100%;
+    margin-top:10px;
   }
     .meta_tabs .edit_fields{
       width:100%;
@@ -89,3 +98,9 @@
   .dashboard_content .row:last-child{
     border-bottom-width:0;
   }
+
+
+.media-listing-wrapper{
+  max-height: 600px;
+  overflow: auto;
+}

@@ -17,6 +17,7 @@ form{
     }
     form fieldset.submit{
       padding:0;
+      float:right;
     }
   form label{
     font-size:131%;
