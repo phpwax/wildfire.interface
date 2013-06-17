@@ -100,7 +100,7 @@
   }
 
 
-.media-listing-wrapper{
+fieldset .media-listing-wrapper{
   max-height: 600px;
   overflow: auto;
 }
