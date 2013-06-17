@@ -16,7 +16,6 @@
   display:block;
   margin-bottom:10px;
 }
-#cms-content .edit_fields .field-title label,
 #cms-content .edit_fields .field-content label{
   display:none;
 }
@@ -28,7 +27,7 @@
   border:none;
 }
 
-.edit_fields .ObbContent-title,
+.edit_fields .field-title,
 #wildfire_content_title{
   width:100%;
 }
