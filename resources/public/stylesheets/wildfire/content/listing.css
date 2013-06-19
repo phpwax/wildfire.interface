@@ -47,7 +47,7 @@ span.live{
 .tree_node .children_link{
   height:35px;
   padding-top:20px;
-  width: 45%;
+  width: auto;
   text-align: left;
 }
 .tree_node .view_children_link{
@@ -67,7 +67,7 @@ span.live{
   font-size:93%;
   display: block;
   color:#b3b3b3;
-  float:left;
+  float:right;
 }
 
 .tree_node.open{

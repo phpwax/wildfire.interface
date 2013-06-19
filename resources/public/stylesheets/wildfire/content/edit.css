@@ -28,7 +28,7 @@
 }
 
 .edit_fields .field-title,
-#wildfire_content_title{
+.edit_fields .field-title input{
   width:100%;
 }
 

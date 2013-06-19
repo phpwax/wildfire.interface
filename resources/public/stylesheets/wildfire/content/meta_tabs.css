@@ -78,3 +78,9 @@
     max-height: 250px;
     overflow: auto;
   }
+
+  .joins .join{
+    float:left;
+    width:50%;
+    padding-right:10px;
+  }
