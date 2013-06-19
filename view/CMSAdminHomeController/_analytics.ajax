@@ -104,7 +104,6 @@
 
   <div class='analytics_block'>
     <h3>Browsers</h3>
-    <div class="donut_enabler"></div>
     <div class='graph_wrapper'>
       <div class='chart' id="overall-browser-data-graph"></div>
       <script type="text/javascript">
