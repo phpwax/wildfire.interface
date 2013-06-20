@@ -78,7 +78,15 @@ span.live{
   }
 
 
+#cms-content .listing.search-result-list{
+  padding:10px;
+  background:#f5f5f5;
+}
 
 .tree_depth_1{margin-left:25px;}
 .tree_depth_2{margin-left:50px;}
 .tree_depth_3{margin-left:75px;}
+.tree_depth_4{margin-left:100px;}
+.tree_depth_5{margin-left:125px;}
+
+

@@ -22,9 +22,11 @@ function filter_list(trigger_element, replace){
       form.removeClass("loading");
       if(typeof replace != "undefined") jQuery(r).replaceWith(res);
       else fieldset.closest(".filter-block-and-listing").find(r).replaceWith(res);
+
       jQuery(window).trigger("filter.trigger");
       jQuery(window).trigger("join.files.highlight");
       $(window).trigger("update_url", new_get_params);
+      jQuery("#data-listing").addClass("search-result-list");
     },
     error:function(){
       jQuery(window).trigger("filter.trigger");
@@ -54,6 +56,7 @@ function inline_filter(form_input){
     data:data,
     type:"post",
     success:function(res){
+
       form_input.removeClass('loading');
       form_input.siblings("ul").replaceWith(res);
     },
