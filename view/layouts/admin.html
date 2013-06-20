@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" id="cms-<?=Inflections::underscore($display_name)?>" class="clearfix <?if(Request::param('print')):?>print-view-of-page<?endif?>">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-	<?=partial("_cf")?>
+  <?=partial("_cf")?>
 
 
   <?foreach(CMSApplication::get_registered_assets("wildfire", "css") as $asset):?>
@@ -12,11 +12,11 @@
 
   <?=css_bundle("wildfire-overwrites", array('media'=>'all'))?>
 
-	<title><?=($ident = $model->{$model->identifier})?"$ident - ":''?><?=($action && $action != "index")?ucfirst($action)." - ":''?><?=$display_name?"$display_name - ":''?>Wildfire</title>
+  <title><?=($ident = $model->{$model->identifier})?"$ident - ":''?><?=($action && $action != "index")?ucfirst($action)." - ":''?><?=$display_name?"$display_name - ":''?>Wildfire</title>
 </head>
 
 <body id="v7-1-cms" class='wildfire'>
-	<div id="header">
+  <div id="header">
     <h1 class="brand" id="logo"><a href="/admin/home/"><span>WildFire</span></a></h1>
     <div class='clearfix full buttons_and_search'>
     <?WaxEvent::run("cms.layout.sublinks", $this);?>
