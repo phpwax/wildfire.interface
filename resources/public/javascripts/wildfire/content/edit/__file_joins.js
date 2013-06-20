@@ -1,5 +1,5 @@
 jQuery(document).ready(function(){
-  
+
   jQuery(window).bind("join.files.highlight", function(){
     jQuery(".joined-to-model").removeClass("joined-to-model");
     jQuery(".joined-file").each(function(){
@@ -63,7 +63,7 @@ jQuery(document).ready(function(){
           function(){$(this).toggleClass("hovered");},
           function(){$(this).toggleClass("hovered");}
         );
-        
+
         jQuery(window).trigger("join.files.highlight");
         jQuery(window).trigger("join.added");
       }
@@ -71,15 +71,21 @@ jQuery(document).ready(function(){
   });
   jQuery(".button.operation_remove, .button.remove-button").live("click", function(e){
     e.preventDefault();
-    var primval = jQuery(this).data("primval") || jQuery(this).closest(".media-listing-item").data("primval"),
-        fieldset = jQuery(this).closest("fieldset"),
-        field = fieldset.find(".embedded-media-listing").attr("data-field"),
-        
-        button = fieldset.find("#row_"+primval+" .operation_remove"),
-        button_link = button.attr("href");
+    var item = jQuery(this),
+          primval = jQuery(this).data("primval") || jQuery(this).closest(".media-listing-item").data("primval"),
+          fieldset = jQuery(this).closest("fieldset"),
+          field = fieldset.find(".embedded-media-listing").attr("data-field"),
+          buttons = fieldset.find("#row_"+primval+" .operation_remove, #row_"+primval+" .remove-button")
+          ;
 
-    button.addClass("operation_add").removeClass("operation_remove").text("Add").attr("href",button_link.replace("\/remove\/","\/add\/"));
+    buttons.each(function(){
+      var b = jQuery(this);
+      if(b.hasClass("operation_remove")) b.addClass("operation_add").removeClass("operation_remove");
+      else b.addClass("add-button").removeClass("remove-button");
+      b.text("Add").attr("href", b.attr("href").replace("\/remove\/","\/add\/"));
+    });
     jQuery(".f_"+field+"_"+primval).remove();
+    jQuery("#row_"+primval).removeClass("joined-to-model");
     jQuery(window).trigger("join.files.highlight");
     jQuery(window).trigger("join.removed");
   });
