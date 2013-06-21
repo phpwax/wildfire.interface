@@ -13,6 +13,10 @@
   background: #dfdfdf;
   border:none;
 }
+  .button:hover,
+  form input[type=submit].button:hover{
+    background:#cdcdcd;
+  }
 
   @keyframes autosave_active{
     from {background-color: #92ba59;}
