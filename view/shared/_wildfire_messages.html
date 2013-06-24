@@ -8,7 +8,7 @@
   $session->unset_var("messages");
 ?>
 <ul class="messages">
-  <?foreach($messages as $message):?>
+  <?foreach((array)$messages as $message):?>
     <?if(is_array($message)){
       $class = $message['class'];
       $message = $message['message'];
