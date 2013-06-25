@@ -1,16 +1,19 @@
 #primary_navigation li{
   margin-left:20px;
+  padding:4px 0;
 }
 #primary_navigation li a{
   text-decoration: none;
   font-weight:600;
 }
-#primary_navigation li a:hover, #primary_navigation li a.active{
+#primary_navigation li a:hover,
+#primary_navigation li a.active{
   color:#136ea2;
 }
 #primary_navigation li b{
   display:inline-block;
   width:20px;
+  line-height: 0em;
 }
 
 #primary_navigation li.subtop{
