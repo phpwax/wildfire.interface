@@ -28,4 +28,22 @@
 .design_preview iframe{
   height:500px;
   border:none;
+  margin:0 auto;
+  display:block;
 }
+.responsive_switcher{
+  float:right;
+}
+  .responsive-setting{
+    display:block;
+    float:left;
+    margin-left:10px;
+    padding:6px;
+  }
+  .responsive-setting:hover{
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  }
+  .active-responsive,
+  .active-responsive:hover{
+    box-shadow: 0 0 8px rgba(19,110,162,0.4);
+  }
