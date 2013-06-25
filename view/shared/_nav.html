@@ -8,20 +8,25 @@
     return $ai > $bi;
   })?>
   <?foreach($allowed_modules as $i=>$info):?>
+    <?$has_sub = count($info['subs']);?>
     <?if($info['hidden'] != true):?>
-      <li class='top <?=$i?>'>
+      <li class='top <?=$i?> <?if($i == $module_name):?> opened<?endif?>'>
         <a
           href="<?=$info['link']?><?=(($cachelink)?"?rand=".rand():"")?>"
           class='<?=$i?>-link <?if($i == $module_name):?> active<?endif?>'>
+             <?if($has_sub):?><b class="entypo-icon-sub"></b><?endif?>
              <b class="entypo-icon-<?=$i?>"></b><?=$info['display_name']?>
         </a>
-      </li>
+      <?if($has_sub):?>
+      <ul class='subnav'>
       <?foreach((array)$info['subs'] as $name=>$subinfo):?>
         <li class='top subtop'>
           <a href="<?=$subinfo?>"><?=$name?></a>
         </li>
       <?endforeach?>
-
+      </ul>
+      <?endif?>
+      </li>
     <?endif?>
   <?endforeach?>
 </ul>

@@ -15,6 +15,12 @@ b{
   vertical-align:middle;
   margin-right:5px;
 }
+b.entypo-icon-sub{
+  float:right;
+  margin-top:8px;
+  margin-right:0;
+  margin-left:5px;
+}
 .button b{
   font-size:25px;
 }
@@ -29,6 +35,8 @@ b.entypo-icon-redirect:before{ content: "🔙"; }
 b.entypo-icon-customformbuilder:before{ content: "📋"; }
 b.entypo-icon-close:before{ content: "❎"; }
 b.entypo-icon-alert:before{ content: "💥"; color:red; }
+b.entypo-icon-sub:before{ content: ""; }
+.active b.entypo-icon-sub:before{ content: ""; }
 
 .has-children b.entypo-icon-expand:before{ content: "↳"; }
 .has-children .open b.entypo-icon-expand:before{ content: "↰"; }
