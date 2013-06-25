@@ -35,6 +35,7 @@ b.entypo-icon-redirect:before{ content: "🔙"; }
 b.entypo-icon-customformbuilder:before{ content: "📋"; }
 b.entypo-icon-close:before{ content: "❎"; }
 b.entypo-icon-alert:before{ content: "💥"; color:red; }
+b.entypo-icon-advertising:before{ content: "⚑"; }
 b.entypo-icon-sub:before{ content: ""; }
 .active b.entypo-icon-sub:before{ content: ""; }
 

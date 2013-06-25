@@ -1,18 +1,18 @@
 .messages li{
   color:#fff;
-  background: #36424A;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
-  padding: 4px 8px;
-  margin: 10px 0;
-  -webkit-box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
-  -moz-box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
-  font-weight: bold;
-  font-size: 108%;
-  text-shadow: 1px 1px 2px #000;
+  background:#36424A;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  -khtml-border-radius:5px;
+  border-radius:5px;
+  padding:4px 8px;
+  margin:10px 0;
+  -webkit-box-shadow:inset 0 0 8px rgba(0,0,0,0.25);
+  -moz-box-shadow:inset 0 0 8px rgba(0,0,0,0.25);
+  box-shadow:inset 0 0 8px rgba(0,0,0,0.25);
+  font-weight:bold;
+  font-size:108%;
+  text-shadow:1px 1px 2px #000;
 }
 .messages a{
   color:#fff;
@@ -26,34 +26,45 @@
 .messages .icon{
   display:block;
   float:left;
-  width:28px;
+  width:19px;
   height:28px;
-  margin-right:6px;
-  background:transparent url(/images/wildfire/icons/info.png) center center no-repeat;
+  margin-right:0px;
+  font-family:"Entypo";
+  font-size:35px;
+  line-height:0.8;
+}
+.messages .icon:after{
+  content:"ℹ";
 }
 .messages .warning{
   background:#333333;
 }
-.messages .warning .icon{
-  background:transparent url(/images/wildfire/icons/warning.png) center center no-repeat;
+.messages .warning .icon:after{
+  content:"!";
 }
 .messages .error{
   background:#7f1b2f;
 }
-.messages .error .icon{
-  background:transparent url(/images/wildfire/icons/error.png) center center no-repeat;
+.messages .error .icon:after{
+  content:"❌";
 }
 .messages .confirm{
   background:#2a4106;
 }
-.messages .confirm .icon{
-  background:transparent url(/images/wildfire/icons/confirm.png) center center no-repeat;
+.messages .confirm .icon:after{
+  content:"✓";
 }
 .messages .close_button{
   display:block;
   float:right;
   width:14px;
   height:14px;
-  margin-top:7px;
-  background:transparent url(/images/wildfire/icons/white-cross.png) center center no-repeat;
+  font-family:"Entypo";
+  font-size:35px;
+  line-height:0.9;
+  text-decoration:none;
+  margin-right:5px;
+}
+.messages .close_button:after{
+  content:"✖";
 }
