@@ -4,6 +4,7 @@
   background:#333333;
   position:fixed;
   border-bottom:4px solid #136ea2;
+  z-index:1;
 }
 
   #header #logo a{
