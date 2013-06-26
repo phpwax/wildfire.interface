@@ -47,3 +47,8 @@
   .active-responsive:hover{
     box-shadow: 0 0 8px rgba(19,110,162,0.4);
   }
+
+
+#overlay .field.field-pagetype{
+  padding:0;
+}

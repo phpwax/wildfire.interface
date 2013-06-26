@@ -33,7 +33,7 @@ jQuery(document).ready(function(){
   }
 
   function help_event(dom_event, ui, e, index, area){
-    //restore from event if its set
+    //restore from event if its set (accordion triggers where event runs higher in dom etc)
     if(ui && ui.newHeader){
       var data = ui.newHeader.data();
       e = data.help.e;
@@ -73,9 +73,11 @@ jQuery(document).ready(function(){
     for(var i in step.elements){
       var e = step.elements[i];
       //see if there is anything to trigger (to show alternative tabs etc)
-      if(e.trigger){
+      if(e.trigger && e.trigger.listen_selector){
         jQuery(e.trigger.listen_selector).one(e.trigger.listen, help_event);
         jQuery(e.trigger.selector).data("help", {e:e, area:area, index:index}).trigger(e.trigger.event);
+      }else if(e.trigger){
+        jQuery(e.trigger.selector).one(e.trigger.event, help_event).trigger(e.trigger.event, [false, e, index, area]);
       }else help_event(false, false, e, index, area);
 
     }
