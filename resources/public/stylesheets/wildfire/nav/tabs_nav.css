@@ -1,14 +1,14 @@
-.tabs_container .tabs_nav{
+html .tabs_nav{
   background:none;
   border:none;
   padding:.2em 10px 0;
 }
-.tabs_container .tabs_nav li.tabs_nav_item{
+html .tabs_nav li.tabs_nav_item{
  float:left;
  border:none;
  background:none;
 }
-.tabs_container .tabs_nav li a{
+html .tabs_nav li a{
   display:block;
   padding:20px;
   text-decoration:none;
@@ -16,10 +16,10 @@
   border-bottom:1px solid transparent;
   outline:none;
 }
-  .tabs_container .tabs_nav li a:hover{
+  html .tabs_nav li a:hover{
     background:#f8f7f7;
   }
-  .tabs_container .tabs_nav li.ui-state-active a{
+  html .tabs_nav li.ui-state-active a{
     font-weight:bold;
     background:#f0f0f0;
     border-top:1px solid #dfdfdf;
@@ -28,4 +28,8 @@
     border-bottom:none;
     position:relative;
     bottom:-1px;
+  }
+
+  html #overlay .tabs_nav{
+    background:#fff;
   }
