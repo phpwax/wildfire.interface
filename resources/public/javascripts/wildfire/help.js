@@ -26,7 +26,7 @@ jQuery(document).ready(function(){
       var curr = jQuery("#overlay").attr("data-active");
       e.preventDefault();
       overlay.hide().html("");
-      jQuery(window).trigger("locationclear");
+      window.location.hash="";
       jQuery("#overlay,body").attr("data-active", 0); //reset the active point
       jQuery("body").removeClass("help-running").removeClass("ha-"+curr);
     });
