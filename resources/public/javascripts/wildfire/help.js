@@ -14,7 +14,7 @@ jQuery(document).ready(function(){
 
   function add_introduction(intro){
     var overlay = jQuery("#overlay");
-    overlay.append("<div class='intro'><a href='' class='close_help_button'>&nbsp;</a><a href='' id='logo'><img src='/images/wildfire/logos/white-small.png' alt='Wildfire logo'></a> "+intro+"</div><div class='controls'></div><div class='steps'></div>");
+    overlay.append("<div class='intro'><a href='' class='close_help_button'>&nbsp;</a><a href='' class='logo'>&nbsp;</a> "+intro+"</div><div class='controls'></div><div class='steps'></div>");
     jQuery(".close_help_button").on("click", function(e){
       var curr = jQuery("#overlay").attr("data-active");
       e.preventDefault();
@@ -103,7 +103,6 @@ jQuery(document).ready(function(){
       url:target,
       dataType:"json",
       success:function(res){
-        TIMER.stop();
         jQuery("body").addClass("help-running");
         insert_overlay();
         add_introduction(res.introduction);

@@ -1,0 +1,41 @@
+<?
+$data =array(
+  'introduction'=>"<p>This dashboard contains a summary of recent content and some analytic highlights.</p>",
+  'steps'=> array(
+    //0
+    array(
+      'elements'=>array(
+        array(
+          'selector'=> '.dashboard_index .draft-content',
+          'copy'=>'This field allows you to filter the listing below by name.',
+          'position'=>array('top'=>'-25', 'left'=>'-10')
+        )
+      )
+    ),
+    //1
+    array(
+      'elements'=>array(
+        array(
+          'selector'=> '#client_filters form span:first-child input',
+          'copy'=>'Here you can search for the fee by name',
+          'position'=>array('top'=>'-35', 'left'=>'-10') //x,y relative to selectors position
+        )
+      )
+    ),
+    //2
+    array(
+      'elements'=>array(
+        array(
+          'selector'=> '.pagination_top',
+          'copy'=>'To reduce the length of the listing it is split in to groups of 15; click on the numbers to swap pages. It also has options to export this data in various formats.',
+          'position'=>array('top'=>'-55', 'left'=>'-20')
+        )
+      )
+    )
+
+  )
+);
+
+?>
+
+<?=json_encode($data);?>

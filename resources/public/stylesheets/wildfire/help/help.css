@@ -20,6 +20,28 @@
 #overlay{
   overflow-y:hidden;
 }
+  #overlay .logo{
+    float:left;
+    width:160px;
+    height:62px;
+    margin-left:20px;
+    background:url('/images/wildfire/logos/white-small.png') no-repeat left center;
+    text-decoration: none;
+  }
+
+
+  .close_help_button{
+    position:fixed;
+    right:5px;
+    top:10px;
+    z-index:20;
+    background:url("/images/wildfire/help/icons/close.png") no-repeat center center;
+    width:14px;
+    height:14px;
+    display:block;
+    text-decoration: none;
+  }
+
 #overlay .helpcopy,
 #overlay .fallbackhelpcopy{
   color:#fff;
@@ -29,14 +51,14 @@
   padding-left:20px;
 }
 #overlay .helpcopy{
-  background:url('/images/wildfire/help/icons/help-arrow.png') no-repeat bottom left;
+  background:url('/images/wildfire/help/icons/arrow.png') no-repeat bottom left;
 }
   #overlay .helpbelow{
-    background:url('/images/wildfire/help/icons/help-arrow-up.png') no-repeat top left;
+    background:url('/images/wildfire/help/icons/arrow-up.png') no-repeat top left;
   }
 
 #overlay .intro{
-  height:58px;
+  height:64px;
   margin: 0;
   padding:0 20px 12px 0;
   background:#136ea2;
@@ -70,6 +92,7 @@
     color:#fff;
     background:#136ea2;
     border:1px solid #fff;
+    text-decoration: none;
   }
   #overlay .next_help{
     float:right;
@@ -86,14 +109,14 @@
     float:right;
     width:16px;
     height:18px;
-    background:url('/images/wildfire/help/icons/help-next.png') no-repeat center center;
+    background:url('/images/wildfire/help/icons/next.png') no-repeat center center;
   }
   #overlay .previous_help span{
     margin-right:4px;
     float:left;
     width:16px;
     height:18px;
-    background:url('/images/wildfire/help/icons/help-previous.png') no-repeat center center;
+    background:url('/images/wildfire/help/icons/previous.png') no-repeat center center;
   }
 
   .disabled_help{
