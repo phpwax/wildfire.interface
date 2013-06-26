@@ -6,13 +6,15 @@ jQuery(document).ready(function(){
     jQuery(".help").show();
   });
 
-  function insert_overlay(){
+  function overlay_resize(){
     var over = jQuery("#overlay"),
           h = jQuery(document).outerHeight(),
           w = jQuery(document).outerWidth()
-        ;
-
+          ;
     over.css({"height":h, "width":w, "top":0, "left":0, "position":"absolute", "z-index":350, 'background':'rgba(0,0,0,0.8)'}).show();
+  }
+  function insert_overlay(){
+    overlay_resize();
     jQuery(document).scrollTop(0);
 
   }
@@ -30,15 +32,25 @@ jQuery(document).ready(function(){
     });
   }
 
-  function help_event(dom_event, e, index, area){
+  function help_event(dom_event, ui, e, index, area){
+    //restore from event if its set
+    if(ui && ui.newHeader){
+      var data = ui.newHeader.data();
+      e = data.help.e;
+      index = data.help.index;
+      area = data.help.area;
+      overlay_resize();
+    }
+
     var  clone = jQuery(e.selector).clone(),
           dimensions = {h: jQuery(e.selector).outerHeight(), w:jQuery(e.selector).outerWidth()},
           pos = jQuery(e.selector).offset(),
           copy = (clone && clone.length) ? jQuery("<p class='helpcopy'>"+e.copy+"</p>") : jQuery("<p class='fallbackhelpcopy'>"+e.fallback_copy+"</p>"),
           t = (pos) ? (pos.top + parseFloat(e.position.top)) : 150,
           l = (pos) ? (pos.left + parseFloat(e.position.left)) : 250
-    ;
+        ;
     window.location.hash = "HELP:"+index;
+
     if(parseFloat(e.position.top) > 0) copy.addClass("helpbelow");
     copy.css({"position":"absolute", top: t, left: l}).appendTo(area);
 
@@ -62,8 +74,9 @@ jQuery(document).ready(function(){
       var e = step.elements[i];
       //see if there is anything to trigger (to show alternative tabs etc)
       if(e.trigger){
-        jQuery(e.trigger.selector).bind(e.trigger.event, help_event).trigger(e.trigger.event, [e, index, area]);
-      }else help_event(false, e, index, area);
+        jQuery(e.trigger.listen_selector).one(e.trigger.listen, help_event);
+        jQuery(e.trigger.selector).data("help", {e:e, area:area, index:index}).trigger(e.trigger.event);
+      }else help_event(false, false, e, index, area);
 
     }
   }
