@@ -26,7 +26,7 @@
   <?=partial("_nav", array("allowed_modules"=>$allowed_modules))?>
 
   <?if($has_help && in_array($action, $has_help)):?>
-    <a href="/<?=$controller?><?=$action?>/" class='help' title='Help' alt="Help">?</a>
+    <a href="/<?=rtrim($controller,"/")?>/<?=$action?>/" class='help' title='Help' alt="Help">?</a>
   <?endif?>
 
   <div id="outer">
