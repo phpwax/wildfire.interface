@@ -24,6 +24,11 @@
     </div>
   </div>
   <?=partial("_nav", array("allowed_modules"=>$allowed_modules))?>
+
+  <?if($has_help && in_array($action, $has_help)):?>
+    <a href="/<?=$controller?><?=$action?>/" class='help' title='Help' alt="Help">?</a>
+  <?endif?>
+
   <div id="outer">
     <div id="page_content" class='clearfix'>
 
@@ -36,6 +41,7 @@
       </div>
     </div>
   </div>
+
 
 <script src='//www.google.com/jsapi?'  type='text/javascript'></script>
 
@@ -60,6 +66,7 @@
 <?=js_bundle("wildfire-plugins", array(),"wildfire")?>
 
 <?=js_bundle("wildfire-overwrites", array())?>
+<div id="overlay" data-active="0"></div>
 
 </body>
 </html>

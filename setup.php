@@ -24,6 +24,8 @@ WaxEvent::add("cms.format.set", function(){
     header("Content-Disposition: attachment; filename=".$name);
     header("Pragma: no-cache");
     header("Expires: 0");
+  }elseif($obj->use_format == "help"){
+    header("Content-type: application/json");
   }elseif($obj->use_format == "zip"){
     $obj->use_view = $obj->use_layout = false;
   }else $obj->use_format = "html";

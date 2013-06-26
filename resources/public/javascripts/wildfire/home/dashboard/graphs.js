@@ -71,6 +71,7 @@ jQuery(document).ready(function(){
       url:analytics_container.attr('data-dest'),
       type:"post",
       success:function(res){
+        jQuery(window).trigger("analytics.loaded");
         analytics_container.removeClass("loading").find(".listing").html(res);
       }
     });

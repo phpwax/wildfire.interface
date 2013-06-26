@@ -1,0 +1,62 @@
+<?
+$data =array(
+  'introduction'=>"<p>This dashboard contains a summary of recent content and some analytic highlights.</p>",
+  'steps'=> array(
+    array(
+      'elements'=>array(
+        array(
+          'selector'=> '.dashboard_index .draft-content',
+          'copy'=>'This is a list of your most recently edited content that is NOT live.',
+          'fallback_copy'=>'Normally you will see a list of your recently edited content that is not live.',
+          'position'=>array('top'=>'-25', 'left'=>'-10')
+        )
+      )
+    ),
+    array(
+      'elements'=>array(
+        array(
+          'selector'=> '.dashboard_index .live-content',
+          'copy'=>'This is a list of your recently changed LIVE content.',
+          'fallback_copy'=>'A list of your recently edited LIVE content is normally shown here',
+          'position'=>array('top'=>'-35', 'left'=>'-10') //x,y relative to selectors position
+        )
+      )
+    ),
+    array(
+      'elements'=>array(
+        array(
+          'selector'=> '#client-analytics .analytics-visitors',
+          'copy'=>'Here you can see the number of visitors per day for the last 30 days.',
+          'fallback_copy'=>'Normally a graph charting the number of visitors over the last 30 days is shown here',
+          'position'=>array('top'=>'-35', 'left'=>'-20')
+        )
+      )
+    ),
+    array(
+      'elements'=>array(
+        array(
+          'selector'=> '#client-analytics .analytics-mobile-usage',
+          'copy'=>'This shows you a percentage split of the your visitors that are using mobile devices vs traditional desktop / laptop',
+          'fallback_copy'=>'Normally a graph showing the split of visitors by mobile / desktop is shown here',
+          'position'=>array('top'=>'-35', 'left'=>'-20')
+        )
+      )
+    ),
+    array(
+      'elements'=>array(
+        array(
+          'selector'=> '#client-analytics .analytics-blocks-3',
+          'copy'=>'This part of the analytics data shows you information on soruces, keywords and browser types being used for you website.',
+          'fallback_copy'=>'A series of information is normally displayed here showing the most popular keywords / sources and browsers being used for your website.',
+          'position'=>array('top'=>'-35', 'left'=>'-20')
+        )
+      )
+    )
+
+
+  )
+);
+
+?>
+
+<?=json_encode($data);?>

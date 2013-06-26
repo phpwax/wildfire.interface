@@ -1,0 +1,149 @@
+.help{
+  position: fixed;
+  bottom:10px;
+  left: 10px;
+  text-transform: uppercase;
+  cursor:pointer;
+  display:inline-block;
+  padding:4px 8px;
+  font-size:12px;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:100px;
+  line-height:1em;
+  border:1px solid #fff;
+  color:#fff;
+  background: #136ea2;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.8);
+}
+
+#overlay{
+  overflow-y:hidden;
+}
+  #overlay .logo{
+    float:left;
+    width:160px;
+    height:62px;
+    margin-left:20px;
+    background:url('/images/wildfire/logos/white-small.png') no-repeat left center;
+    text-decoration: none;
+  }
+
+
+  .close_help_button{
+    position:fixed;
+    right:5px;
+    top:10px;
+    z-index:20;
+    background:url("/images/wildfire/help/icons/close.png") no-repeat center center;
+    width:14px;
+    height:14px;
+    display:block;
+    text-decoration: none;
+  }
+
+#overlay .helpcopy,
+#overlay .fallbackhelpcopy{
+  color:#fff;
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:0;
+  padding-left:20px;
+}
+#overlay .helpcopy{
+  background:url('/images/wildfire/help/icons/arrow.png') no-repeat bottom left;
+}
+  #overlay .helpbelow{
+    background:url('/images/wildfire/help/icons/arrow-up.png') no-repeat top left;
+  }
+
+#overlay .intro{
+  height:64px;
+  margin: 0;
+  padding:0 20px 12px 0;
+  background:#136ea2;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:300;
+}
+  #overlay .intro p{
+    color:#fff;
+    font-weight:600;
+    font-size:16px;
+    padding:10px 0 0 0;
+    margin:0;
+    line-height: 1.2em;
+  }
+
+  #overlay .controls{
+    position:fixed;
+    left:5px;
+    top:120px;
+    width:175px;
+    height:100px;
+  }
+  #overlay .next_help,
+  #overlay .previous_help{
+    padding:8px 6px;
+    margin:10px 0px;
+    display:block;
+    width:auto;
+    color:#fff;
+    background:#136ea2;
+    border:1px solid #fff;
+    text-decoration: none;
+  }
+  #overlay .next_help{
+    float:right;
+    text-align: right;
+    width:66px;
+  }
+  #overlay .previous_help{
+    float:left;
+    text-align: left;
+    width:88px;
+  }
+  #overlay .next_help span{
+    margin-left:4px;
+    float:right;
+    width:16px;
+    height:18px;
+    background:url('/images/wildfire/help/icons/next.png') no-repeat center center;
+  }
+  #overlay .previous_help span{
+    margin-right:4px;
+    float:left;
+    width:16px;
+    height:18px;
+    background:url('/images/wildfire/help/icons/previous.png') no-repeat center center;
+  }
+
+  .disabled_help{
+    opacity:0.4;
+  }
+
+.highlighted_block{
+  border:3px dashed #136ea2 !important;
+  border-radius: 4px;
+}
+
+#overlay span label{
+  display:block;
+}
+
+
+#overlay .form_stage .strip{
+  float:left;
+  width:100%;
+  margin:10px 0;
+}
+#overlay fieldset{
+  background:#fff;
+}
+
+#overlay .indented,
+#overlay .row,
+.highlighted_block{
+  background:#fff;
+}
