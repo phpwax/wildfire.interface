@@ -24,7 +24,11 @@
     </div>
   </div>
   <?=partial("_nav", array("allowed_modules"=>$allowed_modules))?>
-  <a href="/<?=$controller?><?=$action?>/" class='help' title='Help' alt="Help">?</a>
+
+  <?if($has_help[$action]):?>
+    <a href="/<?=$controller?><?=$action?>/" class='help' title='Help' alt="Help">?</a>
+  <?endif?>
+
   <div id="outer">
     <div id="page_content" class='clearfix'>
 
