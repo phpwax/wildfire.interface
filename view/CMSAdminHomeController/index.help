@@ -2,33 +2,33 @@
 $data =array(
   'introduction'=>"<p>This dashboard contains a summary of recent content and some analytic highlights.</p>",
   'steps'=> array(
-    //0
     array(
       'elements'=>array(
         array(
           'selector'=> '.dashboard_index .draft-content',
-          'copy'=>'This field allows you to filter the listing below by name.',
+          'copy'=>'This is a list of your most recently edited content that is NOT live.',
+          'fallback_copy'=>'Normally you will see a list of your recently edited content that is not live.',
           'position'=>array('top'=>'-25', 'left'=>'-10')
         )
       )
     ),
-    //1
     array(
       'elements'=>array(
         array(
-          'selector'=> '#client_filters form span:first-child input',
-          'copy'=>'Here you can search for the fee by name',
+          'selector'=> '.dashboard_index .live-content',
+          'copy'=>'This is a list of your recently changed LIVE content.',
+          'fallback_copy'=>'A list of your recently edited LIVE content is normally shown here',
           'position'=>array('top'=>'-35', 'left'=>'-10') //x,y relative to selectors position
         )
       )
     ),
-    //2
     array(
       'elements'=>array(
         array(
-          'selector'=> '.pagination_top',
-          'copy'=>'To reduce the length of the listing it is split in to groups of 15; click on the numbers to swap pages. It also has options to export this data in various formats.',
-          'position'=>array('top'=>'-55', 'left'=>'-20')
+          'selector'=> '#client-analytics .analytics-visitors',
+          'copy'=>'Here you can see the number of visitors per day for the last 30 days.',
+          'fallback_copy'=>'Normally a graph charting the number of visitors over the last 30 days is shown here',
+          'position'=>array('top'=>'-35', 'left'=>'-20')
         )
       )
     )

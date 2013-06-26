@@ -1,6 +1,11 @@
 jQuery(document).ready(function(){
   var STEPS;
 
+  if(jQuery("#client-analytics").length) jQuery(".help").hide();
+  jQuery(window).bind("analytics.loaded", function(){
+    jQuery(".help").show();
+  });
+
   function insert_overlay(){
     var over = jQuery("#overlay"),
           h = jQuery(document).outerHeight(),

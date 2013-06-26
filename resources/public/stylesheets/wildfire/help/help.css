@@ -141,3 +141,9 @@
 #overlay fieldset{
   background:#fff;
 }
+
+#overlay .indented,
+#overlay .row,
+#overlay .highlighted_block{
+  background:#fff;
+}
