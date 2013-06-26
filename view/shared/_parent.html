@@ -2,6 +2,7 @@
   if(!$tree){
     if($master = $model->revision()) $base = new $model_class($master);
     else $base = $model->clear();
+    $base->enable_has_child_query();
     $depth = 0;
   }
   if(!$path_to_root){
@@ -27,15 +28,20 @@
         <?
           if($branch->primval == $model->parent_id) $parent = true;
           else $parent = false;
-          $kids = $branch->{$branch->children_column};
-          if($kids && $kids->count()) $kids = $kids->scope("parent_list")->all();
         ?>
         <li class='branch branch-depth-<?=$depth?><?=(($parent)?" parent":"")?>' data-primval="<?=$branch->primval?>">
-          <div class='field clearfix<?=(($parent)?" active":"")?><?=(($branch->primval == $base->primval)?" self":"")?>'>
-            <input id="depth_<?=$depth?>_node_<?=$i?>" class='checkbox node' type="radio" name="<?=$model->table?>[parent_id]" value="<?=$branch->primval?>" <?if($model->parent_id == $branch->primval):?>checked="checked"<?endif?>>
-            <span class='view_children<?=(($kids && $kids->count())?" has-children":"")?>'>
-              <?if($kids && $kids->count()):?>
-                <a href="/<?=trim($controller,"/")?>/_parent/<?=$branch->primval?>.ajax?base=<?=$base->primval?>&amp;model=<?=$model->primval?>&amp;depth=<?=($depth+1)?>"<?if(in_array($branch->primval, $path_to_root) && $kids):?> class="open fetched"<?endif?>>
+          <div class='field clearfix <?=$parent?"active":""?> <?=($branch->primval == $base->primval)?"self":""?>'>
+            <input
+              id="depth_<?=$depth?>_node_<?=$i?>"
+              class='checkbox node' type="radio"
+              name="<?=$model->table?>[parent_id]"
+              value="<?=$branch->primval?>"
+              <?=$parent?'checked="checked"':''?>>
+            <span class='view_children <?=$branch->row['has_children']?"has-children":""?>'>
+              <?if($branch->row['has_children']):?>
+                <?$kids = $branch->{$branch->children_column}->scope("parent_list")->all()?>
+                <a href="/<?=trim($controller,"/")?>/_parent/<?=$branch->primval?>.ajax?base=<?=$base->primval?>&amp;model=<?=$model->primval?>&amp;depth=<?=($depth+1)?>"
+                  <?=in_array($branch->primval, $path_to_root)?'class="open fetched"':''?>>
                   <b class="entypo-icon-expand"></b>
                 </a>
               <?endif?>
@@ -43,7 +49,7 @@
             <span class="status <?=Inflections::to_url($branch->humanize("status"))?>"><a href="#">&nbsp;</a></span>
             <label for="depth_<?=$depth?>_node_<?=$i?>"><?=$branch->title?></label>
           </div>
-          <?if(in_array($branch->primval, $path_to_root) && $kids):?>
+          <?if(in_array($branch->primval, $path_to_root) && $branch->row['has_children']):?>
             <?=partial("_parent", array('tree'=>$kids, 'path_to_root'=>$path_to_root, 'base'=>$base, 'model'=>$model, 'depth'=>($depth+1), 'model_tree'=>$model_tree))?>
           <?endif?>
         </li>
