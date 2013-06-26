@@ -39,8 +39,8 @@ jQuery(document).ready(function(){
       e = data.help.e;
       index = data.help.index;
       area = data.help.area;
-      overlay_resize();
     }
+    overlay_resize();
 
     var  clone = jQuery(e.selector).clone(),
           dimensions = {h: jQuery(e.selector).outerHeight(), w:jQuery(e.selector).outerWidth()},
@@ -73,13 +73,24 @@ jQuery(document).ready(function(){
     for(var i in step.elements){
       var e = step.elements[i];
       //see if there is anything to trigger (to show alternative tabs etc)
-      if(e.trigger && e.trigger.listen_selector){
-        jQuery(e.trigger.listen_selector).one(e.trigger.listen, help_event);
-        jQuery(e.trigger.selector).data("help", {e:e, area:area, index:index}).trigger(e.trigger.event);
-      }else if(e.trigger){
-        jQuery(e.trigger.selector).one(e.trigger.event, help_event).trigger(e.trigger.event, [false, e, index, area]);
-      }else help_event(false, false, e, index, area);
+      if(e.triggers){
+        //only bind on the last item (ie it wont trigger till all other tabs etc are selected)
+        var _b = e.triggers[e.triggers.length-1];
+        if(_b && _b.listen_selector){
+          jQuery(_b.listen_selector).one(_b.listen, help_event);
+          jQuery(_b.selector).data("help", {e:e, area:area, index:index});
+        }else if(_b){
+          jQuery(_b.selector).one(_b.event, help_event);
+        }
+        //trigger all
+        for(var t in e.triggers){
+          var _t = e.triggers[t];
+          if(_t.listen_selector) jQuery(_t.selector).trigger(_t.event);
+          else jQuery(_t.selector).trigger(_t.event, [false, e, index, area]);
+        }
 
+      }
+      else help_event(false, false, e, index, area);
     }
   }
 
