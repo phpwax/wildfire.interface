@@ -1,8 +1,17 @@
-.meta_tabs .permalink input{
+.permalink input{
   width:90%;
+}
+.permalink label{
+  display:block;
+  clear:both;
 }
 
 .permalink .remove{
   float:right;
   text-decoration:none;
+}
+
+#overlay .field.permalink{
+  width:100%;
+  display:block;
 }

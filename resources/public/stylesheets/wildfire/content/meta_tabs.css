@@ -1,10 +1,10 @@
-.meta_tabs .meta-tab-title{
-      text-transform: capitalize;
-      border-radius:0px;
-      border:none;
-      padding:15px;
-      font-size:13px;
-    }
+.meta-tab-title{
+  text-transform: capitalize;
+  border-radius:0px;
+  border:none;
+  padding:15px;
+  font-size:13px;
+}
       .meta_tabs .meta-tab-title span{
         display:block;
       }
@@ -84,4 +84,12 @@
     width:50%;
     padding-right:10px;
     height: 350px;
+  }
+
+  .ac-meta-data .field,
+  .ac-meta-data .field label,
+  .ac-meta-data .field input,
+  .ac-meta-data .field textarea{
+    width:100%;
+    display:block;
   }
