@@ -1,25 +1,31 @@
-.edit_fields .field{
+.edit_fields .field,
+#overlay .field{
   padding:15px;
   display: inline-block;
 }
 
-.edit_fields .fieldw-tinymcetextareainput{
+.edit_fields .fieldw-tinymcetextareainput,
+#overlay .fieldw-tinymcetextareainput{
   display:block;
   clear:both;
 }
 
-.edit_fields .field-content{
+.edit_fields .field-content,
+#overlay .field-content{
   padding:0;
   margin:0;
 }
-.edit_fields label{
+.edit_fields label
+#overlay label{
   display:block;
   margin-bottom:10px;
 }
-#cms-content .edit_fields .field-content label{
+#cms-content .edit_fields .field-content label,
+#overlay .field-content label{
   display:none;
 }
-.edit_fields textarea{
+.edit_fields textarea,
+#overlay textarea{
   width:100%;
 }
 
@@ -28,7 +34,9 @@
 }
 
 .edit_fields .field-title,
-.edit_fields .field-title input{
+.edit_fields .field-title input,
+#overlay .field-title,
+#overlay .field-title input{
   width:100%;
 }
 
