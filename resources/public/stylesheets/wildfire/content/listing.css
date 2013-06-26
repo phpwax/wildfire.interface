@@ -34,6 +34,9 @@ span.live{
   text-align: center;
   padding-left:5px;
 }
+.view_children_link{
+  text-decoration: none;
+}
   .tree_node .empty{
     width:26px;
     border-right:1px dotted #f0f0f0;

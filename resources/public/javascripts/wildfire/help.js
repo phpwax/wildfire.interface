@@ -52,7 +52,7 @@ jQuery(document).ready(function(){
       var top = ((parseFloat(e.position.top) > 0 && clone && clone.length) ? clone.offset().top : copy.offset().top)  - 80;
       jQuery(document).scrollTop( (top >0 ) ? top : 0 );
       //unbind events
-      jQuery("#overlay .steps a, #overlay .steps .button, #overlay .steps .submit, #overlay .steps input, #overlay .steps select").unbind("click submit change").bind("click submit change", function(e){
+      jQuery("#overlay .steps a, #overlay .steps .button, #overlay .steps .submit, #overlay .steps input, #overlay .steps select, #overlay .tree_col_status, #overlay .view_children_link").unbind("click submit change").bind("click submit change", function(e){
         e.preventDefault();
         e.stopPropagation();
         return false;
