@@ -78,28 +78,7 @@ form{
     color:#aeaeae;
     box-shadow: none;
   }
-  form input[type=submit]{
-    margin-top:5px;
-    cursor:pointer;
-    display:inline-block;
-    padding:7px 9px;
-    font-size:93%;
-    text-decoration:none;
-    letter-spacing:0.5px;
-    font-weight:normal;
-    border-radius:4px;
-    line-height:1em;
-    border:1px solid #a0bac1;
-    color:#437182;
-    box-shadow:0 0 4px rgba(227,227,227,0.5);
-    background: #f3fbfc; /* Old browsers */
-    background: -moz-linear-gradient(top, #f3fbfc 0%, #eff9fb 3%, #e7f6f9 38%, #d1edf4 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3fbfc), color-stop(3%,#eff9fb), color-stop(38%,#e7f6f9), color-stop(100%,#d1edf4)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #f3fbfc 0%,#eff9fb 3%,#e7f6f9 38%,#d1edf4 100%); /* W3C */
-  }
+
     form input[type=submit].saved{
       background: #4cbd66;
       color:#fff;

@@ -1,4 +1,4 @@
-.button, form input[type=submit].button{
+.button, form input[type=submit]{
   cursor:pointer;
   display:inline-block;
   padding:7px 9px;
@@ -14,7 +14,7 @@
   border:none;
 }
   .button:hover,
-  form input[type=submit].button:hover{
+  form input[type=submit]:hover{
     background:#cdcdcd;
   }
 
