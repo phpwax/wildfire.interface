@@ -41,6 +41,7 @@
 }
 .messages .warning .icon:after{
   content:"!";
+  font-size:23px;
 }
 .messages .error{
   background:#7f1b2f;
