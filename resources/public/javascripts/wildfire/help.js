@@ -129,4 +129,19 @@ jQuery(document).ready(function(){
 
   });
 
+
+  jQuery(window).bind("help.autoload", function(){
+    var hash = window.location.hash,
+          hp = (hash && hash.length) ? hash.indexOf("HELP:") : false,
+          help = (hp && hp >= 0) ? hash.replace("HELP:", "") .replace("#", ""): ""
+          ;
+
+    if(hp && hp >= 0 && help >=0){
+      jQuery("#overlay").attr("data-active", help);
+      jQuery("a.help").trigger("click");
+    }
+
+  });
+  jQuery(window).trigger("help.autoload");
+
 });
