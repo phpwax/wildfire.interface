@@ -31,12 +31,12 @@
     padding:0px;
   }
 
-  fieldset.media .edit_fields{
+  fieldset .embedded-media-listing-holder{
     float:left;
     width:70%;
     padding-right:10px;
   }
-  fieldset.media .meta_tabs{
+  fieldset .embedded-media-attachements{
     float:left;
     width:30%;
     margin-top:0;
