@@ -34,6 +34,7 @@ jQuery(document).ready(function(){
     var area = jQuery("#overlay .steps");
     area.html("");
     for(var i in step.elements){
+
       var e = step.elements[i],
             clone = jQuery(e.selector).clone(),
             dimensions = {h: jQuery(e.selector).outerHeight(), w:jQuery(e.selector).outerWidth()},
@@ -42,21 +43,26 @@ jQuery(document).ready(function(){
             t = (pos) ? (pos.top + parseFloat(e.position.top)) : 150,
             l = (pos) ? (pos.left + parseFloat(e.position.left)) : 250
             ;
+      //see if there is anything to trigger (to show alternative tabs etc)
+      if(e.trigger) jQuery(e.trigger.selector).trigger(e.trigger.event);
+      //wrap in a timeout to delay
+      setTimeout(function(){
+        window.location.hash = "HELP:"+index;
+        if(parseFloat(e.position.top) > 0) copy.addClass("helpbelow");
+        copy.css({"position":"absolute", top: t, left: l}).appendTo(area);
 
-      window.location.hash = "HELP:"+index;
-      if(parseFloat(e.position.top) > 0) copy.addClass("helpbelow");
-      copy.css({"position":"absolute", top: t, left: l}).appendTo(area);
+        if(clone && clone.length) clone.css({"position":"absolute", top:pos.top, left:pos.left, width:dimensions.w+7, height:dimensions.h+6}).addClass("highlighted_block").appendTo(area);
 
-      if(clone && clone.length) clone.css({"position":"absolute", top:pos.top, left:pos.left, width:dimensions.w+7, height:dimensions.h+6}).addClass("highlighted_block").appendTo(area);
+        var top = ((parseFloat(e.position.top) > 0 && clone && clone.length) ? clone.offset().top : copy.offset().top)  - 80;
+        jQuery(document).scrollTop( (top >0 ) ? top : 0 );
+        //unbind events
+        jQuery("#overlay .steps a, #overlay .steps .button, #overlay .steps .submit, #overlay .steps input, #overlay .steps select, #overlay .tree_col_status, #overlay .view_children_link").unbind("click submit change").bind("click submit change", function(e){
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
 
-      var top = ((parseFloat(e.position.top) > 0 && clone && clone.length) ? clone.offset().top : copy.offset().top)  - 80;
-      jQuery(document).scrollTop( (top >0 ) ? top : 0 );
-      //unbind events
-      jQuery("#overlay .steps a, #overlay .steps .button, #overlay .steps .submit, #overlay .steps input, #overlay .steps select, #overlay .tree_col_status, #overlay .view_children_link").unbind("click submit change").bind("click submit change", function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      });
+      }, 800);
 
     }
   }
