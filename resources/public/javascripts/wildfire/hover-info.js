@@ -1,13 +1,7 @@
 jQuery(function(){
 
   jQuery(window).bind("media.generic.preview media.wildfirediskfile.preview", function(e, row, preview_container){
-    var str = "";
-    row.find("td").each(function(){
-      var html = jQuery(this).html();
-      if(html.indexOf("<img")) str += html.replace("/40.", "/200.");
-      else str += html;
-    });
-    preview_container.html(str);
+    preview_container.html(jQuery(row).html());
   });
 
 
