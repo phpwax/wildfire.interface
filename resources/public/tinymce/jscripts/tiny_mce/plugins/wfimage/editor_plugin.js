@@ -17,21 +17,23 @@
 
 				ed.windowManager.open({
 					ui_dialog: "#wildfire-image-dialog",
-					width : 800,
-					height : 450,
+					width : 1000,
+					height : 550,
 					inline : 1,
 					button_actions:{
 					  'Insert':function(){
-					    var img = jQuery("#wildfire-image-dialog .preview_link img"),
+					    var img = jQuery("#wildfire-image-dialog .image_preview img"),
 					        sz = jQuery("#wf_img_size").val(),
 					        cl = jQuery("#wf_img_pos").val(),
 					        alt = jQuery("#wf_img_cap").val(),
-					        imgstr = "<img src='"+img.attr('src').replace("200", sz)+"' class='"+cl+"' alt='"+alt+"'>"
-					        ;					        
+					        imgstr = "<img src='"+img.attr('src').replace("172", sz)+"' class='"+cl+"' alt='"+alt+"'>"
+					        ;
 					    tinymce.execCommand('mceInsertContent',false,imgstr);
 					    jQuery(this).dialog("close");
 					  },
-					  'Cancel':function(){jQuery(this).dialog("close");}
+					  'Cancel':function(){
+					  	jQuery(this).dialog("close");
+					  }
 					}
 				}, {
 					plugin_url : url
