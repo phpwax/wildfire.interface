@@ -17,7 +17,7 @@
     <li class='branch branch-depth-<?=$depth?><?=(($model->parent_id == 0)?" parent":"")?> tree_children' data-primval="0">
       <div class='field clearfix<?=(($model->parent_id == 0)?" active":"")?>'>
         <input type="radio" id="depth_<?=$depth?>_node_0" class='checkbox node' name="<?=$model->table?>[parent_id]" value="0" <?if($model->parent_id == 0):?>checked="checked"<?endif?>>
-        <label for="depth_<?=$depth?>_node_0">No Parent</label>
+        <label for="depth_<?=$depth?>_node_0">None</label>
       </div>
       <?=partial("_parent", array('tree'=>$base->roots(), 'path_to_root'=>$path_to_root, 'base'=>$base, 'model'=>$model, 'depth'=>($depth+1)))?>
     </li>
