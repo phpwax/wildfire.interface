@@ -1,4 +1,5 @@
 <?
+$has_tinymce_editor = false;
 $partial_paths = array(
                       APP_DIR."view/".$controller."/%s%.html",
                       APP_DIR."view/shared/%s%.html"
@@ -18,6 +19,7 @@ foreach($form as $field_name => $element){
     if($element->primary_group) $grouping['primary_tabs'][$group][$field_name] = $element;
     else $grouping['secondary_tabs'][$group][$field_name] = $element;
   }
+  if($element->widget == "TinymceTextareaInput" || $element->widget == "SimpletinymceTextareaInput") $has_tinymce_editor = true;
 }
 WaxEvent::run('cms.edit.grouping', $grouping);
 if(($show_group = Request::param('group')) && isset($grouping[$show_group])) $grouping = array($show_group => $grouping[$show_group]);
@@ -80,9 +82,10 @@ $counter = 0;
 
 </form>
 
-
+<?if($has_tinymce_editor):?>
 <?=partial("_dialog_links", array('controller'=>$controller, "file_system_model"=>$file_system_model))?>
 <?=partial("_dialog_source_code", array('controller'=>$controller))?>
 <?=partial("_dialog_images", $this)?>
 <?=partial("_dialog_tables", array('controller'=>$controller))?>
 <?=partial("_dialog_templates", array('controller'=>$controller))?>
+<?endif?>
