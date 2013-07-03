@@ -57,7 +57,6 @@ jQuery(document).ready(function(){
   jQuery('#wildfire-link-dialog').hide();
   //source code view
   jQuery('#wildfire-source-code').hide();
-  //inline image picker
 
 
   jQuery("#wildfire-image-dialog").on("click",".media-listing-item", function(e){
@@ -70,7 +69,6 @@ jQuery(document).ready(function(){
         ;
 
     jQuery(window).trigger("media."+trigger_type+".preview", [row, preview_container]);
-    //jQuery("#wildfire-image-dialog .image-info-container").show();
   });
 
 
