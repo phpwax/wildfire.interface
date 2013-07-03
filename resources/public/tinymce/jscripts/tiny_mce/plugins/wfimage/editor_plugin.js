@@ -22,12 +22,17 @@
           inline : 1,
           button_actions:{
             'Insert':function(){
-              var img = jQuery("#wildfire-image-dialog .image_preview img"),
+              var preview = jQuery("#wildfire-image-dialog .image_preview"),
                   sz = jQuery("#wf_img_size").val(),
                   cl = jQuery("#wf_img_pos").val(),
                   alt = jQuery("#wf_img_cap").val(),
-                  imgstr = "<img src='"+img.attr('src').replace("172", sz)+"' class='"+cl+"' alt='"+alt+"'>"
+                  img,iframe
                   ;
+              if((img = preview.find("img")) && img.length){
+                imgstr = "<img src='"+img.attr('src').replace("172", sz)+"' class='"+cl+"' alt='"+alt+"'>";
+              }else if((iframe = preview.find("iframe")) && iframe.length){
+                imgstr = iframe.attr({"class":cl,"width":sz,"height":Math.floor(sz/1.778)}).parent().html();
+              }
               tinymce.execCommand('mceInsertContent',false,imgstr);
               jQuery(this).dialog("close");
             },
