@@ -85,7 +85,7 @@ $counter = 0;
 <?if($has_tinymce_editor):?>
 <?=partial("_dialog_links", array('controller'=>$controller, "file_system_model"=>$file_system_model))?>
 <?=partial("_dialog_source_code", array('controller'=>$controller))?>
-<?=partial("_dialog_images", $this)?>
+<?=partial("_dialog_images")?>
 <?=partial("_dialog_tables", array('controller'=>$controller))?>
 <?=partial("_dialog_templates", array('controller'=>$controller))?>
 <?endif?>
