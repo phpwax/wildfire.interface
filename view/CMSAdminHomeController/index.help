@@ -1,5 +1,6 @@
 <?
 $data =array(
+  'action'=>$action,
   'introduction'=>"<p>This dashboard contains a summary of recent content and some analytic highlights.</p>",
   'steps'=> array(
     array(
