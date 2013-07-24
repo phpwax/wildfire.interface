@@ -1,5 +1,5 @@
 <?
-$data =array(
+$this->help_data = array(
   'action'=>$action,
   'introduction'=>"<p>This dashboard contains a summary of recent content and some analytic highlights.</p>",
   'steps'=> array(
@@ -57,7 +57,7 @@ $data =array(
 
   )
 );
-WaxEvent::run("help.".$module_name.".extend", $data);
+WaxEvent::run("help.".$module_name.".".$action.".extend", $this);
 ?>
 
-<?=json_encode($data);?>
+<?=json_encode($this->help_data);?>
