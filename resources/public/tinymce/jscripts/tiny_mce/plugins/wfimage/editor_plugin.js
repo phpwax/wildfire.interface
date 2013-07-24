@@ -26,7 +26,7 @@
                   sz = jQuery("#wf_img_size").val(),
                   cl = jQuery("#wf_img_pos").val(),
                   alt = jQuery("#wf_img_cap").val(),
-                  img,iframe
+                  img,iframe,imgstr
                   ;
               if((img = preview.find("img")) && img.length){
                 imgstr = "<img src='"+img.attr('src').replace("172", sz)+"' class='"+cl+"' alt='"+alt+"'>";
@@ -51,9 +51,8 @@
         cmd : 'wfImageLink'
       });
 
-    },
+    }
 
-    
   });
 
   // Register plugin

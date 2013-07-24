@@ -99,8 +99,9 @@
     border-bottom-width:0;
   }
 
-
+.media-listing-wrapper{
+  overflow: auto;
+}
 fieldset .media-listing-wrapper{
   max-height: 600px;
-  overflow: auto;
 }
