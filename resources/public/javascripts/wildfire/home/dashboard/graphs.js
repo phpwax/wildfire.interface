@@ -64,7 +64,6 @@ jQuery(document).ready(function(){
 });
 
 jQuery(document).ready(function(){
-  var analytics_container = jQuery("#client-analytics");
   jQuery(".analytics").each(function(){
     var analytics_container = jQuery(this);
     analytics_container.addClass('loading');
