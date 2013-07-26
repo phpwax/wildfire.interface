@@ -65,7 +65,8 @@ jQuery(document).ready(function(){
 
 jQuery(document).ready(function(){
   var analytics_container = jQuery("#client-analytics");
-  if(analytics_container && analytics_container.length){
+  jQuery(".analytics").each(function(){
+    var analytics_container = jQuery(this);
     analytics_container.addClass('loading');
     jQuery.ajax({
       url:analytics_container.attr('data-dest'),
@@ -75,5 +76,7 @@ jQuery(document).ready(function(){
         analytics_container.removeClass("loading").find(".listing").html(res);
       }
     });
-  }
+  });
+
+
 });
