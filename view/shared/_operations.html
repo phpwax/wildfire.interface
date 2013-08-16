@@ -1,4 +1,8 @@
 <?foreach($permissions as $action=>$x):?>
+  <?if($op_override = $row->operation($action, $x)):?>
+    <?=$op_override?>
+    <?continue?>
+  <?endif?>
   <?$i = $operation_actions[$action]?>
   <?if(is_array($i)):?>
   <a href="/<?=trim($controller,"/")?>/<?=$i['action']?>/<?=$row->primval?>/<?=(($cachelink)?"?rl=".rand():"")?>" class='button operation operation_<?=$action?>'><?=str_replace("%s", $singular, $i['name'])?></a>
