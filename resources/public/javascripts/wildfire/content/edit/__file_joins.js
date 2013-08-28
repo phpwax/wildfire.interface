@@ -49,7 +49,8 @@ jQuery(document).ready(function(){
         "field":field,
         "join_class":join_class,
         "join_id":join_id,
-        "join_field":join_field
+        "join_field":join_field,
+        "file_tags":file_tags
       },
       "success":function(result){
         var fieldset = target.closest("fieldset"),
