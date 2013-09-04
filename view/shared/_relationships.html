@@ -11,7 +11,7 @@
     }
     ?>
     <?if($readable):?>      
-      <?=partial($type, array('model'=>$model, 'controller'=>$controller, 'join'=>$join, 'name'=>$name))?>
+      <?=partial($type, array('model'=>$model, 'controller'=>$controller, 'join'=>$join, 'name'=>$name, 'multipleselect_scope'=>$multipleselect_scope))?>
     <?else:?>
       <?=$join->render()?>
     <?endif?>

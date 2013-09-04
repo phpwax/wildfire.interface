@@ -60,7 +60,7 @@ $counter = 0;
                 <h3 class='accordion_header meta-tab-title ach-<?=$tabhash?>'><span><?=$name?></span></h3>
                 <div class="meta-tab clearfix ac-<?=$tabhash?>">
                   <?if(!$partial = CMSBaseComponent::form_group_partial_check($partial_paths, $name)) $partial = "_default_form_group";?>
-                  <?=partial($partial, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base));?>
+                  <?=partial($partial, array('tabhash'=>$tabhash, 'model'=>$model, 'controller'=>$controller, 'fields'=>$fields, 'partial_paths'=>$partial_paths, 'scaffold_columns'=>$scaffold_columns, 'current_user'=>$current_user, 'operation_actions'=>$operation_actions, 'file_system_base'=>$file_system_base,'multipleselect_scope'=>$multipleselect_scope));?>
                 </div>
               <?endforeach?>
             </div>
