@@ -17,6 +17,7 @@
 
         ed.windowManager.open({
           ui_dialog: "#wildfire-image-dialog",
+          dialogClass: "wildfire-inline-dialog",
           width : 1000,
           height : 550,
           inline : 1,
