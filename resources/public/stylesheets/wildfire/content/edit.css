@@ -57,4 +57,6 @@
 }
 #wildfire-link-dialog .field label {
   display:block;
+  font-size: 100%;
+  font-weight:normal;
 }
