@@ -53,5 +53,8 @@
 }
 #wildfire-link-dialog .field {
   display:block;
-  margin:5px 0;
+  margin:7px 0;
+}
+#wildfire-link-dialog .field label {
+  display:block;
 }
