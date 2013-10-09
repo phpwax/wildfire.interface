@@ -46,7 +46,7 @@
 #wildfire-source-code {
   background: #111;
   color:#89bcff;
-  width: 99%;
+  width: 99% !important;
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
   font-size: 12px;
   white-space: pre-wrap;
@@ -62,5 +62,5 @@
   font-weight:normal;
 }
 #wildfire-link-dialog .field .input_field {
-  width:90%;
+  width:95%;
 }
