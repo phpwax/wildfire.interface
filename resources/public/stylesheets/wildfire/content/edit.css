@@ -51,6 +51,7 @@
   font-size: 12px;
   white-space: pre-wrap;
 }
+#tinymce {padding:10px;}
 #wildfire-link-dialog .field {
   display:block;
   margin:7px 0;
@@ -59,4 +60,7 @@
   display:block;
   font-size: 100%;
   font-weight:normal;
+}
+#wildfire-link-dialog .field .input_field {
+  width:90%;
 }
