@@ -18,7 +18,7 @@
       });
 
       // Register buttons
-      ed.addButton('image', {
+      ed.addButton('iframe', {
         title : 'Maximise',
         cmd : 'wfMaxiLink'
       });

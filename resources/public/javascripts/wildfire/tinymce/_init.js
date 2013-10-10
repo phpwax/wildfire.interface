@@ -14,7 +14,7 @@ var tinymce_config = {
       theme_advanced_blockformats: "p,h2,h3,h4,blockquote,h6",
       content_css: "/stylesheets/build/wildfire-templates_combined.css",
       // Theme options
-    	theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink,image,|,hr,|,code,|,table,|,row_before,row_after,delete_row,|,col_before,col_after,delete_col",
+    	theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink,image,|,hr,|,code,|,table,|,row_before,row_after,delete_row,|,col_before,col_after,delete_col|iframe",
     	theme_advanced_buttons2 : "formatselect,template",
     	theme_advanced_buttons3 : "",
     	theme_advanced_buttons4 : "",
