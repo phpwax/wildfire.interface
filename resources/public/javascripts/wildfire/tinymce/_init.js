@@ -10,7 +10,7 @@ var tinymce_config = {
       autoresize_min_height: 300,
       autoresize_max_height: 300,
       //
-      plugins: 'directionality,jqueryinlinepopups,paste,wflink,wfimage,wfhtml,wftable,wftemplate,autoresize',
+      plugins: 'directionality,jqueryinlinepopups,paste,wflink,wfimage,wfhtml,wftable,wftemplate,autoresize,wfmaxi',
       theme_advanced_blockformats: "p,h2,h3,h4,blockquote,h6",
       content_css: "/stylesheets/build/wildfire-templates_combined.css",
       // Theme options
