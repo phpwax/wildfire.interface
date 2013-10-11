@@ -22,19 +22,21 @@
             "position":"static"
           });
           frame.css("height","350px");
+          win.find("#wildfire_content_content_iframe").attr("title","Maximise Editor");
           win.removeClass("maximised");
 
         } else {
           win.css({
-          "position":"absolute",
-          "z-index" : "10",
-          "left"    : "5px",
-          "top"     : "5px",
-          "width"   : "99%",
-          "height"  : "99%"
-        });
-        frame.height($(document).height() - frame.offset().top);
-        win.addClass("maximised");
+            "position":"absolute",
+            "z-index" : "10",
+            "left"    : "5px",
+            "top"     : "5px",
+            "width"   : "99%",
+            "height"  : "99%"
+          });
+          frame.height($(document).height() - frame.offset().top);
+          win.addClass("maximised");
+          win.find("#wildfire_content_content_iframe").attr("title","Minimise Editor");
         }
         
       });
