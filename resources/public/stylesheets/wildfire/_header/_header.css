@@ -13,10 +13,10 @@
     width:160px;
     height:50px;
     margin-left:20px;
-    background:url(/images/wildfire/logos/white-small.png) no-repeat 22px center;
+    background:url(/images/wildfire/logos/white-small.png) no-repeat left center;
   }
   #header #logo a:hover{
-    background:url(/images/wildfire/logos/white-small.gif) no-repeat left center;
+    opacity: 0.8;
   }
 
     #logo span{display:none;}
