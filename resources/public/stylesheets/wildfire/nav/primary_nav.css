@@ -5,6 +5,7 @@
 #primary_navigation li a{
   text-decoration: none;
   font-weight:600;
+  font-size:11px;
 }
 #primary_navigation li a:hover,
 #primary_navigation li a.active{
