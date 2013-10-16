@@ -10,7 +10,7 @@ html .tabs_nav li.tabs_nav_item{
 }
 html .tabs_nav li a{
   display:block;
-  padding:20px;
+  padding:10px;
   text-decoration:none;
   border-radius:0;
   border-bottom:1px solid transparent;
