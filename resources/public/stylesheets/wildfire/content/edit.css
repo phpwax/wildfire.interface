@@ -67,5 +67,6 @@
 
 .edit_fields .field label {
   display: block;
-  font-size:85%;
+  font-size:100%;
+  margin: 10px 0px 5px;
 }
