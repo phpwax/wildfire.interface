@@ -64,3 +64,8 @@
 #wildfire-link-dialog .field .input_field {
   width:95%;
 }
+
+.edit_fields .field label {
+  display: block;
+  font-size:85%;
+}
