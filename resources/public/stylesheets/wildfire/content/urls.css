@@ -1,6 +1,9 @@
 .meta_tabs .meta-tab .permalink input{
   width:90%;
 }
+.meta_tabs .meta-tab .permalink input:disabled {
+  border:1px solid #999;
+}
 .meta_tabs .meta-tab .permalink label{
   display:block;
   clear:both;
