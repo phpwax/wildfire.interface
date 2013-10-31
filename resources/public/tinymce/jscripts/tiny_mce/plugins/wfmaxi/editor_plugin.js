@@ -14,7 +14,7 @@
       this.editor = ed;
       // Register commands
       ed.addCommand('wfMaxiLink', function() {
-        var win = $("#content_tab_content table.mcelayout");
+        var win = $("#content_tab_content table.mceLayout");
         var frame = win.find("iframe");
 
         if(win.hasClass("maximised")) {
@@ -29,9 +29,9 @@
           win.css({
             "position":"absolute",
             "z-index" : "10",
-            "left"    : "5px",
-            "top"     : "5px",
-            "width"   : "99%",
+            "left"    : "0px",
+            "top"     : "0px",
+            "width"   : "100%",
             "bottom"  : "0px"
           });
           frame.height($(document).height() - frame.offset().top);
