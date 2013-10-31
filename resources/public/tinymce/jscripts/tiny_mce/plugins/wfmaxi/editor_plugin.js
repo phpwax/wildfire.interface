@@ -29,8 +29,8 @@
             "z-index" : "10",
             "left"    : "0px",
             "top"     : "0px",
-            "bottom"  : "0px"
-            "width"   : "100%",
+            "bottom"  : "0px",
+            "width"   : "100%"
           });
           win.addClass("maximised");
           win.find("#wildfire_content_content_iframe").attr("title","Minimise Editor");
