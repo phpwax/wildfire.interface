@@ -1,7 +1,8 @@
 var auto_save_signature,
     auto_interval,
     auto_saver,
-    auto_save_time
+    auto_save_time,
+    auto_save_editor
     ;
 
 function auto_save_form(auto_saver){
@@ -11,7 +12,8 @@ function auto_save_form(auto_saver){
       ;
 
   if(auto_save_signature != form_data){
-
+    auto_save_editor = tinyMCE.activeEditor;
+    $(document).trigger("autosave.start", [auto_save_editor]);
     auto_saver.addClass("autosave_active");
 
     jQuery.ajax({
@@ -29,6 +31,7 @@ function auto_save_form(auto_saver){
           auto_saver.attr("name", "hide"); //did this to mirror the functionality of the "save for later" button as in _submit.html for content
         }
         auto_saver.removeClass("autosave_active");
+        tinyMCE.activeEditor.setContent(res.model.row.content);
         jQuery(window).trigger("autosave.completed", [res]);
       },
       error:function(){
