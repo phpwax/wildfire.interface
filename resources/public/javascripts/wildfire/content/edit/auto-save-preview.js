@@ -7,13 +7,14 @@ var auto_save_signature,
 
 function auto_save_form(auto_saver){
 
+  auto_save_editor = tinyMCE.activeEditor;
+  $(document).trigger("autosave.start", [auto_save_editor]);
+
   var form_container = auto_saver.closest("form"),
       form_data = form_container.serialize();
       ;
 
   if(auto_save_signature != form_data){
-    auto_save_editor = tinyMCE.activeEditor;
-    $(document).trigger("autosave.start", [auto_save_editor]);
     auto_saver.addClass("autosave_active");
 
     jQuery.ajax({
