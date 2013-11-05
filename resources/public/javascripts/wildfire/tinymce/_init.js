@@ -49,6 +49,7 @@ var tinymce_config = {
     
 
 jQuery(document).ready(function(){
+  $(document).trigger("tinymce.init",[tinymce_config]);
   var tinymce = jQuery('textarea.tinymce').tinymce(tinymce_config);
   
   var simpletinymce = jQuery('textarea.simpletinymce').tinymce(simpletinymce_config);
