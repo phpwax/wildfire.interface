@@ -52,9 +52,11 @@
       .meta_tabs .meta-tab input,
       .meta_tabs .meta-tab textarea,
       .meta_tabs .meta-tab select{
-        display:inline-block;
         max-width:none;
         width:100%;
+      }
+      .meta_tabs .meta-tab select {
+        display:inline-block;
       }
       .meta_tabs .meta-tab input[type=radio],
       .meta_tabs .meta-tab input[type=checkbox]{
