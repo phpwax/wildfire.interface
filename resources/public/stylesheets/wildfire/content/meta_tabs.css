@@ -52,7 +52,7 @@
       .meta_tabs .meta-tab input,
       .meta_tabs .meta-tab textarea,
       .meta_tabs .meta-tab select{
-        display:block;
+        display:inline-block;
         max-width:none;
         width:100%;
       }
