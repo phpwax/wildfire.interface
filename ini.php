@@ -1,4 +1,4 @@
-<?
+<?php
 AutoLoader::register_assets("stylesheets/wildfire",__DIR__."/resources/public/stylesheets/wildfire/", "/*.css");
 AutoLoader::register_assets("javascripts/wildfire",__DIR__."/resources/public/javascripts/wildfire/", "/*.js");
 AutoLoader::register_assets("javascripts/wildfire-plugins",__DIR__."/resources/public/javascripts/wildfire-plugins/", "/*.js");

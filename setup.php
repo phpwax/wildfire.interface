@@ -1,4 +1,4 @@
-<?
+<?php
 CMSBaseComponent::$default_format = "html";
 if(!CMSApplication::$default_module_order) CMSApplication::$default_module_order = array(
   "home",
