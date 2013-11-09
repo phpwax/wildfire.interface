@@ -6,7 +6,7 @@ var auto_save_signature,
     ;
 
 function auto_save_form(auto_saver){
-
+  if(typeof autosave_disabled != "undefined" && autosave_disabled === true) return true;
   auto_save_editor = tinyMCE.activeEditor;
   $(document).trigger("autosave.start", [auto_save_editor]);
 
