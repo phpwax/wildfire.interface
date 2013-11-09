@@ -32,7 +32,7 @@ function auto_save_form(auto_saver){
           auto_saver.attr("name", "hide"); //did this to mirror the functionality of the "save for later" button as in _submit.html for content
         }
         auto_saver.removeClass("autosave_active");
-        tinyMCE.activeEditor.setContent(res.model.row.content);
+        //tinyMCE.activeEditor.setContent(res.model.row.content);
         jQuery(window).trigger("autosave.completed", [res]);
       },
       error:function(){
