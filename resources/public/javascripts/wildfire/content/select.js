@@ -1,7 +1,6 @@
 jQuery(document).ready(function(){
 
-  jQuery("select:not(.unstyled_select)").each(function(){
-
+  jQuery("select").bind("select2_trigger", function(){
     var select = jQuery(this).select2({width:"resolve",allowClear:true}),
         option = jQuery(this).find("option:first");
         if(!option.val()){
@@ -9,7 +8,10 @@ jQuery(document).ready(function(){
           option.html("");
           select.select2({width:"resolve",allowClear:true,placeholder:placeholder}); //would be nice if there would be a setter for the placeholder
         }
+  });
 
+  jQuery("select:not(.unstyled_select)").each(function(){
+    jQuery(this).trigger("select2_trigger");
   });
 
 });
