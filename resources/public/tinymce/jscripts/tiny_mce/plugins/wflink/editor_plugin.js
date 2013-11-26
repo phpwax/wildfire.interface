@@ -53,11 +53,8 @@ var __tinymce_insert_functions = ["__tinymce_insert_standard_link"];
       // Register commands
       ed.addCommand('wfAdvLink', function() {
         var se = ed.selection;
-
         // No selection and not in link
-        if (se.isCollapsed() && !ed.dom.getParent(se.getNode(), 'A'))
-          return;
-
+        if (se.isCollapsed() && !ed.dom.getParent(se.getNode(), 'A')) return;
         ed.windowManager.open({
           ui_dialog: "#wildfire-link-dialog",
           width : 400,
@@ -67,9 +64,7 @@ var __tinymce_insert_functions = ["__tinymce_insert_standard_link"];
             'Insert':function(){
               for(var i in __tinymce_insert_functions){
                 var func = __tinymce_insert_functions[i];
-                console.log(func);
                 window[func](ed,se);
-                //(ed,se);
               }
               jQuery(this).dialog("close");
             },
@@ -79,14 +74,11 @@ var __tinymce_insert_functions = ["__tinymce_insert_standard_link"];
           plugin_url : url
         });
       });
-
       // Register buttons
       ed.addButton('link', {
         title : 'Insert Link',
         cmd : 'wfAdvLink'
       });
-
-
       ed.onNodeChange.add(function(ed, cm, n, co) {
         cm.setDisabled('link', co && n.nodeName != 'A');
         cm.setActive('link', n.nodeName == 'A' && !n.name);
