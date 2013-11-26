@@ -94,6 +94,30 @@ function __tinymce_anchor_link(ed, se){
   }
 }
 
+function __tinymce_dynamic_link(ed, se){
+  var e = ed.dom.getParent(se.getNode(), 'A'),
+      linkd=jQuery('#wildfire-link-dialog'),
+      val = jQuery("#wf_dyn_choice").val()
+      ;
+  if(val.length && e == null){
+    tinymce.execCommand("mceInsertLink", false, "#mce_temp_dyn#", {skip_undo : 1});
+    tinymce.each(ed.dom.select("a"), function(n) {
+      if (ed.dom.getAttrib(n, 'href') == '#mce_temp_dyn#') {
+        e = n;
+        ed.dom.setAttribs(e, {
+         class: "__dynamic_link__",
+         href: val
+        });
+      }
+    });
+  }else if(val.length){
+    ed.dom.setAttribs(e, {
+      class: "__dynamic_link__",
+      href: val
+    });
+  }
+}
+
 function __tinymce_anchor_checker(ed){
   var content = ed.getContent({format:"raw"}),
         pattern = /<a class="__anchor__" name="(.*?)" href="#" data-mce-href="#">(.*?)<\/a>|<a data-mce-href="#" href="#" class="__anchor__" name="(.*?)">(.*?)<\/a>/ig,
@@ -110,7 +134,7 @@ function __tinymce_anchor_checker(ed){
 
 }
 
-var __tinymce_linkinsert_functions = ["__tinymce_insert_standard_link", "__tinymce_create_anchor_link", "__tinymce_anchor_link"];
+var __tinymce_linkinsert_functions = ["__tinymce_insert_standard_link", "__tinymce_create_anchor_link", "__tinymce_anchor_link", "__tinymce_dynamic_link"];
 var __tinymce_pre_linkinsert_functions = ["__tinymce_anchor_checker"];
 (function() {
   tinymce.create('tinymce.plugins.WildfireLinkPlugin', {
