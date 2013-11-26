@@ -81,14 +81,14 @@ function __tinymce_anchor_link(ed, se){
       if (ed.dom.getAttrib(n, 'href') == '#mce_temp_anc#') {
         e = n;
         ed.dom.setAttribs(e, {
-         class: " ",
+         class: "__to_anchor__",
          href: "#"+anchor
         });
       }
     });
   }else if(anchor.length){
     ed.dom.setAttribs(e, {
-      class: " ",
+      class: "__to_anchor__",
       href: "#"+anchor
     });
   }
@@ -96,7 +96,7 @@ function __tinymce_anchor_link(ed, se){
 
 function __tinymce_anchor_checker(ed){
   var content = ed.getContent({format:"raw"}),
-        pattern = /<a class="__anchor__" name="(.*?)" href="#">(.*?)<\/a>/ig,
+        pattern = /<a class="__anchor__" name="(.*?)" href="#" data-mce-href="#">(.*?)<\/a>/ig,
         matches = content.match(pattern),
         select = jQuery("#wf_an_choice"),
         new_select = "<option value=''>----</option>"
