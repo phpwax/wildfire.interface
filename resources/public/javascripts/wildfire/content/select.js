@@ -12,6 +12,7 @@ jQuery(document).ready(function(){
 
   jQuery("select:not(.unstyled_select)").each(function(){
     jQuery(this).trigger("select2_trigger");
+
   });
 
 });
