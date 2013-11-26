@@ -96,11 +96,12 @@ function __tinymce_anchor_link(ed, se){
 
 function __tinymce_anchor_checker(ed){
   var content = ed.getContent({format:"raw"}),
-        pattern = /<a class="__anchor__" name="(.*?)" href="#" data-mce-href="#">(.*?)<\/a>/ig,
+        pattern = /<a class="__anchor__" name="(.*?)" href="#" data-mce-href="#">(.*?)<\/a>|<a data-mce-href="#" href="#" class="__anchor__" name="(.*?)">(.*?)<\/a>/ig,
         matches = content.match(pattern),
         select = jQuery("#wf_an_choice"),
         new_select = "<option value=''>----</option>"
         ;
+  console.log(content);
   for(var x in matches) {
     var ele = jQuery(matches[x]), nm = ele.attr("name");
     new_select += "<option value='"+nm+"'>"+nm +" ("+ele.text()+")</option>";
