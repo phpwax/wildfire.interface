@@ -46,13 +46,16 @@ var tinymce_config = {
   		//
     }
     ;
-    
+
 
 jQuery(document).ready(function(){
+  if(typeof main_tinymce_class == "undefined") main_tinymce_class = "tinymce";
+  if(typeof simple_tinymce_class == "undefined") simple_tinymce_class = "simpletinymce";
+
   $(document).trigger("tinymce.init",[tinymce_config]);
-  var tinymce = jQuery('textarea.tinymce').tinymce(tinymce_config);
-  
-  var simpletinymce = jQuery('textarea.simpletinymce').tinymce(simpletinymce_config);
+  var tinymce = jQuery('textarea.'+main_tinymce_class).tinymce(tinymce_config);
+
+  var simpletinymce = jQuery('textarea.'+simple_tinymce_class).tinymce(simpletinymce_config);
 
   //hide the dialog boxes etc
   jQuery('#wildfire-link-dialog').hide();
