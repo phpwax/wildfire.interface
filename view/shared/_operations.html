@@ -1,3 +1,4 @@
+<span class='inner_operations'>
 <?foreach($permissions as $action=>$x):?>
   <?if($op_override = $row->operation($action, $x)):?>
     <?=$op_override?>
@@ -10,3 +11,4 @@
   <a href="/<?=trim($controller,"/")?>/<?=$action?>/<?=$row->primval?>/<?=(($cachelink)?"?rl=".rand():"")?>" class='button operation operation_<?=$action?>'><?=Inflections::humanize($action)?></a>
   <?endif?>
 <?endforeach?>
+</span>
