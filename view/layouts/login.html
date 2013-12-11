@@ -5,13 +5,14 @@
   <script type='text/javascript'>
     google.load('jquery', '1.5');
   </script>
+  <?=partial("_cms_meta")?>
   <?=partial("_cf")?>
   <link href='//fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
   <?foreach(CMSApplication::get_registered_assets("wildfire", "css") as $asset):?>
     <?=css_bundle($asset, array('media'=>'all'), $asset);?>
   <?endforeach?>
 
-  
+
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
   <title>Wildfire Web Content Manager Login</title>
