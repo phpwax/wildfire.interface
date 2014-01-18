@@ -27,7 +27,7 @@
       <ul class='subnav'>
       <?foreach((array)$info['subs'] as $name=>$subinfo):?>
         <li class='top subtop'>
-          <a href="<?=$subinfo?>"><?=$name?></a>
+          <a href="<?=$subinfo?>" <?if("/".$controller == $subinfo):?> class='active'<?endif?>><?=$name?></a>
         </li>
       <?endforeach?>
       </ul>

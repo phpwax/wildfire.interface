@@ -24,6 +24,9 @@
   #primary_navigation li.subtop a{
     font-weight: 300;
   }
+  #primary_navigation li.subtop a.active{
+    text-decoration: underline;
+  }
 
   #primary_navigation ul.subnav{
     display:none;
