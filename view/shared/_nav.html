@@ -1,4 +1,4 @@
-<?$cachelink = Config::get('cacheissue')?>
+<?$cachelink = Config::get('cacheissue');?>
 <ul id="primary_navigation">
   <?uksort($allowed_modules, function($a, $b){
     $ai = array_search($a, CMSApplication::$default_module_order);
@@ -27,7 +27,7 @@
       <ul class='subnav'>
       <?foreach((array)$info['subs'] as $name=>$subinfo):?>
         <li class='top subtop'>
-          <a href="<?=$subinfo?>" <?if("/".$controller == $subinfo):?> class='active'<?endif?>><?=$name?></a>
+          <a href="<?=$subinfo?>" <?if("/".trim($controller,"/")."/" == $subinfo):?> class='active'<?endif?>><?=$name?></a>
         </li>
       <?endforeach?>
       </ul>
