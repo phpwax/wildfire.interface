@@ -97,7 +97,8 @@ function __tinymce_anchor_link(ed, se){
 function __tinymce_dynamic_link(ed, se){
   var e = ed.dom.getParent(se.getNode(), 'A'),
       linkd=jQuery('#wildfire-link-dialog'),
-      val = jQuery("#wf_dyn_choice").val()
+      val = jQuery("#wf_dyn_choice").val(),
+      extraclasses = jQuery("#wf_df_class").val()
       ;
   if(val.length && e == null){
     tinymce.execCommand("mceInsertLink", false, "#mce_temp_dyn#", {skip_undo : 1});
@@ -105,14 +106,14 @@ function __tinymce_dynamic_link(ed, se){
       if (ed.dom.getAttrib(n, 'href') == '#mce_temp_dyn#') {
         e = n;
         ed.dom.setAttribs(e, {
-         class: "__dynamic_link__",
+         class: "__dynamic_link__ "+extraclasses,
          href: val
         });
       }
     });
   }else if(val.length){
     ed.dom.setAttribs(e, {
-      class: "__dynamic_link__",
+      class: "__dynamic_link__ "+extraclasses,
       href: val
     });
   }
