@@ -1,3 +1,6 @@
 <?=partial("admin/content/_recent_content", array('live'=>false))?>
 <?=partial("admin/content/_recent_content", array('live'=>true))?>
+<?foreach(AdminHomeController::$dashboards as $dash):?>
+  <?=partial($dash)?>
+<?endforeach?>
 <?=partial("_analytics")?>
