@@ -3,4 +3,7 @@
 <?foreach(AdminHomeController::$dashboards as $dash):?>
   <?=partial($dash, array('current_user'=>$current_user))?>
 <?endforeach?>
+
+<?if($show_analytics):?>
 <?=partial("_analytics")?>
+<?endif?>
