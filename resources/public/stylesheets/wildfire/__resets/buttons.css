@@ -15,7 +15,7 @@
 }
   .button:hover,
   form input[type=submit]:hover{
-    background:#cdcdcd;
+    background:#e4e4e4;
   }
 
   @keyframes autosave_active{
