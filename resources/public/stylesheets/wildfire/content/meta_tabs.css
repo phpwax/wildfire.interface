@@ -30,7 +30,6 @@
       }
         .meta_tabs .meta-tab-title.ui-state-active span{
           padding-bottom:10px;
-          border-bottom:1px solid #dfdfdf;
         }
       .meta_tabs .meta-tab-title.ui-state-active:first-child{
         margin-top:0px;

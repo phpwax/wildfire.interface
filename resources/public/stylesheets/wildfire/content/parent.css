@@ -9,8 +9,10 @@
     border-bottom:1px solid #dbdbdb;
   }
 .meta_tabs .content_parent label{
-  padding:10px 0 0 0;
   font-weight:normal;
+  display:inline-block;
+  width:auto;
+  margin-bottom:0;
 }
   .meta_tabs .content_parent .self label{
     font-weight:bold;

@@ -8,7 +8,12 @@
   if(!$path_to_root){
     $path = $base->path_to_root();
     $path_to_root = array();
-    if($path) foreach($path->rowset as $p) if($p['id'] != $model->primval) $path_to_root[] = $p['id'];
+    if($path){
+      foreach($path->rowset as $p){
+        if(is_array($p) && $p['id'] != $model->primval) $path_to_root[] = $p['id'];
+        elseif($p != $model->primval) $path_to_root[] = $p;
+      }
+    }
   }
   if(!$parent_id) $parent_id = 0;
 ?>
@@ -39,7 +44,7 @@
               <?=$parent?'checked="checked"':''?>>
             <span class='view_children <?=$branch->row['has_children']?"has-children":""?>'>
               <?if($branch->row['has_children']):?>
-                <?$kids = $branch->{$branch->children_column}->scope("parent_list")->all()?>
+                <?$kids = $branch->{$branch->children_column}->enable_has_child_query()->scope("parent_list")->all()?>
                 <a href="/<?=trim($controller,"/")?>/_parent/<?=$branch->primval?>.ajax?base=<?=$base->primval?>&amp;model=<?=$model->primval?>&amp;depth=<?=($depth+1)?>"
                   <?=in_array($branch->primval, $path_to_root)?'class="open fetched"':''?>>
                   <b class="entypo-icon-expand"></b>
