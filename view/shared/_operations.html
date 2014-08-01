@@ -8,7 +8,7 @@
   <?if(is_array($i)):?>
   <a href="/<?=trim($controller,"/")?>/<?=$i['action']?>/<?=$row->primval?>/<?=(($cachelink)?"?rl=".rand():"")?>" class='button operation operation_<?=$action?>'><?=str_replace("%s", $singular, $i['name'])?></a>
   <?else:?>
-  <a href="/<?=trim($controller,"/")?>/<?=$action?>/<?=$row->primval?>/<?=(($cachelink)?"?rl=".rand():"")?>" class='button operation operation_<?=$action?>'><?=Inflections::humanize($action)?></a>
+  <a href="/<?=trim($controller,"/")?>/<?=$action?>/<?=$row->primval?>/<?=(($cachelink)?"?rl=".rand():"")?>" class='button operation operation_<?=$action?>'><?if($icons):?><b class="entypo-icon"></b><?else:?><?=Inflections::humanize($action)?><?endif?></a>
   <?endif?>
 <?endforeach?>
 </span>
