@@ -7,8 +7,9 @@
  * License: http://tinymce.moxiecode.com/license
  * Contributing: http://tinymce.moxiecode.com/contributing
  */
-
-function __tinymce_insert_standard_link(ed, se){
+var editorCursorPosition;
+function __tinymce_insert_standard_link(ed,se){
+  ed.selection.moveToBookmark(editorCursorPosition);
   var e = ed.dom.getParent(se.getNode(), 'A'),
       linkd=jQuery('#wildfire-link-dialog'),
       siteaddress = linkd.attr("data-server");
@@ -143,10 +144,16 @@ var __tinymce_pre_linkinsert_functions = ["__tinymce_anchor_checker"];
       this.editor = ed;
       // Register commands
       ed.addCommand('wfAdvLink', function() {
-        var se = ed.selection;
+        var se = ed.selection,
+            nodeParent = ed.dom.getParent(se.getNode(), 'A'); 
+            $nodeParent = $(nodeParent);
 
         // No selection and not in link
         if (se.isCollapsed() && !ed.dom.getParent(se.getNode(), 'A')) return;
+        if($nodeParent.is("a")) se.select(nodeParent); 
+
+        // store selection IE fix
+        editorCursorPosition = ed.selection.getBookmark(false);
 
         for(var x in __tinymce_pre_linkinsert_functions){
           var f = __tinymce_pre_linkinsert_functions[x];
