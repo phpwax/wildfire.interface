@@ -56,4 +56,8 @@ jQuery(document).ready(function(){
     }, 2000);
   }
 
+  auto_saver.parents("form").on("submit",function(e){
+    autosave_disabled = true;
+  });
+
 });
