@@ -49,8 +49,9 @@ jQuery(document).ready(function(){
               ;
         jQuery(this).css({width:width+"%"}).find(".amount").html(width+"% ");
       });
-      main_bar.addClass("biggest_segment");
-
+      if(main_bar){
+        main_bar.addClass("biggest_segment");
+      }
     });
   });
 
