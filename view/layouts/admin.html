@@ -45,21 +45,18 @@
   </div>
 
 
-<script src='//www.google.com/jsapi?'  type='text/javascript'></script>
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
-<script type='text/javascript'>
-  google.load("visualization", "1", {packages:["corechart"]});
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {packages: ['corechart']});
 </script>
 
 <!-- EDITOR -->
 <script src="/tinymce/jscripts/tiny_mce/jquery.tinymce.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- CMS -->
-
 <?foreach(CMSApplication::get_registered_assets("wildfire", "js") as $asset):?>
   <?=js_bundle($asset, array(), $asset);?>
 <?endforeach?>
