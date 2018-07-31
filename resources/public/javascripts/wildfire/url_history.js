@@ -19,8 +19,10 @@ jQuery(function($){
     var current_params = parse_url(window.location.href);
     $.extend(current_params, new_params);
     var ret = [];
-    for(var i in current_params) ret.push(i+"="+current_params[i]);
-    history.pushState({}, window.document.title, window.location.pathname+"?"+ret.join("&"));
+    for(var i in current_params) {
+      ret[decodeURIComponent(i)] = decodeURIComponent(i) + '=' + current_params[i];
+    }
+    history.pushState({}, window.document.title, window.location.pathname+"?"+Object.values(ret).join("&"));
   });
 
   $(window).bind("autosave.completed", function(e,res){
