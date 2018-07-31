@@ -10,10 +10,10 @@ jQuery(document).ready(function(){
 
   //this inserts the ability to join media to the content
   jQuery(window).bind("preview.click", function(e, row, preview_container){
-    var primval = row.data("model-id"),
+    var primval  = row.data("model-id"),
         checkbox = jQuery(".default_value_to_unset_join").clone(),
-        field = row.closest(".media-listing, .existing-files").attr("data-field"),
-        button = (jQuery(".f_"+field+"_"+primval).length) ? "<a href='#' class='button js-added remove-button' data-primval='"+primval+"'>REMOVE</a>" : "<a href='#' class='button js-added add-button' data-primval='"+primval+"'>ADD</a>"
+        field    = row.closest(".media-listing, .existing-files").attr("data-field"),
+        button   = (jQuery(".f_"+field+"_"+primval).length) ? "<a href='#' class='button js-added remove-button' data-primval='"+primval+"'>REMOVE</a>" : "<a href='#' class='button js-added add-button' data-primval='"+primval+"'>ADD</a>"
         ;
     if(row.parents(".file-listing").length){
       if(jQuery(".media-listing, .existing-files").length){
@@ -33,28 +33,28 @@ jQuery(document).ready(function(){
   jQuery(".button.operation_add, .button.add-button").live("click", function(e){
     e.preventDefault();
 
-    var target = jQuery(this),
-        primval = target.data("primval") || target.closest(".media-listing-item").data("primval"),
-        holder = target.closest(".embedded-media-listing"),
-        field = holder.attr("data-field"),
-        url = holder.attr("data-new-join-url"),
+    var target     = jQuery(this),
+        primval    = target.data("primval") || target.closest(".media-listing-item").data("primval"),
+        holder     = target.closest(".embedded-media-listing"),
+        field      = holder.attr("data-field"),
+        url        = holder.attr("data-new-join-url"),
         join_class = holder.attr("data-join-class");
-        join_id = holder.attr("data-join-id");
-        join_field = holder.attr("data-join-field");;
+        join_id    = holder.attr("data-join-id");
+        join_field = holder.attr("data-join-field");
 
     jQuery.ajax({
-      "url":url,
-      "data":{
-        "target_id":primval,
-        "field":field,
-        "join_class":join_class,
-        "join_id":join_id,
-        "join_field":join_field,
-        "file_tags":file_tags
+      "url":          url,
+      "data": {
+        "target_id":  primval,
+        "field":      field,
+        "join_class": join_class,
+        "join_id":    join_id,
+        "join_field": join_field,
+        "file_tags":  file_tags
       },
       "success":function(result){
-        var fieldset = target.closest("fieldset"),
-            button = fieldset.find("#row_"+primval+" .operation_add"),
+        var fieldset    = target.closest("fieldset"),
+            button      = fieldset.find("#row_"+primval+" .operation_add"),
             button_link = button.attr("href");
 
         fieldset.trigger("add-media", result);
@@ -72,12 +72,13 @@ jQuery(document).ready(function(){
   });
   jQuery(".button.operation_remove, .button.remove-button").live("click", function(e){
     e.preventDefault();
-    var item = jQuery(this),
-          primval = jQuery(this).data("primval") || jQuery(this).closest(".media-listing-item").data("primval"),
-          fieldset = jQuery(this).closest("fieldset"),
-          field = fieldset.find(".embedded-media-listing").attr("data-field"),
-          buttons = fieldset.find("#row_"+primval+" .operation_remove, #row_"+primval+" .remove-button")
-          ;
+
+    var item       = jQuery(this),
+        primval    = jQuery(this).data("primval") || jQuery(this).closest(".media-listing-item").data("primval"),
+        fieldset   = jQuery(this).closest("fieldset"),
+        field      = fieldset.find(".embedded-media-listing").attr("data-field"),
+        buttons    = fieldset.find("#row_"+primval+" .operation_remove, #row_"+primval+" .remove-button")
+        ;
 
     buttons.each(function(){
       var b = jQuery(this);
