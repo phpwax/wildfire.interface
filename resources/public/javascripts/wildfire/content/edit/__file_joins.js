@@ -59,6 +59,8 @@ jQuery(document).ready(function(){
 
         fieldset.trigger("add-media", result);
         button.addClass("operation_remove").removeClass("operation_add").attr("href",button_link.replace("\/add\/","\/remove\/"));
+        //rename the button if it uses text
+        if(button.get(0).text) button.get(0).text = button.get(0).text.replace('Add','Remove');
 
         $(".media-listing-item").hoverIntent(
           function(){$(this).toggleClass("hovered");},
@@ -85,6 +87,8 @@ jQuery(document).ready(function(){
       if(b.hasClass("operation_remove")) b.addClass("operation_add").removeClass("operation_remove");
       else b.addClass("add-button").removeClass("remove-button");
       b.attr("href", b.attr("href").replace("\/remove\/","\/add\/"));
+      //rename the button if it uses text
+      if(b.get(0).text) b.get(0).text = b.get(0).text.replace('Remove','Add');
     });
     jQuery(".f_"+field+"_"+primval).remove();
     jQuery("#row_"+primval).removeClass("joined-to-model");
