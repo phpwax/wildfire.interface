@@ -28,12 +28,13 @@ function filter_list(trigger_element, replace){
     type:"get",
     success:function(res){
       form.removeClass("loading");
-      if(typeof replace != "undefined") jQuery(r).replaceWith(res);
-      else fieldset.closest(".filter-block-and-listing").find(r).replaceWith(res);
-
+      if(typeof replace != "undefined") {
+        if(jQuery(r).length > 1) fieldset.closest('.tab-contents').find(r).replaceWith(res);
+        else jQuery(r).replaceWith(res);
+      } else fieldset.closest(".filter-block-and-listing").find(r).replaceWith(res);
       jQuery(window).trigger("filter.trigger");
       jQuery(window).trigger("join.files.highlight");
-      $(window).trigger("update_url", new_get_params);
+      jQuery(window).trigger("update_url", new_get_params);
       jQuery("#data-listing").addClass("search-result-list");
     },
     error:function(){
@@ -80,8 +81,10 @@ jQuery(document).ready(function(){
   });
 
   jQuery('form fieldset.filters_container').find("input[type='text'],select").each(function(){
-    var obj = jQuery(this), parent_form = obj.closest("form");
-    if(parent_form.find(".data_table").length) jQuery(window).trigger("filter.bind", [obj, parent_form ]);
+    var obj = jQuery(this), 
+        parent_form = obj.closest("form"),
+        replace_id = obj.closest('.tab-contents').attr('id');
+    if(parent_form.find(".data_table").length) jQuery(window).trigger("filter.bind", [obj, parent_form, '#' + replace_id + ' .data_table' ]);
     else jQuery(window).trigger("filter.bind", [obj, parent_form, "#data-listing .data_table" ]);
   });
   jQuery(".inline-filter").each(function(){
