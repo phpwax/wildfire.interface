@@ -2,6 +2,7 @@ function filter_list(trigger_element, replace){
   var form = trigger_element.closest("form"),
       data = {},
       fieldset = trigger_element.closest("fieldset.filters_container"),
+      embed = fieldset.closest('.embedded-media-listing'),
       dest = fieldset.attr('data-action'),
       r = fieldset.attr('data-replace'),
       use_view = false;
@@ -14,6 +15,13 @@ function filter_list(trigger_element, replace){
     if(val != pl) data[nm] = val;
     else data[nm]='';
   }).serialize();
+
+  if(embed.length){
+    data.join_class = embed.attr("data-join-class");
+    data.join_id = embed.attr("data-join-id");
+    data.join_field = embed.attr("data-join-field");
+  }
+
   jQuery.ajax({
     url:dest,
     data:data,
